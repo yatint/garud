@@ -38,11 +38,12 @@ const SOCIALS = [FacebookIcon, XIcon, InstagramIcon, LinkedinIcon, YoutubeIcon];
 const SOCIAL_SLUGS = ["facebook", "x", "instagram", "linkedin", "youtube"];
 
 const PROGRAM_MENU = [
-  { label: "Kids Transform (6–12)", target: "#programs" },
+  { label: "All Programs Overview", href: "/programs" },
+  { label: "Kids Transform (6–12)", href: "/programs" },
   { label: "Youth Transform (13–18)", href: "/youth-transform" },
-  { label: "Young Adult Transform (19+)", target: "#programs" },
-  { label: "Parenting 360°", target: "#programs" },
-  { label: "30-Day Transformation", target: "#programs" },
+  { label: "Young Adult Transform (19+)", href: "/programs" },
+  { label: "Parenting 360°", href: "/programs" },
+  { label: "30-Day Transformation", href: "/programs" },
 ];
 
 interface AcademyNavbarProps {
@@ -128,37 +129,26 @@ export const AcademyNavbar = ({ onEnquire }: AcademyNavbarProps) => {
           </Link>
 
           <div className="group relative">
-            <button
+            <Link
+              to="/programs"
               data-testid="academy-nav-link-programs"
-              onClick={() => go("#programs")}
               className={`${linkClass} inline-flex items-center gap-1`}
             >
               Programs
               <ChevronDown size={13} className="transition-transform duration-300 group-hover:rotate-180" />
-            </button>
+            </Link>
             <div className="invisible absolute left-1/2 top-full z-50 -translate-x-1/2 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
               <div className="w-64 rounded-xl border border-[#e1dfdf] bg-white p-2 shadow-[0_18px_44px_rgba(24,70,59,0.16)]" data-testid="programs-dropdown">
-                {PROGRAM_MENU.map((p) =>
-                  p.href ? (
-                    <Link
-                      key={p.label}
-                      to={p.href}
-                      data-testid="programs-dropdown-youth"
-                      className="block rounded-lg px-4 py-2.5 text-sm font-semibold text-[#18463b] transition-colors hover:bg-[#f6f7f0] hover:text-[#f68a4a]"
-                    >
-                      {p.label}
-                    </Link>
-                  ) : (
-                    <button
-                      key={p.label}
-                      data-testid={`programs-dropdown-${p.label.toLowerCase().replace(/[^a-z]+/g, "-")}`}
-                      onClick={() => go(p.target!)}
-                      className="block w-full rounded-lg px-4 py-2.5 text-left text-sm font-semibold text-[#444] transition-colors hover:bg-[#f6f7f0] hover:text-[#f68a4a]"
-                    >
-                      {p.label}
-                    </button>
-                  )
-                )}
+                {PROGRAM_MENU.map((p) => (
+                  <Link
+                    key={p.label}
+                    to={p.href}
+                    data-testid={`programs-dropdown-${p.label.toLowerCase().replace(/[^a-z]+/g, "-")}`}
+                    className="block rounded-lg px-4 py-2.5 text-sm font-semibold text-[#444] transition-colors hover:bg-[#f6f7f0] hover:text-[#f68a4a]"
+                  >
+                    {p.label}
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
@@ -198,7 +188,6 @@ export const AcademyNavbar = ({ onEnquire }: AcademyNavbarProps) => {
             <div className="flex flex-col gap-1 px-6 py-4">
               {[
                 { label: "Home", target: "#top" },
-                { label: "Programs", target: "#programs" },
                 { label: "Life Skills", target: "#skills" },
                 { label: "Success Stories", target: "#stories" },
                 { label: "Contact", target: "#contact" },
@@ -225,6 +214,13 @@ export const AcademyNavbar = ({ onEnquire }: AcademyNavbarProps) => {
                 className="rounded-lg px-3 py-3 text-left text-sm font-semibold text-[#18463b]"
               >
                 Why Choose Us →
+              </Link>
+              <Link
+                to="/programs"
+                data-testid="academy-mobile-nav-programs-link"
+                className="rounded-lg px-3 py-3 text-left text-sm font-semibold text-[#18463b]"
+              >
+                All Programs →
               </Link>
               <Link
                 to="/gallery"

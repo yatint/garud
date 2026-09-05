@@ -58,6 +58,10 @@ Build a premium, responsive, English-only landing page for **Youth Transform**, 
 - `/why-us`: hero (walkers-toward-light imagery, curved edge, Explore Programs → homepage #programs, Book a Counselling Session → enquiry dialog), Philosophy ("Education Beyond Academics"), 8 trust feature cards, Ordinary Coaching vs Rupantaram comparison table (gray X column vs green ✓ column), 12-skills colorful icon grid, 4-step Transformation Method with arrow connectors, Outcomes for 4 audiences (Children/Teenagers/Parents/Young Adults), Core Promise green band, final CTA (Join Rupantaram / Contact Our Team).
 - Homepage navbar (desktop + mobile) gained a "Why Us" link.
 
+## Implemented — Programs Overview Page (2026-09-05, seventh phase)
+- `/programs`: hero (multi-generation family image, curved edge, Find Your Program / Contact Us), intro, 5 premium program cards (flagship 30-Day highlighted), "Which Program Is Right for You?" horizontal age→program journey (colorful icon stops), 8 "What Every Program Develops" cards, 6-column Learning Experience grid, 4 location cards + batch note, final CTA "Start Your Transformation Today". Page title set for SEO.
+- Homepage navbar Programs now routes to /programs (dropdown lists all five programs + overview; Youth Transform still routes to its own page).
+
 ## Verified
 - `/` and `/youth-transform` both load through the public URL; enquiry dialog fill → submit → success toast confirmed; cross-page links work; typecheck clean.
 - Public URL https://transform-teens.preview.emergentagent.com returns 200; `/api/status` responds.

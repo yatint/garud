@@ -123,6 +123,9 @@ export const AcademyNavbar = ({ onEnquire }: AcademyNavbarProps) => {
           <Link to="/about" data-testid="academy-nav-link-about" className={linkClass}>
             About
           </Link>
+          <Link to="/why-us" data-testid="academy-nav-link-why-us" className={linkClass}>
+            Why Us
+          </Link>
 
           <div className="group relative">
             <button
@@ -215,6 +218,13 @@ export const AcademyNavbar = ({ onEnquire }: AcademyNavbarProps) => {
                 className="rounded-lg px-3 py-3 text-left text-sm font-semibold text-[#18463b]"
               >
                 About Us →
+              </Link>
+              <Link
+                to="/why-us"
+                data-testid="academy-mobile-nav-why-us-link"
+                className="rounded-lg px-3 py-3 text-left text-sm font-semibold text-[#18463b]"
+              >
+                Why Choose Us →
               </Link>
               <Link
                 to="/gallery"

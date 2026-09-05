@@ -47,6 +47,8 @@ Build a premium, responsive, English-only landing page for **Youth Transform**, 
 - Homepage hero rebuilt to match the original site per user screenshot: real campus banner (`/assets/hero-banner.webp` from their CDN) with green overlay, centered Marathi tagline चला माणूस घडवू या (Mukta font added), uppercase "Life Skills & Personality Transformation Academy" title, Explore Programs pill + circular call CTA, and 6 overlapping white stat cards (5 programs / 25 skills / 4 locations / 6–19+ ages / 30-day flagship / 6 mentors).
 - Header rebuilt to match original: white top bar (social icons left, real logo.webp centered, orange phone pill right) + dark-green menu bar with HOME / ABOUT / PROGRAMS (hover dropdown) / LIFE SKILLS / GALLERY / SUCCESS STORIES / CONTACT + Enquire Now pill. Real logo downloaded from garudzeprupantarm.com.
 
+- Hero polish (per user reference screenshot): banner bottom edge uses an elliptical curve (`border-radius: 0 0 50% 50% / 0 0 72px 72px`) sweeping up at the edges; stat cards are flat white with brown line icons on soft-beige hexagon badges (clip-path polygon), bold green numbers, gray labels.
+
 ## Verified
 - `/` and `/youth-transform` both load through the public URL; enquiry dialog fill → submit → success toast confirmed; cross-page links work; typecheck clean.
 - Public URL https://transform-teens.preview.emergentagent.com returns 200; `/api/status` responds.

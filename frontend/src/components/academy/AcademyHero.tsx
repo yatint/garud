@@ -1,6 +1,15 @@
 import type { LucideIcon } from "lucide-react";
 import { motion } from "framer-motion";
-import { ArrowRight, Award, Building2, CalendarClock, GraduationCap, Phone, UserPlus, Users } from "lucide-react";
+import {
+  ArrowRight,
+  Award,
+  BedDouble,
+  Building2,
+  CalendarClock,
+  GraduationCap,
+  Phone,
+  UserPlus,
+} from "lucide-react";
 import { scrollToId } from "@/lib/scroll";
 
 interface Stat {
@@ -12,16 +21,19 @@ interface Stat {
 const STATS: Stat[] = [
   { icon: Award, value: "5", label: "Transformation Programs" },
   { icon: UserPlus, value: "25", label: "Life Skills Taught" },
-  { icon: Building2, value: "4", label: "Training Locations" },
-  { icon: Users, value: "6 – 19+", label: "Age Group (Years)" },
-  { icon: CalendarClock, value: "30", label: "Day Flagship Program" },
+  { icon: CalendarClock, value: "4", label: "Training Locations" },
+  { icon: Building2, value: "6 – 19+", label: "Age Group (Years)" },
+  { icon: BedDouble, value: "30", label: "Day Flagship Program" },
   { icon: GraduationCap, value: "6", label: "Trained Mentors" },
 ];
+
+const HEXAGON =
+  "[clip-path:polygon(50%_0%,93%_25%,93%_75%,50%_100%,7%_75%,7%_25%)]";
 
 export const AcademyHero = ({ started }: { started: boolean }) => {
   return (
     <section id="top" data-testid="academy-hero" className="relative">
-      <div className="relative flex min-h-[88vh] items-center justify-center overflow-hidden">
+      <div className="relative flex min-h-[92vh] items-center justify-center overflow-hidden [border-radius:0_0_50%_50%/0_0_72px_72px]">
         <img
           src="/assets/hero-banner.webp"
           alt="Rupantaram training campus surrounded by greenery"
@@ -29,7 +41,7 @@ export const AcademyHero = ({ started }: { started: boolean }) => {
         />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(24,70,59,0.5)_0%,rgba(24,70,59,0.68)_55%,rgba(24,70,59,0.8)_100%)]" />
 
-        <div className="relative z-10 mx-auto max-w-5xl px-4 pb-32 pt-44 text-center sm:px-6">
+        <div className="relative z-10 mx-auto max-w-5xl px-4 pb-40 pt-44 text-center sm:px-6">
           <motion.p
             initial={{ opacity: 0, y: 24 }}
             animate={started ? { opacity: 1, y: 0 } : {}}
@@ -81,7 +93,7 @@ export const AcademyHero = ({ started }: { started: boolean }) => {
       </div>
 
       <div className="relative z-20 mx-auto -mt-24 max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6" data-testid="academy-stats-strip">
+        <div className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 lg:grid-cols-6" data-testid="academy-stats-strip">
           {STATS.map((s, i) => (
             <motion.div
               key={s.label}
@@ -89,13 +101,15 @@ export const AcademyHero = ({ started }: { started: boolean }) => {
               animate={started ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.7 + i * 0.08, ease: [0.22, 1, 0.36, 1] }}
               data-testid={`stat-${i + 1}`}
-              className="rounded-xl border border-[#e1dfdf] bg-white px-4 py-7 text-center shadow-[0_18px_44px_rgba(24,70,59,0.12)] transition-all duration-300 hover:-translate-y-2 hover:border-[#f68a4a]/50"
+              className="group rounded-2xl bg-white px-4 py-8 text-center transition-all duration-300 hover:-translate-y-2"
             >
-              <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#fdf1e7] text-[#f68a4a]">
-                <s.icon size={26} />
+              <span
+                className={`mx-auto flex h-16 w-16 items-center justify-center bg-[#faf4ec] transition-transform duration-300 group-hover:scale-110 ${HEXAGON}`}
+              >
+                <s.icon size={27} strokeWidth={1.7} className="text-[#a15e2e]" />
               </span>
-              <p className="mt-4 font-heading text-3xl font-black text-[#18463b]">{s.value}</p>
-              <p className="mt-1.5 text-xs font-semibold leading-snug text-[#7a7a7a]">{s.label}</p>
+              <p className="mt-5 font-heading text-3xl font-black text-[#18463b]">{s.value}</p>
+              <p className="mt-2 text-sm font-medium leading-snug text-[#7a7a7a]">{s.label}</p>
             </motion.div>
           ))}
         </div>

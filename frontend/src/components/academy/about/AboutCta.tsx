@@ -43,7 +43,7 @@ export const AboutCta = ({ onEnquire }: AboutCtaProps) => {
             </button>
             <a
               data-testid="about-cta-contact-button"
-              href="tel:+919860775149"
+              href="tel:+919011658888"
               className="inline-flex items-center gap-2 rounded-full border border-white/30 px-9 py-4 text-sm font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:-translate-y-[3px] hover:border-[#f68a4a] hover:text-[#f8b183] active:scale-95"
             >
               <Phone size={16} />

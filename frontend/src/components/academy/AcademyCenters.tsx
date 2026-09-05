@@ -38,12 +38,12 @@ export const AcademyCenters = ({ onEnquire }: AcademyCentersProps) => {
                 <p className="mt-1 text-sm text-[#7a7a7a]">{c.district}</p>
                 <p className="mt-3 flex items-center gap-2 text-sm font-semibold text-[#444]">
                   <Phone size={14} className="text-[#f68a4a]" />
-                  +91 98607 75149
+                  +91 90116 58888
                 </p>
                 <div className="mt-5 flex gap-2">
                   <a
                     data-testid={`center-call-${c.slug}`}
-                    href="tel:+919860775149"
+                    href="tel:+919011658888"
                     className="flex-1 rounded-full border border-[#f68a4a] bg-[#f68a4a] px-4 py-2.5 text-center text-xs font-bold uppercase tracking-[0.12em] text-white transition-all duration-300 hover:border-[#18463b] hover:bg-[#18463b]"
                   >
                     Call

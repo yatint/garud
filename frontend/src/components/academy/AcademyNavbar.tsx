@@ -43,7 +43,7 @@ const PROGRAM_MENU = [
   { label: "Youth Transform (13–18)", href: "/youth-transform" },
   { label: "Young Adult Transform (19+)", href: "/programs/young-adult-transform" },
   { label: "Parenting 360°", href: "/programs" },
-  { label: "30-Day Transformation", href: "/programs" },
+  { label: "30-Day Transformation", href: "/programs/30-day-transform" },
 ];
 
 interface AcademyNavbarProps {
@@ -95,11 +95,11 @@ export const AcademyNavbar = ({ onEnquire }: AcademyNavbarProps) => {
           <div className="ml-auto flex items-center gap-3">
             <a
               data-testid="topbar-phone-link"
-              href="tel:+919860775149"
+              href="tel:+919011658888"
               className="hidden items-center gap-2 rounded-full border border-[#f68a4a] bg-[#f68a4a] px-5 py-2.5 text-xs font-bold uppercase tracking-[0.1em] text-white transition-all duration-300 hover:-translate-y-[2px] hover:border-[#18463b] hover:bg-[#18463b] sm:inline-flex"
             >
               <Phone size={13} />
-              +91 98607 75149
+              +91 90116 58888
             </a>
             <button
               data-testid="academy-mobile-menu-button"
@@ -153,18 +153,18 @@ export const AcademyNavbar = ({ onEnquire }: AcademyNavbarProps) => {
             </div>
           </div>
 
-          <button data-testid="academy-nav-link-life-skills" onClick={() => go("#skills")} className={linkClass}>
+          <Link to="/life-skills" data-testid="academy-nav-link-life-skills" className={linkClass}>
             Life Skills
-          </button>
+          </Link>
           <Link to="/gallery" data-testid="academy-nav-gallery-link" className={linkClass}>
             Gallery
           </Link>
-          <button data-testid="academy-nav-link-success-stories" onClick={() => go("#stories")} className={linkClass}>
+          <Link to="/success-stories" data-testid="academy-nav-link-success-stories" className={linkClass}>
             Success Stories
-          </button>
-          <button data-testid="academy-nav-link-contact" onClick={() => go("#contact")} className={linkClass}>
+          </Link>
+          <Link to="/contact" data-testid="academy-nav-link-contact" className={linkClass}>
             Contact
-          </button>
+          </Link>
           <button
             data-testid="academy-nav-enquire-button"
             onClick={onEnquire}
@@ -188,9 +188,6 @@ export const AcademyNavbar = ({ onEnquire }: AcademyNavbarProps) => {
             <div className="flex flex-col gap-1 px-6 py-4">
               {[
                 { label: "Home", target: "#top" },
-                { label: "Life Skills", target: "#skills" },
-                { label: "Success Stories", target: "#stories" },
-                { label: "Contact", target: "#contact" },
               ].map((l) => (
                 <button
                   key={l.target}
@@ -201,6 +198,27 @@ export const AcademyNavbar = ({ onEnquire }: AcademyNavbarProps) => {
                   {l.label}
                 </button>
               ))}
+              <Link
+                to="/life-skills"
+                data-testid="academy-mobile-nav-life-skills-link"
+                className="rounded-lg px-3 py-3 text-left text-sm font-semibold text-[#18463b]"
+              >
+                Life Skills →
+              </Link>
+              <Link
+                to="/success-stories"
+                data-testid="academy-mobile-nav-success-stories-link"
+                className="rounded-lg px-3 py-3 text-left text-sm font-semibold text-[#18463b]"
+              >
+                Success Stories →
+              </Link>
+              <Link
+                to="/contact"
+                data-testid="academy-mobile-nav-contact-link"
+                className="rounded-lg px-3 py-3 text-left text-sm font-semibold text-[#18463b]"
+              >
+                Contact →
+              </Link>
               <Link
                 to="/about"
                 data-testid="academy-mobile-nav-about-link"

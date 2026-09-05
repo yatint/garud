@@ -88,10 +88,10 @@ export const Footer = () => {
                 <Phone size={16} className="shrink-0 text-[#f68a4a]" />
                 <a
                   data-testid="footer-phone-link"
-                  href="tel:+919000000000"
+                  href="tel:+919011658888"
                   className="transition-colors hover:text-white"
                 >
-                  +91 90000 00000
+                  +91 90116 58888
                 </a>
               </li>
               <li className="flex items-center gap-3">

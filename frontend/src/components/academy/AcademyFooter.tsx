@@ -154,12 +154,12 @@ export const AcademyFooter = () => {
               <li className="flex items-center gap-3">
                 <Phone size={16} className="shrink-0 text-[#f68a4a]" />
                 <span>
-                  <a data-testid="academy-footer-phone-1" href="tel:+919860775149" className="transition-colors hover:text-white">
-                    +91 98607 75149
+                  <a data-testid="academy-footer-phone-1" href="tel:+919011658888" className="transition-colors hover:text-white">
+                    +91 90116 58888
                   </a>
                   {" · "}
-                  <a data-testid="academy-footer-phone-2" href="tel:+918087075149" className="transition-colors hover:text-white">
-                    +91 80870 75149
+                  <a data-testid="academy-footer-phone-2" href="tel:+919011678888" className="transition-colors hover:text-white">
+                    +91 90116 78888
                   </a>
                 </span>
               </li>
@@ -167,12 +167,10 @@ export const AcademyFooter = () => {
                 <Mail size={16} className="shrink-0 text-[#f68a4a]" />
                 <a
                   data-testid="academy-footer-website"
-                  href="https://www.garudzep.com"
-                  target="_blank"
-                  rel="noreferrer"
+                  href="mailto:info@garudzeprupantaram.com"
                   className="transition-colors hover:text-white"
                 >
-                  www.garudzep.com
+                  info@garudzeprupantaram.com
                 </a>
               </li>
             </ul>

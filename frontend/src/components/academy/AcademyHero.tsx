@@ -78,14 +78,14 @@ export const AcademyHero = ({ started }: { started: boolean }) => {
             </button>
             <a
               data-testid="academy-hero-call-button"
-              href="tel:+919860775149"
+              href="tel:+919011658888"
               className="group inline-flex items-center gap-3 transition-transform duration-300 hover:-translate-y-[3px] active:scale-95"
             >
               <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#f68a4a] text-white shadow-[0_0_0_6px_rgba(246,138,74,0.25)] transition-colors duration-300 group-hover:bg-white group-hover:text-[#18463b]">
                 <Phone size={18} />
               </span>
               <span className="font-heading text-sm font-bold uppercase tracking-[0.12em] text-white">
-                Call Us: +91 98607 75149
+                Call Us: +91 90116 58888
               </span>
             </a>
           </motion.div>

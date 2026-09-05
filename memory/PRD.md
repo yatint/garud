@@ -49,6 +49,11 @@ Build a premium, responsive, English-only landing page for **Youth Transform**, 
 
 - Hero polish (per user reference screenshot): banner bottom edge uses an elliptical curve (`border-radius: 0 0 50% 50% / 0 0 72px 72px`) sweeping up at the edges; stat cards are flat white with brown line icons on soft-beige hexagon badges (clip-path polygon), bold green numbers, gray labels.
 
+## Implemented — About Us Page (2026-09-05, fifth phase)
+- `/about`: full About page — hero (mountain-summit sunrise stock image, green overlay, curved bottom edge, Explore Programs/Contact Us CTAs), Who We Are + Mission/Vision cards, What Makes Us Different (6 cards), Core Values (8 circular cards with one-liners), Our Programs (4 cards, Youth links to /youth-transform, others open enquiry), 5-step horizontal methodology timeline, Why Families Choose animated counters (4 centers / 4 programs / 25+ modules / 100% practical), Community Impact (volunteer imagery), 4 location cards with View Programs, final CTA "Your Transformation Begins Today".
+- Shared `SlimNavbar` (logo + Academy Home + Enquire) extracted and used by About and Gallery.
+- Homepage navbar About link (desktop + mobile) now routes to /about.
+
 ## Verified
 - `/` and `/youth-transform` both load through the public URL; enquiry dialog fill → submit → success toast confirmed; cross-page links work; typecheck clean.
 - Public URL https://transform-teens.preview.emergentagent.com returns 200; `/api/status` responds.

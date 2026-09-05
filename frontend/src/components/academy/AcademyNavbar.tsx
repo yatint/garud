@@ -120,9 +120,9 @@ export const AcademyNavbar = ({ onEnquire }: AcademyNavbarProps) => {
           <button data-testid="academy-nav-link-home" onClick={() => go("#top")} className={linkClass}>
             Home
           </button>
-          <button data-testid="academy-nav-link-about" onClick={() => go("#about")} className={linkClass}>
+          <Link to="/about" data-testid="academy-nav-link-about" className={linkClass}>
             About
-          </button>
+          </Link>
 
           <div className="group relative">
             <button
@@ -195,7 +195,6 @@ export const AcademyNavbar = ({ onEnquire }: AcademyNavbarProps) => {
             <div className="flex flex-col gap-1 px-6 py-4">
               {[
                 { label: "Home", target: "#top" },
-                { label: "About", target: "#about" },
                 { label: "Programs", target: "#programs" },
                 { label: "Life Skills", target: "#skills" },
                 { label: "Success Stories", target: "#stories" },
@@ -210,6 +209,13 @@ export const AcademyNavbar = ({ onEnquire }: AcademyNavbarProps) => {
                   {l.label}
                 </button>
               ))}
+              <Link
+                to="/about"
+                data-testid="academy-mobile-nav-about-link"
+                className="rounded-lg px-3 py-3 text-left text-sm font-semibold text-[#18463b]"
+              >
+                About Us →
+              </Link>
               <Link
                 to="/gallery"
                 data-testid="academy-mobile-nav-gallery-link"

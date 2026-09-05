@@ -1,8 +1,8 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowLeft, ChevronLeft, ChevronRight, Expand, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, Expand, X } from "lucide-react";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
 import { Toaster } from "@/components/ui/sonner";
+import { SlimNavbar } from "@/components/academy/SlimNavbar";
 import { AcademyFooter } from "@/components/academy/AcademyFooter";
 import { EnquiryDialog } from "@/components/academy/EnquiryDialog";
 import { destroyLenis, initLenis, startLenis, stopLenis } from "@/lib/scroll";
@@ -151,48 +151,10 @@ export default function Gallery() {
     <div className="min-h-screen bg-white font-sans text-[#222]">
       <div className="grain-overlay" />
 
-      <header
-        data-testid="gallery-navbar"
-        className="fixed inset-x-0 top-0 z-50 border-b border-[#e1dfdf] bg-white/90 shadow-[0_2px_24px_rgba(24,70,59,0.07)] backdrop-blur-xl"
-      >
-        <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-          <Link to="/" data-testid="gallery-nav-logo" className="flex items-center gap-3">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0b5d3b] font-heading text-lg font-black text-white">
-              R
-            </span>
-            <span className="text-left leading-tight">
-              <span className="block font-heading text-sm font-extrabold uppercase tracking-[0.18em] text-[#18463b]">
-                Rupantaram
-              </span>
-              <span className="block text-[10px] font-semibold uppercase tracking-[0.22em] text-[#f68a4a]">
-                Garud Zep Group
-              </span>
-            </span>
-          </Link>
-
-          <div className="flex items-center gap-3">
-            <Link
-              to="/"
-              data-testid="gallery-nav-home-link"
-              className="hidden items-center gap-1.5 text-sm font-semibold text-[#555] transition-colors hover:text-[#18463b] sm:inline-flex"
-            >
-              <ArrowLeft size={14} />
-              Academy Home
-            </Link>
-            <button
-              data-testid="gallery-nav-enquire-button"
-              onClick={openEnquiry}
-              className="rounded-full border border-[#f68a4a] bg-[#f68a4a] px-6 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:-translate-y-[2px] hover:border-[#18463b] hover:bg-[#18463b] active:scale-95"
-            >
-              Enquire Now
-            </button>
-          </div>
-        </div>
-      </header>
+      <SlimNavbar onEnquire={openEnquiry} />
 
       <main>
-        <section className="relative overflow-hidden bg-[#f6f7f0] pb-14 pt-36 lg:pt-44">
-          <div className="pointer-events-none absolute inset-0">
+        <section className="relative overflow-hidden bg-[#f6f7f0] pb-14 pt-36 lg:pt-44">          <div className="pointer-events-none absolute inset-0">
             <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[radial-gradient(circle,rgba(246,138,74,0.14),transparent_70%)]" />
           </div>
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

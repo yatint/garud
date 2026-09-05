@@ -180,3 +180,7 @@
 .lenis.lenis-smooth {
   scroll-behavior: auto !important;
 }
+
+.font-mukta {
+  font-family: 'Mukta', 'Geist Variable', sans-serif;
+}

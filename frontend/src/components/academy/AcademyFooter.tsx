@@ -101,7 +101,7 @@ export const AcademyFooter = () => {
                 <li key={l.target}>
                   <button
                     data-testid={`academy-footer-link-${l.label.toLowerCase().replace(/[^a-z]+/g, "-")}`}
-                    onClick={() => scrollToId(l.target, -116)}
+                    onClick={() => scrollToId(l.target, -124)}
                     className="text-sm text-white/60 transition-colors duration-300 hover:text-[#f8b183]"
                   >
                     {l.label}

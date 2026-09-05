@@ -1,0 +1,184 @@
+import { Mail, MapPin, Phone } from "lucide-react";
+import { Link } from "react-router-dom";
+import { scrollToId } from "@/lib/scroll";
+
+const FacebookIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.5 1.6-1.5h1.3V4.9c-.2 0-1-.1-1.9-.1-1.9 0-3.2 1.2-3.2 3.3V11H9v3h2.3v7h2.2Z" />
+  </svg>
+);
+const InstagramIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+    <rect x="3" y="3" width="18" height="18" rx="5" />
+    <circle cx="12" cy="12" r="4" />
+    <circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none" />
+  </svg>
+);
+const YoutubeIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8c1.6.4 7.8.4 7.8.4s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8ZM10 15.2V8.8l5.2 3.2L10 15.2Z" />
+  </svg>
+);
+const LinkedinIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M6.4 8.9H3.6V21h2.8V8.9ZM5 3.5a1.7 1.7 0 1 0 0 3.4 1.7 1.7 0 0 0 0-3.4ZM12 11.3c0-1-.1-1.8-.2-2.4h2.6l.1 1.1h.1c.4-.6 1.3-1.3 2.7-1.3 1.8 0 3.1 1.2 3.1 3.7V21h-2.8v-7.9c0-1.2-.4-2-1.5-2-.8 0-1.3.6-1.5 1.1-.1.2-.1.5-.1.8V21H12v-9.7Z" />
+  </svg>
+);
+
+const LINKS = [
+  { label: "About Us", target: "#about" },
+  { label: "Life Skills", target: "#skills" },
+  { label: "Programs", target: "#programs" },
+  { label: "Our Method", target: "#method" },
+  { label: "Success Stories", target: "#stories" },
+  { label: "Centers", target: "#centers" },
+  { label: "FAQs", target: "#faq" },
+];
+
+const PROGRAMS = [
+  "Kids Transform (Ages 6–12)",
+  "Youth Transform (Ages 13–18)",
+  "Young Adult Transform (19+)",
+  "Parenting 360° (1 Day)",
+  "30-Day Transformation Journey",
+];
+
+const SOCIALS = [
+  { icon: FacebookIcon, label: "Facebook", slug: "facebook" },
+  { icon: InstagramIcon, label: "Instagram", slug: "instagram" },
+  { icon: YoutubeIcon, label: "YouTube", slug: "youtube" },
+  { icon: LinkedinIcon, label: "LinkedIn", slug: "linkedin" },
+];
+
+export const AcademyFooter = () => {
+  return (
+    <footer id="contact" data-testid="academy-footer" className="border-t border-[#0b5d3b] bg-[#18463b]">
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
+          <div>
+            <div className="flex items-center gap-3">
+              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f68a4a] font-heading text-xl font-black text-white">
+                R
+              </span>
+              <div className="leading-tight">
+                <p className="font-heading text-base font-extrabold uppercase tracking-[0.14em] text-white">
+                  Rupantaram
+                </p>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#f8b183]">
+                  Garud Zep Group
+                </p>
+              </div>
+            </div>
+            <p className="mt-5 text-sm leading-relaxed text-white/65">
+              A life skills & personality transformation academy. This is not teaching — this is
+              transformation.
+            </p>
+            <p className="mt-4 font-heading text-sm font-bold uppercase tracking-[0.18em] text-[#f8b183]">
+              Chala Manus Ghadvu Ya
+            </p>
+            <div className="mt-5 flex gap-3">
+              {SOCIALS.map((s) => (
+                <a
+                  key={s.slug}
+                  data-testid={`social-link-${s.slug}`}
+                  href="#contact"
+                  aria-label={s.label}
+                  onClick={(e) => e.preventDefault()}
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/60 transition-all duration-300 hover:border-[#f68a4a] hover:text-[#f68a4a]"
+                >
+                  <s.icon />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 className="font-heading text-sm font-bold uppercase tracking-[0.2em] text-[#f68a4a]">
+              Quick Links
+            </h3>
+            <ul className="mt-5 flex flex-col gap-3">
+              {LINKS.map((l) => (
+                <li key={l.target}>
+                  <button
+                    data-testid={`academy-footer-link-${l.label.toLowerCase().replace(/[^a-z]+/g, "-")}`}
+                    onClick={() => scrollToId(l.target, -116)}
+                    className="text-sm text-white/60 transition-colors duration-300 hover:text-[#f8b183]"
+                  >
+                    {l.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-heading text-sm font-bold uppercase tracking-[0.2em] text-[#f68a4a]">
+              Programs
+            </h3>
+            <ul className="mt-5 flex flex-col gap-3">
+              {PROGRAMS.map((p) => (
+                <li key={p} className="text-sm text-white/60">
+                  {p}
+                </li>
+              ))}
+              <li>
+                <Link
+                  to="/youth-transform"
+                  data-testid="academy-footer-youth-link"
+                  className="text-sm font-semibold text-[#f8b183] transition-colors hover:text-white"
+                >
+                  Explore Youth Transform →
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-heading text-sm font-bold uppercase tracking-[0.2em] text-[#f68a4a]">
+              Contact
+            </h3>
+            <ul className="mt-5 flex flex-col gap-4 text-sm text-white/60">
+              <li className="flex items-start gap-3">
+                <MapPin size={16} className="mt-0.5 shrink-0 text-[#f68a4a]" />
+                <span data-testid="academy-footer-centers">Karjat · Alibag · Pen · Lonavala, Maharashtra</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone size={16} className="shrink-0 text-[#f68a4a]" />
+                <span>
+                  <a data-testid="academy-footer-phone-1" href="tel:+919860775149" className="transition-colors hover:text-white">
+                    +91 98607 75149
+                  </a>
+                  {" · "}
+                  <a data-testid="academy-footer-phone-2" href="tel:+918087075149" className="transition-colors hover:text-white">
+                    +91 80870 75149
+                  </a>
+                </span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail size={16} className="shrink-0 text-[#f68a4a]" />
+                <a
+                  data-testid="academy-footer-website"
+                  href="https://www.garudzep.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="transition-colors hover:text-white"
+                >
+                  www.garudzep.com
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
+          <p className="text-xs text-white/45">
+            © 2026 Garud Zep – Rupantaram. All rights reserved.
+          </p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/45">
+            Not Teaching — Transformation
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};

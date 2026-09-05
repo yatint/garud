@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { ArrowLeft, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { scrollToId } from "@/lib/scroll";
 
 const LINKS = [
@@ -61,6 +62,14 @@ export const Navbar = ({ onEnroll }: NavbarProps) => {
         </button>
 
         <nav className="hidden items-center gap-7 lg:flex" data-testid="nav-links">
+          <Link
+            to="/"
+            data-testid="nav-link-home"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#f68a4a] transition-colors duration-300 hover:text-[#18463b]"
+          >
+            <ArrowLeft size={14} />
+            Academy Home
+          </Link>
           {LINKS.map((l) => (
             <button
               key={l.target}

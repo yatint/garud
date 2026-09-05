@@ -9,8 +9,8 @@ const ITEMS = [
   "Career Clarity",
 ];
 
-export const EditorialMarquee = () => {
-  const row = [...ITEMS, ...ITEMS];
+export const EditorialMarquee = ({ items = ITEMS }: { items?: string[] }) => {
+  const row = [...items, ...items];
   return (
     <div
       data-testid="editorial-marquee"

@@ -31,7 +31,15 @@ Build a premium, responsive, English-only landing page for **Youth Transform**, 
 - Footer with programs, quick links, centers (Karjat · Alibag · Pen · Lonavala), placeholder contact.
 - data-testid attributes on all interactive elements; `yarn typecheck` clean.
 
+## Implemented — Academy Homepage Rebuild (2026-09-05, second phase)
+- Rebuilt the fresher-made garudzeprupantarm.com index page as a premium React homepage at `/`, translated to English (per user choice).
+- Youth Transform page moved to `/youth-transform` with an "Academy Home" back link; homepage links into it from nav, program card, and footer.
+- Sections: top bar + navbar, hero ("Chala Manus Ghadvu Ya" masked reveal + tilt image), pillars marquee, 6-stat strip, About, 25 Life Skills in 3 tracks, Founder's Note (green band), 3 Success Stories, 5 Program cards (+ guidance tile), How We Teach (5), 6-Step Transformation Journey, Why Parents Choose Us (4), 4 Training Centers (call/enquire), 8 FAQs, final CTA, footer (both phones, garudzep.com, socials).
+- Enquiry dialog (name/mobile/email/city/program/message) — STATIC ONLY, toast confirmation, nothing saved (per user choice).
+- All imagery is stock (Unsplash/Pexels), Indian students/families — no AI images (per user choice).
+
 ## Verified
+- `/` and `/youth-transform` both load through the public URL; enquiry dialog fill → submit → success toast confirmed; cross-page links work; typecheck clean.
 - Public URL https://transform-teens.preview.emergentagent.com returns 200; `/api/status` responds.
 - Browser pass: preloader → hero reveal → section scrolls → FAQ toggle → enroll dialog fill + submit → success toast → final CTA → footer. All screenshotted and confirmed.
 

@@ -2,24 +2,35 @@ import { AnimatePresence } from "framer-motion";
 import { useCallback, useEffect, useState } from "react";
 import { Toaster } from "@/components/ui/sonner";
 import { Preloader } from "@/components/Preloader";
-import { Navbar } from "@/components/Navbar";
-import { HeroSection } from "@/components/HeroSection";
 import { EditorialMarquee } from "@/components/EditorialMarquee";
-import { AboutProgram } from "@/components/AboutProgram";
-import { OutcomesGrid } from "@/components/OutcomesGrid";
-import { WhoShouldJoin } from "@/components/WhoShouldJoin";
-import { TimelineJourney } from "@/components/TimelineJourney";
-import { LearningMethods } from "@/components/LearningMethods";
-import { BenefitsList } from "@/components/BenefitsList";
-import { FaqAccordion } from "@/components/FaqAccordion";
-import { FinalCta } from "@/components/FinalCta";
-import { Footer } from "@/components/Footer";
-import { EnrollDialog } from "@/components/EnrollDialog";
+import { AcademyNavbar } from "@/components/academy/AcademyNavbar";
+import { AcademyHero } from "@/components/academy/AcademyHero";
+import { AcademyAbout } from "@/components/academy/AcademyAbout";
+import { AcademySkills } from "@/components/academy/AcademySkills";
+import { AcademyFounder } from "@/components/academy/AcademyFounder";
+import { AcademyStories } from "@/components/academy/AcademyStories";
+import { AcademyPrograms } from "@/components/academy/AcademyPrograms";
+import { AcademyMethod } from "@/components/academy/AcademyMethod";
+import { AcademyJourney } from "@/components/academy/AcademyJourney";
+import { AcademyWhyParents } from "@/components/academy/AcademyWhyParents";
+import { AcademyCenters } from "@/components/academy/AcademyCenters";
+import { AcademyFaq } from "@/components/academy/AcademyFaq";
+import { AcademyCta } from "@/components/academy/AcademyCta";
+import { AcademyFooter } from "@/components/academy/AcademyFooter";
+import { EnquiryDialog } from "@/components/academy/EnquiryDialog";
 import { destroyLenis, initLenis, startLenis, stopLenis } from "@/lib/scroll";
+
+const PILLARS = [
+  "Thought Transformation",
+  "Habit Transformation",
+  "Character & Values",
+  "Leadership & Service",
+  "Purposeful Living",
+];
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
-  const [enrollOpen, setEnrollOpen] = useState(false);
+  const [enquiryOpen, setEnquiryOpen] = useState(false);
 
   useEffect(() => {
     const lenis = initLenis();
@@ -46,29 +57,32 @@ export default function Home() {
   }, [loading]);
 
   const finishLoading = useCallback(() => setLoading(false), []);
-  const openEnroll = useCallback(() => setEnrollOpen(true), []);
+  const openEnquiry = useCallback(() => setEnquiryOpen(true), []);
 
   return (
     <div className="min-h-screen bg-white font-sans text-[#222]">
       <div className="grain-overlay" />
       <AnimatePresence>{loading && <Preloader onDone={finishLoading} />}</AnimatePresence>
 
-      <Navbar onEnroll={openEnroll} />
+      <AcademyNavbar onEnquire={openEnquiry} />
       <main>
-        <HeroSection started={!loading} onEnroll={openEnroll} />
-        <EditorialMarquee />
-        <AboutProgram />
-        <OutcomesGrid />
-        <WhoShouldJoin />
-        <TimelineJourney />
-        <LearningMethods />
-        <BenefitsList />
-        <FaqAccordion />
-        <FinalCta onEnroll={openEnroll} />
+        <AcademyHero started={!loading} />
+        <EditorialMarquee items={PILLARS} />
+        <AcademyAbout />
+        <AcademySkills />
+        <AcademyFounder />
+        <AcademyStories />
+        <AcademyPrograms onEnquire={openEnquiry} />
+        <AcademyMethod />
+        <AcademyJourney />
+        <AcademyWhyParents />
+        <AcademyCenters onEnquire={openEnquiry} />
+        <AcademyFaq />
+        <AcademyCta onEnquire={openEnquiry} />
       </main>
-      <Footer />
+      <AcademyFooter />
 
-      <EnrollDialog open={enrollOpen} onOpenChange={setEnrollOpen} />
+      <EnquiryDialog open={enquiryOpen} onOpenChange={setEnquiryOpen} />
       <Toaster position="top-center" richColors />
     </div>
   );

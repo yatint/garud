@@ -16,9 +16,9 @@ export const destroyLenis = () => {
 export const stopLenis = () => lenis?.stop();
 export const startLenis = () => lenis?.start();
 
-export const scrollToId = (id: string) => {
+export const scrollToId = (id: string, offset = -72) => {
   if (lenis) {
-    lenis.scrollTo(id, { offset: -72, duration: 1.4 });
+    lenis.scrollTo(id, { offset, duration: 1.4 });
   } else {
     document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
   }

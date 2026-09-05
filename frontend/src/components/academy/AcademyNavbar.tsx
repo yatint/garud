@@ -41,7 +41,7 @@ const PROGRAM_MENU = [
   { label: "All Programs Overview", href: "/programs" },
   { label: "Kids Transform (6–12)", href: "/programs/kids-transform" },
   { label: "Youth Transform (13–18)", href: "/youth-transform" },
-  { label: "Young Adult Transform (19+)", href: "/programs" },
+  { label: "Young Adult Transform (19+)", href: "/programs/young-adult-transform" },
   { label: "Parenting 360°", href: "/programs" },
   { label: "30-Day Transformation", href: "/programs" },
 ];

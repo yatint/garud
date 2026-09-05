@@ -5,6 +5,7 @@ import WhyUs from "@/pages/WhyUs";
 import Programs from "@/pages/Programs";
 import YouthTransform from "@/pages/YouthTransform";
 import KidsTransform from "@/pages/KidsTransform";
+import YoungAdultTransform from "@/pages/YoungAdultTransform";
 import Gallery from "@/pages/Gallery";
 
 // One <Route> per page in src/pages; BrowserRouter already wraps this in main.tsx.
@@ -16,6 +17,7 @@ export default function App() {
       <Route path="/why-us" element={<WhyUs />} />
       <Route path="/programs" element={<Programs />} />
       <Route path="/programs/kids-transform" element={<KidsTransform />} />
+      <Route path="/programs/young-adult-transform" element={<YoungAdultTransform />} />
       <Route path="/youth-transform" element={<YouthTransform />} />
       <Route path="/gallery" element={<Gallery />} />
     </Routes>

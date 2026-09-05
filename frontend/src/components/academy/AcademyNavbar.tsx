@@ -95,6 +95,13 @@ export const AcademyNavbar = ({ onEnquire }: AcademyNavbarProps) => {
 
           <div className="hidden items-center gap-3 lg:flex">
             <Link
+              to="/gallery"
+              data-testid="academy-nav-gallery-link"
+              className="text-sm font-semibold text-[#555] transition-colors duration-300 hover:text-[#18463b]"
+            >
+              Gallery
+            </Link>
+            <Link
               to="/youth-transform"
               data-testid="academy-nav-youth-link"
               className="rounded-full border border-[#18463b]/40 px-5 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-[#18463b] transition-all duration-300 hover:border-[#18463b] hover:bg-[#18463b]/5"
@@ -141,6 +148,13 @@ export const AcademyNavbar = ({ onEnquire }: AcademyNavbarProps) => {
                     {l.label}
                   </button>
                 ))}
+                <Link
+                  to="/gallery"
+                  data-testid="academy-mobile-nav-gallery-link"
+                  className="rounded-lg px-3 py-3 text-left text-sm font-semibold text-[#18463b]"
+                >
+                  Gallery →
+                </Link>
                 <Link
                   to="/youth-transform"
                   data-testid="academy-mobile-nav-youth-link"

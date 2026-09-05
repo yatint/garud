@@ -108,6 +108,15 @@ export const AcademyFooter = () => {
                   </button>
                 </li>
               ))}
+              <li>
+                <Link
+                  to="/gallery"
+                  data-testid="academy-footer-gallery-link"
+                  className="text-sm font-semibold text-[#f8b183] transition-colors hover:text-white"
+                >
+                  Gallery →
+                </Link>
+              </li>
             </ul>
           </div>
 

@@ -38,6 +38,11 @@ Build a premium, responsive, English-only landing page for **Youth Transform**, 
 - Enquiry dialog (name/mobile/email/city/program/message) — STATIC ONLY, toast confirmation, nothing saved (per user choice).
 - All imagery is stock (Unsplash/Pexels), Indian students/families — no AI images (per user choice).
 
+## Implemented — Gallery Page (2026-09-05, third phase)
+- `/gallery`: "Moments of Transformation" — 13 stock photos in 4 filterable categories (Workshops, Yoga & Mindfulness, Stage & Speaking, Team Activities), masonry grid, lightbox with prev/next + keyboard (Esc/arrows), slim header with Academy Home link, shared footer + enquiry dialog.
+- Gallery linked from homepage navbar (desktop + mobile) and footer quick links.
+- Photos are curated stock (Unsplash/Pexels), NOT real batch photos — replace with authentic workshop pictures when available.
+
 ## Verified
 - `/` and `/youth-transform` both load through the public URL; enquiry dialog fill → submit → success toast confirmed; cross-page links work; typecheck clean.
 - Public URL https://transform-teens.preview.emergentagent.com returns 200; `/api/status` responds.

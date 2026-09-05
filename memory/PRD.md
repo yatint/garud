@@ -6,7 +6,7 @@ Build a premium, responsive, English-only landing page for **Youth Transform**, 
 ## User Decisions
 - Pure frontend landing page, **no backend** (enroll/contact forms static only).
 - "Download Brochure" scrolls to program details (dummy for now).
-- Visuals: mix of AI-generated (hero, workshop, day 1–3, CTA texture) + stock (Unsplash).
+- Visuals: stock photography only (Unsplash/Pexels) — hero group shot, classroom workshop, meditation, team huddle, public speaking. (2026-09-05: user rejected AI-generated images; all replaced with stock.)
 - Art direction pushed to Awwwards level: kinetic masked-line hero reveal, editorial marquee, numbered chapters, framer-motion scroll reveals, lenis smooth scrolling, mouse-tilt 3D hero card, film-grain overlay.
 
 ## Architecture

@@ -4,7 +4,7 @@ import { ArrowRight, Download, GraduationCap, Users } from "lucide-react";
 import { scrollToId } from "@/lib/scroll";
 
 const HERO_IMG =
-  "https://static.prod-images.emergentagent.com/jobs/02ef60ff-e687-423a-b4e6-3c742b985c0b/images/dd769aa382161d14f214bd35278a746e7959b276adbdf0b59787c4c295c2128b.jpeg";
+  "https://images.unsplash.com/photo-1774205884995-fb3561261518?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=1200";
 
 const STATS = [
   { value: "3", label: "Intensive Days" },

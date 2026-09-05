@@ -3,7 +3,7 @@ import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
 
 const WORKSHOP_IMG =
-  "https://static.prod-images.emergentagent.com/jobs/02ef60ff-e687-423a-b4e6-3c742b985c0b/images/7b60618b753a568145fe899a1a43a46f738c60f2bfcb3af320745f7f428dd371.jpeg";
+  "https://images.unsplash.com/photo-1509062522246-3755977927d7?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=1200";
 
 const PILLARS = [
   {

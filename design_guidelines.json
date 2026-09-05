@@ -1,0 +1,277 @@
+{
+  "brand": {
+    "name": "Youth Transform",
+    "academy": "Rupantaram – Life Skills & Personality Transformation Academy",
+    "parent_brand": "Garud Zep Rupantaram",
+    "program_name": "Youth Transform",
+    "program_type": "3-Day Life Skills & Personality Development Flagship Program",
+    "tagline": "Discover Yourself. Build Confidence. Create Your Future.",
+    "target_audience": "Teenagers & Young Adults (Ages 13–18) and their Parents",
+    "language": "English only",
+    "theme_archetype": "Luxury Academic & Kinetic Youth Leadership (Navy #071328, Imperial Gold #E6A635 / #F5C253, Crisp White #FFFFFF with Rupantaram Emerald #0B5D3B & Coral Accent #F68A4A)",
+    "tone": "Inspirational, high-prestige, deeply trustworthy for parents, electrifying & modern for youth"
+  },
+  "colors": {
+    "surfaces": [
+      {
+        "name": "page",
+        "kind": "solid",
+        "bg": "#071328",
+        "on_bg": "#F8FAFC",
+        "on_bg_muted": "#94A3B8",
+        "roles": {
+          "link": "#F5C253",
+          "gold_highlight": "#E6A635",
+          "emerald_accent": "#10B981",
+          "coral_accent": "#F68A4A",
+          "border": "#1E293B"
+        }
+      },
+      {
+        "name": "panel_dark",
+        "kind": "solid",
+        "bg": "#0B1D3A",
+        "on_bg": "#FFFFFF",
+        "on_bg_muted": "#A0ABC0",
+        "roles": {
+          "accent": "#F5C253",
+          "accent_hover": "#E6A635",
+          "border": "#1E3A5F"
+        }
+      },
+      {
+        "name": "card_elevated",
+        "kind": "solid",
+        "bg": "#0E2448",
+        "on_bg": "#FFFFFF",
+        "on_bg_muted": "#CBD5E1",
+        "roles": {
+          "accent": "#F5C253",
+          "tag_bg": "#14305D",
+          "tag_text": "#FDE68A",
+          "border": "#23487A"
+        }
+      },
+      {
+        "name": "surface_white",
+        "kind": "solid",
+        "bg": "#FFFFFF",
+        "on_bg": "#071328",
+        "on_bg_muted": "#475569",
+        "roles": {
+          "link": "#0B5D3B",
+          "accent": "#D97706",
+          "border": "#E2E8F0"
+        }
+      },
+      {
+        "name": "hero",
+        "kind": "image",
+        "contrast_against": "#0A1424",
+        "guarantee": "scrim: linear-gradient(180deg, rgba(7,19,40,0.92) 0%, rgba(7,19,40,0.78) 50%, rgba(7,19,40,0.98) 100%)",
+        "on_bg": "#FFFFFF",
+        "on_bg_muted": "#CBD5E1",
+        "roles": {
+          "link": "#F5C253",
+          "highlight": "#FCD34D",
+          "badge_bg": "#14305D",
+          "badge_text": "#FDE68A"
+        }
+      },
+      {
+        "name": "preloader",
+        "kind": "gradient",
+        "contrast_against": "#C8102E",
+        "guarantee": "background: linear-gradient(135deg, #C8102E 0%, #F0A500 100%)",
+        "on_bg": "#1B2A4A",
+        "on_bg_muted": "#0A1424",
+        "roles": {
+          "progress_bar": "#1B2A4A"
+        }
+      },
+      {
+        "name": "final_cta_banner",
+        "kind": "solid",
+        "bg": "#0A1A33",
+        "on_bg": "#FFFFFF",
+        "on_bg_muted": "#94A3B8",
+        "roles": {
+          "gold_glow": "#F5C253",
+          "border": "#2A4365"
+        }
+      }
+    ],
+    "accent": "#E6A635",
+    "on_accent": "#071328",
+    "secondary_accent": "#0B5D3B",
+    "on_secondary_accent": "#FFFFFF",
+    "coral_accent": "#F68A4A",
+    "on_coral_accent": "#FFFFFF"
+  },
+  "typography": {
+    "font_family_heading": "Barlow, 'Barlow Variable', system-ui, sans-serif",
+    "font_family_body": "Mulish, 'Mulish Variable', system-ui, sans-serif",
+    "scale_px": {
+      "display": 60,
+      "h1": 48,
+      "h2": 36,
+      "h3": 24,
+      "body": 16,
+      "caption": 14
+    },
+    "hierarchy": {
+      "hero_h1": "text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-none",
+      "section_h2": "text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white",
+      "card_h3": "text-xl sm:text-2xl font-bold text-white",
+      "item_h4": "text-lg sm:text-xl font-semibold text-white",
+      "body": "text-base leading-relaxed text-slate-300 font-normal",
+      "body_large": "text-lg sm:text-xl leading-relaxed text-slate-200",
+      "caption": "text-sm text-slate-400 font-medium",
+      "overline": "text-xs uppercase tracking-[0.2em] text-[#F5C253] font-bold"
+    }
+  },
+  "entry_surfaces": {
+    "/": "split hero — kinetic typographic branding with gold gradient glow & dual pill CTAs on left, layered student achievement card cluster with real interactive preview on right; fixed crystal-glass navy navigation bar above"
+  },
+  "layout_and_grids": {
+    "container_max_width": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    "section_padding": "py-20 lg:py-28",
+    "bento_grid_outcomes": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6",
+    "timeline_grid": "grid grid-cols-1 lg:grid-cols-3 gap-8 relative",
+    "learning_methods_grid": "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6",
+    "who_should_join_layout": "grid grid-cols-1 lg:grid-cols-12 gap-12 items-center",
+    "benefits_grid": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6",
+    "faq_layout": "max-w-4xl mx-auto space-y-4"
+  },
+  "sections_breakdown": [
+    {
+      "id": "preloader",
+      "name": "On-Load Brand Preloader",
+      "visual_design": "Screen-wide reveal transitioning from vibrant Rupantaram red→gold gradient (#c8102e → #f0a500) with deep navy (#1b2a4a) typography, displaying academy crest + program launch count (0% → 100%) and fading out smoothly to reveal the navy/gold page."
+    },
+    {
+      "id": "navigation",
+      "name": "Crystal Glass Navbar",
+      "visual_design": "Sticky header with backdrop-blur-xl bg-[#071328]/85 border-b border-slate-800/80. Features Rupantaram emblem + 'Youth Transform' wordmark, desktop links [About, 8 Outcomes, 3-Day Journey, Methodology, Benefits, FAQs], and dual CTAs ['Download Brochure' ghost button & 'Enroll Now' gold pill button]. Mobile responsive sheet menu."
+    },
+    {
+      "id": "hero",
+      "name": "Kinetic Hero Section",
+      "visual_design": "Awwwards-grade asymmetric composition. Overline badge: '3-DAY INTENSIVE FLAGSHIP PROGRAM (AGES 13–18)'. Main headline with gold metallic accents: 'Discover Yourself. Build Unshakable Confidence. Create Your Future.' Subtitle explaining the transformative journey for teens & parents. Dual primary CTAs: 'Enroll Now (Fast Track)' with glowing hover + 'Download Program Brochure (PDF)'. Real-time trust stats strip (5,000+ Students Mentored, 98% Confidence Boost, 30+ Certified Interactive Modules, 100% Practical Immersion)."
+    },
+    {
+      "id": "editorial_ribbon",
+      "name": "Editorial Marquee Ribbon",
+      "visual_design": "Slow, smooth infinite drift ticker with muted gold dividers: GOAL SETTING • PUBLIC SPEAKING • EMOTIONAL INTELLIGENCE • DIGITAL DETOX & DISCIPLINE • TIME MASTERY • CRITICAL THINKING • LEADERSHIP PRESENCE • RESILIENCE."
+    },
+    {
+      "id": "about_academy",
+      "name": "Manifesto / About Rupantaram Academy",
+      "visual_design": "Asymmetric 2-column editorial spread. Left: Academy ethos by Garud Zep Rupantaram, mission to bridge school education and real-world mastery. Right: 3 core academy pillars with rich gold border accents (Empowerment, Practical Neuro-Psychology, Lifelong Mentorship)."
+    },
+    {
+      "id": "key_outcomes",
+      "name": "8 Key Transformational Outcomes",
+      "visual_design": "8 Icon Bento cards with hover lift, gradient borders (#F5C253 glow), and specific teen-benefit bullet points: 1. Goal Setting & Vision Crafting, 2. Unstoppable Confidence Building, 3. Dynamic Youth Leadership, 4. Articulate & Magnetic Communication, 5. Smart Time & Energy Management, 6. Emotional Intelligence & Stress Mastery, 7. Digital Discipline & Focus Mastery, 8. Clear Career Direction & Life Blueprint."
+    },
+    {
+      "id": "who_should_join",
+      "name": "Who Should Join (The 6 Persona Traits)",
+      "visual_design": "Split layout: Left features an interactive checklist of 6 teen archetypes (e.g., 'Hesitant speakers wanting courage', 'Overwhelmed by screen addiction & distractions', 'Ambitious minds seeking a concrete career roadmap', 'Teens struggling with peer pressure & self-doubt'). Right features a high-impact inspirational visual card with parent testimonials & transformation score."
+    },
+    {
+      "id": "timeline_journey",
+      "name": "3-Day Visual Journey Timeline",
+      "visual_design": "Interactive 3-stage visual path with numbered badges (01, 02, 03) and connecting gold laser track. Day 1: DISCOVER YOURSELF (Self-Awareness, Strength Discovery, Limiting Beliefs Breakthrough). Day 2: BUILD YOUR SKILLS (Voice Modulation, Stage Presence, Leadership Dynamics, Digital Detox). Day 3: DESIGN YOUR FUTURE (Goal Engineering, Action Blueprint, Graduation & Parent Showcase)."
+    },
+    {
+      "id": "learning_methodology",
+      "name": "8-Pillar Experiential Learning Method",
+      "visual_design": "High-density 8-card grid showing 100% non-boring active pedagogy: 1. Roleplay & Simulation Labs, 2. Peer Mastermind Circles, 3. Live Stage Challenges, 4. Gamified Habit Tracking, 5. 1-on-1 Personalized Feedback, 6. Audio-Visual Immersion, 7. Practical Frameworks & Toolkits, 8. Post-Camp 30-Day Accountability."
+    },
+    {
+      "id": "measurable_benefits",
+      "name": "8 Measurable Long-Term Benefits",
+      "visual_design": "Data-backed milestone cards showcasing transformation: High Academic Focus, Public Speaking Fluency, Stronger Family Bonds, Clear 5-Year Roadmap, Emotional Equilibrium, Decisive Leadership, Resilience against Setbacks, Lifelong Alumni Network."
+    },
+    {
+      "id": "faq_accordion",
+      "name": "Frequently Asked Questions (6 Core Items)",
+      "visual_design": "Clean luxury accordion cards with subtle gold indicators addressing parents & students (Eligibility, Batch Sizes, Trainer Credentials, Post-Program Support, Schedule & Venue Flexibility, Certificate & Kit inclusions)."
+    },
+    {
+      "id": "final_cta",
+      "name": "High-Impact Conversion Band",
+      "visual_design": "Commanding dark navy & gold glowing container with radial gradient background. Bold call-to-action: 'Ready to Transform Your Future? Seats are limited to 30 students per cohort for individualized attention.' Action buttons: 'Register Now' (Opens dynamic enrollment dialog) + 'Contact Us / Request Callback' (Opens advisor inquiry dialog)."
+    },
+    {
+      "id": "interactive_modals",
+      "name": "Enrollment & Brochure Modals",
+      "visual_design": "Shadcn Dialog customized with dark navy theme, crisp inputs, stage selection, age picker, student & parent contact fields, and instantaneous toast confirmation with Sonner."
+    },
+    {
+      "id": "footer",
+      "name": "Luxury Editorial Footer",
+      "visual_design": "Deep obsidian surface with large brand imprint, Rupantaram Academy accreditation, quick navigation, batch schedule updates, social channels, and copyright notice."
+    }
+  ],
+  "motion_and_interactions": {
+    "engine": "framer-motion (motion/react) + CSS micro-animations",
+    "preloader_animation": "Progress bar from 0% to 100% in 1.4s, then slideUp curtain reveal into the hero section.",
+    "scroll_reveal": "Staggered fade-up (`opacity: 0, y: 30` -> `opacity: 1, y: 0`) with 0.6s spring physics.",
+    "card_hover": "Subtle -translate-y-2 lift, 1px border highlight shift from #1E293B to #F5C253, soft gold box-shadow glow [0 12px 30px rgba(245,194,83,0.15)].",
+    "button_interactions": "Pill button hover: scale(1.03), brightness(1.08), active click scale(0.97).",
+    "accordion_toggle": "Smooth height spring animation using motion layout.",
+    "reduced_motion_fallback": "All motion wrappers fallback to instantaneous opacity transition if `prefers-reduced-motion` is active."
+  },
+  "media_and_images": {
+    "hero_presentation": "https://images.unsplash.com/photo-1773243906614-875ddb4918b6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MjJ8MHwxfHNlYXJjaHwxfHx0ZWVuYWdlciUyMHN0dWRlbnQlMjBjb25maWRlbnQlMjBwcmVzZW50YXRpb24lMjBzbWlsaW5nfGVufDB8fHx8MTc4ODYxMTg2Nnww&ixlib=rb-4.1.0&q=85",
+    "youth_collaboration": "https://images.unsplash.com/photo-1581090690925-3898802525e2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTN8MHwxfHNlYXJjaHw0fHx5b3V0aCUyMHdvcmtzaG9wJTIwY29sbGFib3JhdGlvbiUyMHRlYW13b3JrfGVufDB8fHx8MTc4ODYxMTg2Nnww&ixlib=rb-4.1.0&q=85",
+    "team_unity": "https://images.unsplash.com/photo-1630068846062-3ffe78aa5049?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTN8MHwxfHNlYXJjaHwyfHx5b3V0aCUyMHdvcmtzaG9wJTIwY29sbGFib3JhdGlvbiUyMHRlYW13b3JrfGVufDB8fHx8MTc4ODYxMTg2Nnww&ixlib=rb-4.1.0&q=85",
+    "mentor_speaking": "https://images.unsplash.com/photo-1665391222532-9940e1a75660?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzOTB8MHwxfHNlYXJjaHwxfHx5b3VuZyUyMG1lbnRvciUyMGxlYWRlcnNoaXAlMjBzcGVha2luZ3xlbnwwfHx8fDE3ODg2MTE4NjZ8MA&ixlib=rb-4.1.0&q=85",
+    "stage_workshop": "https://images.unsplash.com/photo-1631478650772-4b04eb816625?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzOTB8MHwxfHNlYXJjaHwzfHx5b3VuZyUyMG1lbnRvciUyMGxlYWRlcnNoaXAlMjBzcGVha2luZ3xlbnwwfHx8fDE3ODg2MTE4NjZ8MA&ixlib=rb-4.1.0&q=85"
+  },
+  "component_structure": {
+    "page_file": "/app/frontend/src/pages/Home.tsx",
+    "css_entry": "/app/frontend/src/index.css",
+    "app_shell": "/app/frontend/src/App.tsx",
+    "components": {
+      "Preloader": "/app/frontend/src/components/Preloader.tsx",
+      "Navbar": "/app/frontend/src/components/Navbar.tsx",
+      "HeroSection": "/app/frontend/src/components/HeroSection.tsx",
+      "EditorialMarquee": "/app/frontend/src/components/EditorialMarquee.tsx",
+      "AboutAcademy": "/app/frontend/src/components/AboutAcademy.tsx",
+      "OutcomesGrid": "/app/frontend/src/components/OutcomesGrid.tsx",
+      "WhoShouldJoin": "/app/frontend/src/components/WhoShouldJoin.tsx",
+      "TimelineJourney": "/app/frontend/src/components/TimelineJourney.tsx",
+      "LearningMethods": "/app/frontend/src/components/LearningMethods.tsx",
+      "BenefitsList": "/app/frontend/src/components/BenefitsList.tsx",
+      "FaqAccordion": "/app/frontend/src/components/FaqAccordion.tsx",
+      "EnrollmentModal": "/app/frontend/src/components/EnrollmentModal.tsx",
+      "BrochureModal": "/app/frontend/src/components/BrochureModal.tsx",
+      "FinalCta": "/app/frontend/src/components/FinalCta.tsx",
+      "Footer": "/app/frontend/src/components/Footer.tsx"
+    }
+  },
+  "testing_attributes": {
+    "convention": "All interactive elements (buttons, inputs, accordions, modals, tabs) MUST contain kebab-case data-testid attributes",
+    "examples": [
+      "data-testid=\"nav-enroll-button\"",
+      "data-testid=\"hero-enroll-button\"",
+      "data-testid=\"hero-brochure-button\"",
+      "data-testid=\"outcome-card-goal-setting\"",
+      "data-testid=\"timeline-day-1-tab\"",
+      "data-testid=\"faq-accordion-item-1\"",
+      "data-testid=\"enrollment-form-submit-button\"",
+      "data-testid=\"brochure-download-submit-button\""
+    ]
+  },
+  "instructions_to_main_agent": [
+    "1. Replace font import in frontend/src/index.css with @fontsource-variable/barlow and @fontsource-variable/mulish or define system font stacks Barlow 700 + Mulish 400 for maximum fidelity.",
+    "2. Maintain strict navy (#071328) base with gold (#E6A635 / #F5C253) accents and crisp white surfaces. Ensure parent brand 'Garud Zep Rupantaram' & 'Rupantaram Academy' identity is prominent.",
+    "3. Implement the full suite of required sections: Hero, About Academy, 8 Key Outcomes, Who Should Join (6 traits), 3-Day Journey Timeline (Day 1 Discover, Day 2 Build, Day 3 Design), 8-Pillar Learning Method, 8 Measurable Benefits, 6 FAQ Accordion items, Final CTA, and Footer.",
+    "4. Deliver an on-load preloader matching the Rupantaram gradient #c8102e -> #f0a500 with navy text #1b2a4a that dismisses smoothly.",
+    "5. Use interactive Shadcn Dialogs for 'Enroll Now' and 'Download Brochure' with active Sonner toast notifications upon submission.",
+    "6. Include all data-testid attributes for automated testing verification."
+  ]
+}

@@ -49,7 +49,7 @@ export default function Home() {
   const openEnroll = useCallback(() => setEnrollOpen(true), []);
 
   return (
-    <div className="min-h-screen bg-[#071328] font-sans text-white">
+    <div className="min-h-screen bg-white font-sans text-[#222]">
       <div className="grain-overlay" />
       <AnimatePresence>{loading && <Preloader onDone={finishLoading} />}</AnimatePresence>
 

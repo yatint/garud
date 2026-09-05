@@ -11,6 +11,7 @@ Build a premium, responsive, English-only landing page for **Youth Transform**, 
 
 ## Architecture
 - **Frontend only**: Vite + React 19 + TS strict, Tailwind v4, framer-motion, lenis, shadcn (dialog/input/label/sonner), lucide-react.
+- **Theme (2026-09-05, corrected per user screenshot)**: official Rupantaram palette — white/#fbfafa/#f6f7f0 surfaces, brand green #18463b (headings, marquee, final CTA, footer), logo green #0b5d3b, accent orange #f68a4a (buttons/CTAs, hover → green per .btn-main spec), body #222, muted #7a7a7a/#999, border #e1dfdf. Preloader keeps brand red→gold gradient (#c8102e → #f0a500) with navy #1b2a4a text. Barlow 700 headings + Mulish body.
 - `src/pages/Home.tsx` composes: Preloader → Navbar → HeroSection → EditorialMarquee → AboutProgram → OutcomesGrid → WhoShouldJoin → TimelineJourney → LearningMethods → BenefitsList → FaqAccordion → FinalCta → Footer → EnrollDialog.
 - `src/lib/scroll.ts`: lenis singleton + smooth anchor scrolling.
 - Fonts: Barlow + Mulish via Google Fonts `<link>` in index.html, Geist Variable as fallback.

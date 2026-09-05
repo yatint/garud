@@ -14,17 +14,17 @@ export const EditorialMarquee = () => {
   return (
     <div
       data-testid="editorial-marquee"
-      className="relative overflow-hidden border-y border-[#1e3a5f] bg-[#0b1d3a] py-5"
+      className="relative overflow-hidden border-y border-[#0b5d3b] bg-[#18463b] py-5"
     >
       <div className="animate-marquee flex w-max items-center">
         {[0, 1].map((half) => (
           <div key={half} className="flex items-center" aria-hidden={half === 1}>
             {row.map((item, i) => (
               <span key={`${half}-${i}`} className="flex items-center">
-                <span className="whitespace-nowrap px-8 font-heading text-sm font-bold uppercase tracking-[0.3em] text-slate-300">
+                <span className="whitespace-nowrap px-8 font-heading text-sm font-bold uppercase tracking-[0.3em] text-white/85">
                   {item}
                 </span>
-                <span className="h-1.5 w-1.5 rotate-45 bg-[#e6a635]" />
+                <span className="h-1.5 w-1.5 rotate-45 bg-[#f68a4a]" />
               </span>
             ))}
           </div>

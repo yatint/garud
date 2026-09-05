@@ -31,7 +31,7 @@ const METHODS: Method[] = [
 
 export const LearningMethods = () => {
   return (
-    <section id="method" data-testid="method-section" className="py-20 lg:py-28">
+    <section id="method" data-testid="method-section" className="bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           index="05"
@@ -45,15 +45,15 @@ export const LearningMethods = () => {
             <Reveal key={m.slug} delay={(i % 4) * 0.08}>
               <div
                 data-testid={`method-card-${m.slug}`}
-                className="card-glow-hover group flex h-full flex-col items-center rounded-xl border border-[#1e293b] bg-[#0b1d3a] p-7 text-center"
+                className="card-glow-hover group flex h-full flex-col items-center rounded-xl border border-[#e1dfdf] bg-[#fbfafa] p-7 text-center"
               >
-                <span className="flex h-14 w-14 items-center justify-center rounded-full border border-[#e6a635]/40 bg-[#071328] text-[#f5c253] transition-all duration-300 group-hover:rotate-6 group-hover:bg-[#e6a635] group-hover:text-[#071328]">
+                <span className="flex h-14 w-14 items-center justify-center rounded-full border border-[#18463b]/25 bg-white text-[#18463b] transition-all duration-300 group-hover:rotate-6 group-hover:border-[#18463b] group-hover:bg-[#18463b] group-hover:text-white">
                   <m.icon size={24} />
                 </span>
-                <h3 className="mt-5 font-heading text-base font-bold text-white sm:text-lg">
+                <h3 className="mt-5 font-heading text-base font-bold text-[#18463b] sm:text-lg">
                   {m.title}
                 </h3>
-                <span className="mt-3 h-px w-8 bg-[#e6a635]/40 transition-all duration-300 group-hover:w-14 group-hover:bg-[#e6a635]" />
+                <span className="mt-3 h-px w-8 bg-[#f68a4a]/40 transition-all duration-300 group-hover:w-14 group-hover:bg-[#f68a4a]" />
               </div>
             </Reveal>
           ))}

@@ -36,13 +36,13 @@ export const EnrollDialog = ({ open, onOpenChange }: EnrollDialogProps) => {
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
         data-testid="enroll-dialog"
-        className="border-[#23487a] bg-[#0b1d3a] text-white sm:max-w-md"
+        className="border-[#e1dfdf] bg-white text-[#222] sm:max-w-md"
       >
         <DialogHeader>
-          <DialogTitle className="font-heading text-2xl font-black text-white">
-            Enroll in <span className="text-gold-gradient">Youth Transform</span>
+          <DialogTitle className="font-heading text-2xl font-black text-[#18463b]">
+            Enroll in <span className="text-brand-gradient">Youth Transform</span>
           </DialogTitle>
-          <DialogDescription className="text-slate-400">
+          <DialogDescription className="text-[#7a7a7a]">
             Share your details and our team will reach out with the next batch schedule and venue
             options.
           </DialogDescription>
@@ -50,7 +50,7 @@ export const EnrollDialog = ({ open, onOpenChange }: EnrollDialogProps) => {
 
         <form onSubmit={onSubmit} className="mt-2 flex flex-col gap-5" data-testid="enroll-form">
           <div className="flex flex-col gap-2">
-            <Label htmlFor="student-name" className="text-xs font-bold uppercase tracking-[0.16em] text-slate-300">
+            <Label htmlFor="student-name" className="text-xs font-bold uppercase tracking-[0.16em] text-[#555]">
               Student Name
             </Label>
             <Input
@@ -60,12 +60,12 @@ export const EnrollDialog = ({ open, onOpenChange }: EnrollDialogProps) => {
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="e.g. Aarav Patil"
-              className="border-[#1e3a5f] bg-[#071328] text-white placeholder:text-slate-500 focus-visible:border-[#e6a635]"
+              className="border-[#e1dfdf] bg-white text-[#222] placeholder:text-[#999] focus-visible:border-[#f68a4a]"
             />
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div className="flex flex-col gap-2">
-              <Label htmlFor="student-age" className="text-xs font-bold uppercase tracking-[0.16em] text-slate-300">
+              <Label htmlFor="student-age" className="text-xs font-bold uppercase tracking-[0.16em] text-[#555]">
                 Age
               </Label>
               <Input
@@ -78,11 +78,11 @@ export const EnrollDialog = ({ open, onOpenChange }: EnrollDialogProps) => {
                 value={age}
                 onChange={(e) => setAge(e.target.value)}
                 placeholder="13–18"
-                className="border-[#1e3a5f] bg-[#071328] text-white placeholder:text-slate-500 focus-visible:border-[#e6a635]"
+                className="border-[#e1dfdf] bg-white text-[#222] placeholder:text-[#999] focus-visible:border-[#f68a4a]"
               />
             </div>
             <div className="flex flex-col gap-2">
-              <Label htmlFor="parent-phone" className="text-xs font-bold uppercase tracking-[0.16em] text-slate-300">
+              <Label htmlFor="parent-phone" className="text-xs font-bold uppercase tracking-[0.16em] text-[#555]">
                 Parent Phone
               </Label>
               <Input
@@ -93,14 +93,14 @@ export const EnrollDialog = ({ open, onOpenChange }: EnrollDialogProps) => {
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder="+91 ..."
-                className="border-[#1e3a5f] bg-[#071328] text-white placeholder:text-slate-500 focus-visible:border-[#e6a635]"
+                className="border-[#e1dfdf] bg-white text-[#222] placeholder:text-[#999] focus-visible:border-[#f68a4a]"
               />
             </div>
           </div>
           <button
             type="submit"
             data-testid="enroll-form-submit-button"
-            className="mt-1 rounded-full bg-[#e6a635] px-6 py-3.5 text-sm font-bold uppercase tracking-[0.14em] text-[#071328] transition-all duration-300 hover:scale-[1.02] hover:bg-[#f5c253] active:scale-95"
+            className="mt-1 rounded-full border border-[#f68a4a] bg-[#f68a4a] px-6 py-3.5 text-sm font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:-translate-y-[2px] hover:border-[#18463b] hover:bg-[#18463b] active:scale-95"
           >
             Request Enrollment
           </button>

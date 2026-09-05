@@ -30,7 +30,7 @@ const DAYS = [
 
 export const TimelineJourney = () => {
   return (
-    <section id="journey" data-testid="journey-section" className="bg-[#0b1d3a] py-20 lg:py-28">
+    <section id="journey" data-testid="journey-section" className="bg-[#f6f7f0] py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           index="04"
@@ -41,26 +41,26 @@ export const TimelineJourney = () => {
         />
 
         <div className="relative mt-16 grid grid-cols-1 gap-10 lg:grid-cols-3 lg:gap-8">
-          <div className="absolute left-0 right-0 top-[52px] hidden h-px bg-[linear-gradient(90deg,transparent,#e6a635_20%,#e6a635_80%,transparent)] lg:block" />
+          <div className="absolute left-0 right-0 top-[52px] hidden h-px bg-[linear-gradient(90deg,transparent,#f68a4a_20%,#f68a4a_80%,transparent)] lg:block" />
           {DAYS.map((d, i) => (
             <Reveal key={d.slug} delay={i * 0.15}>
               <article
                 data-testid={`timeline-${d.slug}`}
-                className="card-glow-hover group relative h-full rounded-2xl border border-[#1e293b] bg-[#0e2448] p-7"
+                className="card-glow-hover group relative h-full rounded-2xl border border-[#e1dfdf] bg-white p-7"
               >
                 <div className="relative mb-7 flex items-center gap-4">
-                  <span className="flex h-14 w-14 items-center justify-center rounded-full border border-[#e6a635]/50 bg-[#071328] font-heading text-lg font-black text-[#f5c253]">
+                  <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#f68a4a] font-heading text-lg font-black text-white shadow-[0_8px_20px_rgba(246,138,74,0.35)]">
                     {d.num}
                   </span>
                   <div>
-                    <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[#f5c253]">
+                    <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[#e0701f]">
                       {d.day}
                     </p>
-                    <h3 className="font-heading text-2xl font-black text-white">{d.title}</h3>
+                    <h3 className="font-heading text-2xl font-black text-[#18463b]">{d.title}</h3>
                   </div>
                 </div>
 
-                <div className="overflow-hidden rounded-xl border border-[#23487a]">
+                <div className="overflow-hidden rounded-xl border border-[#e1dfdf]">
                   <img
                     src={d.img}
                     alt={`${d.day} — ${d.title}`}
@@ -70,8 +70,8 @@ export const TimelineJourney = () => {
 
                 <ul className="mt-6 flex flex-col gap-2.5">
                   {d.items.map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-sm text-slate-300">
-                      <span className="h-1.5 w-1.5 rotate-45 bg-[#e6a635]" />
+                    <li key={item} className="flex items-center gap-3 text-sm text-[#555]">
+                      <span className="h-1.5 w-1.5 rotate-45 bg-[#f68a4a]" />
                       {item}
                     </li>
                   ))}

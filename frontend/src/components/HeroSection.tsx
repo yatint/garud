@@ -1,6 +1,5 @@
 import type { ReactNode } from "react";
-import { motion, useMotionValue, useScroll, useSpring, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ArrowRight, Download, GraduationCap, Users } from "lucide-react";
 import { scrollToId } from "@/lib/scroll";
 
@@ -43,13 +42,6 @@ interface HeroSectionProps {
 }
 
 export const HeroSection = ({ started, onEnroll }: HeroSectionProps) => {
-  const sectionRef = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start start", "end start"],
-  });
-  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "22%"]);
-
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
   const rotateX = useSpring(useTransform(my, [-0.5, 0.5], [5, -5]), { stiffness: 120, damping: 18 });
@@ -64,16 +56,14 @@ export const HeroSection = ({ started, onEnroll }: HeroSectionProps) => {
   return (
     <section
       id="top"
-      ref={sectionRef}
       onMouseMove={onMouseMove}
       data-testid="hero-section"
-      className="relative overflow-hidden"
+      className="relative overflow-hidden bg-[#f6f7f0]"
     >
-      <motion.div style={{ y: bgY }} className="absolute inset-0 scale-110">
-        <img src={HERO_IMG} alt="" className="h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,19,40,0.9)_0%,rgba(7,19,40,0.72)_45%,rgba(7,19,40,0.98)_100%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(60%_50%_at_20%_30%,rgba(230,166,53,0.14),transparent_70%)]" />
-      </motion.div>
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -left-32 -top-32 h-[480px] w-[480px] rounded-full bg-[radial-gradient(circle,rgba(246,138,74,0.14),transparent_70%)]" />
+        <div className="absolute -bottom-40 -right-24 h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle,rgba(24,70,59,0.1),transparent_70%)]" />
+      </div>
 
       <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-4 pb-24 pt-36 sm:px-6 lg:grid-cols-12 lg:px-8 lg:pb-32 lg:pt-44">
         <div className="lg:col-span-7">
@@ -81,28 +71,28 @@ export const HeroSection = ({ started, onEnroll }: HeroSectionProps) => {
             initial={{ opacity: 0, y: 16 }}
             animate={started ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="mb-7 inline-flex items-center gap-3 rounded-full border border-[#f5c253]/30 bg-[#14305d]/60 px-4 py-2 backdrop-blur-sm"
+            className="mb-7 inline-flex items-center gap-3 rounded-full border border-[#f68a4a]/40 bg-white px-4 py-2 shadow-sm"
             data-testid="hero-badge"
           >
-            <span className="h-2 w-2 rounded-full bg-[#f5c253] animate-gold-pulse" />
-            <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#fde68a]">
+            <span className="h-2 w-2 rounded-full bg-[#f68a4a] animate-gold-pulse" />
+            <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#e0701f]">
               3-Day Flagship Program · Ages 13–18
             </span>
           </motion.div>
 
-          <p className="mb-4 font-heading text-sm font-bold uppercase tracking-[0.3em] text-slate-300">
+          <p className="mb-4 font-heading text-sm font-bold uppercase tracking-[0.3em] text-[#7a7a7a]">
             Rupantaram Presents
           </p>
 
-          <h1 className="font-heading text-5xl font-black leading-[0.98] tracking-tight text-white sm:text-6xl lg:text-7xl">
+          <h1 className="font-heading text-5xl font-black leading-[0.98] tracking-tight text-[#18463b] sm:text-6xl lg:text-7xl">
             <MaskedLine started={started} delay={0.25}>
-              Discover <span className="text-gold-gradient">Yourself.</span>
+              Discover <span className="text-brand-gradient">Yourself.</span>
             </MaskedLine>
             <MaskedLine started={started} delay={0.38}>
               Build Confidence.
             </MaskedLine>
             <MaskedLine started={started} delay={0.51}>
-              Create Your <span className="text-gold-gradient">Future.</span>
+              Create Your <span className="text-brand-gradient">Future.</span>
             </MaskedLine>
           </h1>
 
@@ -110,12 +100,13 @@ export const HeroSection = ({ started, onEnroll }: HeroSectionProps) => {
             initial={{ opacity: 0, y: 20 }}
             animate={started ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.72 }}
-            className="mt-7 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg"
+            className="mt-7 max-w-xl text-base leading-relaxed text-[#555] sm:text-lg"
             data-testid="hero-subtitle"
           >
-            <span className="font-heading font-bold text-white">Youth Transform</span> — a 3-day
-            life skills & personality development program that turns teenagers into confident,
-            disciplined, purpose-driven young leaders. No lectures. Pure experiential learning.
+            <span className="font-heading font-bold text-[#18463b]">Youth Transform</span> — a
+            3-day life skills & personality development program that turns teenagers into
+            confident, disciplined, purpose-driven young leaders. No lectures. Pure experiential
+            learning.
           </motion.p>
 
           <motion.div
@@ -127,7 +118,7 @@ export const HeroSection = ({ started, onEnroll }: HeroSectionProps) => {
             <button
               data-testid="hero-enroll-button"
               onClick={onEnroll}
-              className="group inline-flex items-center gap-2 rounded-full bg-[#e6a635] px-8 py-4 text-sm font-bold uppercase tracking-[0.14em] text-[#071328] transition-all duration-300 hover:scale-[1.04] hover:bg-[#f5c253] hover:shadow-[0_10px_36px_rgba(230,166,53,0.4)] active:scale-95"
+              className="group inline-flex items-center gap-2 rounded-full border border-[#f68a4a] bg-[#f68a4a] px-8 py-4 text-sm font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:-translate-y-[3px] hover:border-[#18463b] hover:bg-[#18463b] hover:shadow-[0_5px_20px_rgba(0,0,0,0.2)] active:scale-95"
             >
               Enroll Now
               <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
@@ -135,7 +126,7 @@ export const HeroSection = ({ started, onEnroll }: HeroSectionProps) => {
             <button
               data-testid="hero-brochure-button"
               onClick={() => scrollToId("#program")}
-              className="inline-flex items-center gap-2 rounded-full border border-white/25 px-8 py-4 text-sm font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:border-[#f5c253] hover:text-[#f5c253] active:scale-95"
+              className="inline-flex items-center gap-2 rounded-full border border-[#18463b]/25 px-8 py-4 text-sm font-bold uppercase tracking-[0.14em] text-[#18463b] transition-all duration-300 hover:-translate-y-[3px] hover:border-[#f68a4a] hover:text-[#f68a4a] active:scale-95"
             >
               <Download size={16} />
               Download Brochure
@@ -146,13 +137,13 @@ export const HeroSection = ({ started, onEnroll }: HeroSectionProps) => {
             initial={{ opacity: 0 }}
             animate={started ? { opacity: 1 } : {}}
             transition={{ duration: 0.9, delay: 1.05 }}
-            className="mt-14 grid max-w-xl grid-cols-2 gap-6 border-t border-white/10 pt-8 sm:grid-cols-4"
+            className="mt-14 grid max-w-xl grid-cols-2 gap-6 border-t border-[#e1dfdf] pt-8 sm:grid-cols-4"
             data-testid="hero-stats"
           >
             {STATS.map((s) => (
               <div key={s.label}>
-                <p className="font-heading text-3xl font-black text-[#f5c253]">{s.value}</p>
-                <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">
+                <p className="font-heading text-3xl font-black text-[#18463b]">{s.value}</p>
+                <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#999]">
                   {s.label}
                 </p>
               </div>
@@ -169,41 +160,41 @@ export const HeroSection = ({ started, onEnroll }: HeroSectionProps) => {
             className="relative"
             data-testid="hero-image-card"
           >
-            <div className="absolute -inset-3 rounded-3xl border border-[#f5c253]/25" />
-            <div className="relative overflow-hidden rounded-2xl border border-white/10 shadow-[0_30px_80px_rgba(0,0,0,0.55)]">
+            <div className="absolute -inset-3 rounded-3xl border border-[#f68a4a]/30" />
+            <div className="relative overflow-hidden rounded-2xl border border-[#e1dfdf] shadow-[0_30px_70px_rgba(24,70,59,0.18)]">
               <img
                 src={HERO_IMG}
                 alt="Confident students of the Youth Transform program"
                 className="aspect-[4/5] w-full object-cover"
               />
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgba(7,19,40,0.85)_100%)]" />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgba(24,70,59,0.55)_100%)]" />
             </div>
 
             <motion.div
               style={{ transform: "translateZ(50px)" }}
-              className="absolute -left-8 bottom-10 flex items-center gap-3 rounded-xl border border-[#23487a] bg-[#0b1d3a]/90 px-4 py-3 shadow-xl backdrop-blur-md"
+              className="absolute -left-8 bottom-10 flex items-center gap-3 rounded-xl border border-[#e1dfdf] bg-white/95 px-4 py-3 shadow-[0_16px_40px_rgba(24,70,59,0.14)] backdrop-blur-md"
               data-testid="hero-float-certificate"
             >
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#e6a635]/15 text-[#f5c253]">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#f68a4a]/15 text-[#f68a4a]">
                 <GraduationCap size={20} />
               </span>
               <span>
-                <span className="block font-heading text-sm font-bold text-white">Day 3 Finale</span>
-                <span className="block text-xs text-slate-400">Graduation & Certificate</span>
+                <span className="block font-heading text-sm font-bold text-[#18463b]">Day 3 Finale</span>
+                <span className="block text-xs text-[#7a7a7a]">Graduation & Certificate</span>
               </span>
             </motion.div>
 
             <motion.div
               style={{ transform: "translateZ(40px)" }}
-              className="absolute -right-5 top-8 flex items-center gap-3 rounded-xl border border-[#23487a] bg-[#0b1d3a]/90 px-4 py-3 shadow-xl backdrop-blur-md"
+              className="absolute -right-5 top-8 flex items-center gap-3 rounded-xl border border-[#e1dfdf] bg-white/95 px-4 py-3 shadow-[0_16px_40px_rgba(24,70,59,0.14)] backdrop-blur-md"
               data-testid="hero-float-batch"
             >
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#0b5d3b]/30 text-emerald-300">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#18463b]/10 text-[#18463b]">
                 <Users size={20} />
               </span>
               <span>
-                <span className="block font-heading text-sm font-bold text-white">Small Batches</span>
-                <span className="block text-xs text-slate-400">Personal Mentoring</span>
+                <span className="block font-heading text-sm font-bold text-[#18463b]">Small Batches</span>
+                <span className="block text-xs text-[#7a7a7a]">Personal Mentoring</span>
               </span>
             </motion.div>
           </motion.div>

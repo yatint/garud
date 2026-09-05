@@ -35,7 +35,7 @@ export const FaqAccordion = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" data-testid="faq-section" className="py-20 lg:py-28">
+    <section id="faq" data-testid="faq-section" className="bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           index="07"
@@ -52,7 +52,7 @@ export const FaqAccordion = () => {
                 <div
                   data-testid={`faq-item-${i + 1}`}
                   className={`overflow-hidden rounded-xl border transition-colors duration-300 ${
-                    open ? "border-[#e6a635]/60 bg-[#0e2448]" : "border-[#1e293b] bg-[#0b1d3a]"
+                    open ? "border-[#f68a4a]/60 bg-white shadow-[0_10px_30px_rgba(24,70,59,0.08)]" : "border-[#e1dfdf] bg-[#fbfafa]"
                   }`}
                 >
                   <button
@@ -60,7 +60,7 @@ export const FaqAccordion = () => {
                     onClick={() => setOpenIndex(open ? null : i)}
                     className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
                   >
-                    <span className="font-heading text-base font-bold text-white sm:text-lg">
+                    <span className="font-heading text-base font-bold text-[#18463b] sm:text-lg">
                       {f.q}
                     </span>
                     <motion.span
@@ -68,8 +68,8 @@ export const FaqAccordion = () => {
                       transition={{ duration: 0.3 }}
                       className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border ${
                         open
-                          ? "border-[#e6a635] bg-[#e6a635] text-[#071328]"
-                          : "border-[#1e3a5f] text-[#f5c253]"
+                          ? "border-[#f68a4a] bg-[#f68a4a] text-white"
+                          : "border-[#e1dfdf] text-[#f68a4a]"
                       }`}
                     >
                       <Plus size={16} />
@@ -85,7 +85,7 @@ export const FaqAccordion = () => {
                       >
                         <p
                           data-testid={`faq-answer-${i + 1}`}
-                          className="px-6 pb-6 text-sm leading-relaxed text-slate-400 sm:text-base"
+                          className="px-6 pb-6 text-sm leading-relaxed text-[#555] sm:text-base"
                         >
                           {f.a}
                         </p>

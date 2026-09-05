@@ -16,7 +16,7 @@ const TRAIT_IMG =
 
 export const WhoShouldJoin = () => {
   return (
-    <section id="who" data-testid="who-should-join-section" className="py-20 lg:py-28">
+    <section id="who" data-testid="who-should-join-section" className="bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-12">
           <div className="lg:col-span-6">
@@ -31,13 +31,13 @@ export const WhoShouldJoin = () => {
                 <Reveal key={t} delay={0.08 * i}>
                   <li
                     data-testid={`who-trait-${i + 1}`}
-                    className="group flex items-center gap-4 rounded-xl border border-[#1e293b] bg-[#0b1d3a]/60 px-5 py-4 transition-all duration-300 hover:border-[#e6a635]/50 hover:bg-[#0b1d3a]"
+                    className="group flex items-center gap-4 rounded-xl border border-[#e1dfdf] bg-white px-5 py-4 transition-all duration-300 hover:border-[#f68a4a]/60 hover:bg-[#fbfafa]"
                   >
                     <CheckCircle2
                       size={22}
-                      className="shrink-0 text-[#e6a635] transition-transform duration-300 group-hover:scale-110"
+                      className="shrink-0 text-[#f68a4a] transition-transform duration-300 group-hover:scale-110"
                     />
-                    <span className="text-sm font-semibold text-slate-200 sm:text-base">{t}</span>
+                    <span className="text-sm font-semibold text-[#333] sm:text-base">{t}</span>
                   </li>
                 </Reveal>
               ))}
@@ -46,24 +46,24 @@ export const WhoShouldJoin = () => {
 
           <Reveal className="lg:col-span-6" delay={0.15}>
             <div className="relative">
-              <div className="overflow-hidden rounded-2xl border border-[#1e3a5f]">
+              <div className="overflow-hidden rounded-2xl border border-[#e1dfdf]">
                 <img
                   src={TRAIT_IMG}
                   alt="Students laughing and learning together"
                   className="aspect-[4/3] w-full object-cover"
                 />
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,19,40,0.15),rgba(7,19,40,0.55)_100%)]" />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0)_60%,rgba(24,70,59,0.25)_100%)]" />
               </div>
               <div
                 data-testid="who-parent-quote"
-                className="relative -mt-16 ml-6 mr-2 rounded-xl border border-[#23487a] bg-[#0b1d3a] p-6 shadow-[0_20px_50px_rgba(0,0,0,0.45)] sm:ml-12"
+                className="relative -mt-16 ml-6 mr-2 rounded-xl border border-[#e1dfdf] bg-white p-6 shadow-[0_20px_50px_rgba(24,70,59,0.12)] sm:ml-12"
               >
-                <Quote size={26} className="text-[#e6a635]" />
-                <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
+                <Quote size={26} className="text-[#f68a4a]" />
+                <p className="mt-3 text-sm leading-relaxed text-[#444] sm:text-base">
                   "My son came back a different person — focused, polite, and full of purpose. He
                   finally put his phone down on his own."
                 </p>
-                <p className="mt-4 font-heading text-xs font-bold uppercase tracking-[0.2em] text-[#f5c253]">
+                <p className="mt-4 font-heading text-xs font-bold uppercase tracking-[0.2em] text-[#18463b]">
                   A Youth Transform Parent
                 </p>
               </div>

@@ -72,7 +72,7 @@ const OUTCOMES: Outcome[] = [
 
 export const OutcomesGrid = () => {
   return (
-    <section id="outcomes" data-testid="outcomes-section" className="bg-[#0b1d3a] py-20 lg:py-28">
+    <section id="outcomes" data-testid="outcomes-section" className="bg-[#fbfafa] py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           index="02"
@@ -86,16 +86,16 @@ export const OutcomesGrid = () => {
             <Reveal key={o.slug} delay={(i % 4) * 0.08}>
               <div
                 data-testid={`outcome-card-${o.slug}`}
-                className="card-glow-hover group h-full rounded-xl border border-[#1e293b] bg-[#0e2448] p-6"
+                className="card-glow-hover group h-full rounded-[10px] border border-[#e1dfdf] bg-white p-6"
               >
-                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#14305d] text-[#f5c253] transition-all duration-300 group-hover:bg-[#e6a635] group-hover:text-[#071328]">
+                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#f6f7f0] text-[#18463b] transition-all duration-300 group-hover:bg-[#f68a4a] group-hover:text-white">
                   <o.icon size={22} />
                 </span>
-                <p className="mt-5 font-heading text-[11px] font-bold uppercase tracking-[0.24em] text-slate-500">
+                <p className="mt-5 font-heading text-[11px] font-bold uppercase tracking-[0.24em] text-[#999]">
                   {String(i + 1).padStart(2, "0")}
                 </p>
-                <h3 className="mt-2 font-heading text-xl font-bold text-white">{o.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate-400">{o.text}</p>
+                <h3 className="mt-2 font-heading text-xl font-bold text-[#18463b]">{o.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-[#555]">{o.text}</p>
               </div>
             </Reveal>
           ))}

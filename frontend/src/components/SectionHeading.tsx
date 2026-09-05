@@ -5,7 +5,7 @@ interface SectionHeadingProps {
   eyebrow: string;
   title: string;
   description?: string;
-  tone?: "dark" | "light";
+  tone?: "light" | "dark";
   align?: "left" | "center";
 }
 
@@ -14,24 +14,20 @@ export const SectionHeading = ({
   eyebrow,
   title,
   description,
-  tone = "dark",
+  tone = "light",
   align = "left",
 }: SectionHeadingProps) => {
-  const isDark = tone === "dark";
+  const onDark = tone === "dark";
   return (
     <Reveal className={align === "center" ? "text-center" : ""}>
       <div className={`flex items-center gap-4 ${align === "center" ? "justify-center" : ""}`}>
-        <span
-          className={`font-heading text-sm font-black tracking-[0.2em] ${
-            isDark ? "text-[#e6a635]" : "text-[#b97f1f]"
-          }`}
-        >
+        <span className="font-heading text-sm font-black tracking-[0.2em] text-[#f68a4a]">
           {index}
         </span>
-        <span className={`h-px w-12 ${isDark ? "bg-[#e6a635]/60" : "bg-[#b97f1f]/50"}`} />
+        <span className="h-px w-12 bg-[#f68a4a]/50" />
         <span
           className={`text-xs font-bold uppercase tracking-[0.28em] ${
-            isDark ? "text-[#f5c253]" : "text-[#b97f1f]"
+            onDark ? "text-[#f8b183]" : "text-[#e0701f]"
           }`}
         >
           {eyebrow}
@@ -39,7 +35,7 @@ export const SectionHeading = ({
       </div>
       <h2
         className={`mt-5 font-heading text-3xl font-black leading-tight tracking-tight sm:text-4xl lg:text-5xl ${
-          isDark ? "text-white" : "text-[#071328]"
+          onDark ? "text-white" : "text-[#18463b]"
         }`}
       >
         {title}
@@ -47,7 +43,7 @@ export const SectionHeading = ({
       {description && (
         <p
           className={`mt-5 max-w-2xl text-base leading-relaxed sm:text-lg ${
-            isDark ? "text-slate-400" : "text-slate-600"
+            onDark ? "text-white/70" : "text-[#7a7a7a]"
           } ${align === "center" ? "mx-auto" : ""}`}
         >
           {description}

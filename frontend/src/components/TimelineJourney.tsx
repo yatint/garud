@@ -1,42 +1,65 @@
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
-
-const DAYS = [
-  {
-    num: "01",
-    day: "Day 1",
-    title: "Discover Yourself",
-    img: "https://images.unsplash.com/photo-1522075782449-e45a34f1ddfb?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=1000",
-    items: ["Self-awareness", "Goal identification", "Confidence activities", "Personality assessment"],
-    slug: "day-1",
-  },
-  {
-    num: "02",
-    day: "Day 2",
-    title: "Build Your Skills",
-    img: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=1000",
-    items: ["Communication", "Leadership", "Team activities", "Emotional intelligence", "Time management"],
-    slug: "day-2",
-  },
-  {
-    num: "03",
-    day: "Day 3",
-    title: "Design Your Future",
-    img: "https://images.pexels.com/photos/8348466/pexels-photo-8348466.jpeg?auto=compress&cs=tinysrgb&w=1000",
-    items: ["Career clarity", "Decision making", "Public speaking", "Personal action plan", "Graduation & certificate"],
-    slug: "day-3",
-  },
-];
+import { useLang } from "@/lib/lang";
 
 export const TimelineJourney = () => {
+  const { t } = useLang();
+
+  const DAYS = [
+    {
+      num: "01",
+      day: t("Day 1", "दिवस १"),
+      title: t("Discover Yourself", "स्वतःला ओळखा"),
+      img: "https://images.unsplash.com/photo-1522075782449-e45a34f1ddfb?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=1000",
+      items: [
+        t("Self-awareness", "स्व-जाणीव"),
+        t("Goal identification", "ध्येय ओळख"),
+        t("Confidence activities", "आत्मविश्वासाचे उपक्रम"),
+        t("Personality assessment", "व्यक्तिमत्त्व मूल्यमापन"),
+      ],
+      slug: "day-1",
+    },
+    {
+      num: "02",
+      day: t("Day 2", "दिवस २"),
+      title: t("Build Your Skills", "कौशल्ये घडवा"),
+      img: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=1000",
+      items: [
+        t("Communication", "संवाद"),
+        t("Leadership", "नेतृत्व"),
+        t("Team activities", "सांघिक उपक्रम"),
+        t("Emotional intelligence", "भावनिक बुद्धिमत्ता"),
+        t("Time management", "वेळ व्यवस्थापन"),
+      ],
+      slug: "day-2",
+    },
+    {
+      num: "03",
+      day: t("Day 3", "दिवस ३"),
+      title: t("Design Your Future", "भविष्य रचा"),
+      img: "https://images.pexels.com/photos/8348466/pexels-photo-8348466.jpeg?auto=compress&cs=tinysrgb&w=1000",
+      items: [
+        t("Career clarity", "करिअर स्पष्टता"),
+        t("Decision making", "निर्णयक्षमता"),
+        t("Public speaking", "सार्वजनिक भाषण"),
+        t("Personal action plan", "वैयक्तिक कृती आराखडा"),
+        t("Graduation & certificate", "पदवी व प्रमाणपत्र"),
+      ],
+      slug: "day-3",
+    },
+  ];
+
   return (
     <section id="journey" data-testid="journey-section" className="bg-[#f6f7f0] py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           index="04"
-          eyebrow="The 3-Day Journey"
-          title="A Carefully Engineered Transformation Arc"
-          description="Each day builds on the last — from self-discovery, to skill mastery, to a concrete future blueprint."
+          eyebrow={t("The 3-Day Journey", "३ दिवसांचा प्रवास")}
+          title={t("A Carefully Engineered Transformation Arc", "सुविचारित रूपांतर प्रवास")}
+          description={t(
+            "Each day builds on the last — from self-discovery, to skill mastery, to a concrete future blueprint.",
+            "प्रत्येक दिवस मागील दिवसावर बांधला जातो — स्व-शोधापासून कौशल्य-प्रभुत्वातून ठोस भविष्य-आराखड्यापर्यंत."
+          )}
           align="center"
         />
 

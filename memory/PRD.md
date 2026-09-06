@@ -83,6 +83,16 @@ Build a premium, responsive, English-only landing page for **Youth Transform**, 
 - `yarn build` → `frontend/dist/`; zipped to `/app/rupantaram-website.zip` (~450K). Verified standalone via plain static server (home + #/programs render fully).
 - Note: React SPA compiles to one index.html + JS/CSS bundles — not 12 separate hand-written HTML files.
 
+## Implemented — Full Marathi/English Bilingual Conversion (2026-09-06)
+- Governing request: "I want entire site in Marathi. In header allow user to switch to English." User confirmed: all pages, agent-written professional Marathi, no ZIP rebuild needed.
+- `src/lib/lang.tsx`: LanguageProvider with `t(en, mr)`, default Marathi, persisted via localStorage `rupantaram-lang`, sets `document.documentElement.lang` + `lang-mr` class. `LangToggle` pill in both navbars (English/मराठी).
+- ~53 components across all 12 pages converted to the `t()` pattern: Home, About, Why Us, Programs Overview, Kids/Youth/Young Adult/30-Day Transform, Life Skills, Success Stories, Contact, Gallery + navbars, footer, enquiry/enroll dialogs, preloader (also re-themed from old red/navy to brand green).
+- Bilingual browser tab titles centralized in `App.tsx` (TITLES map by pathname, reacts to language switch).
+- Brand names intentionally stay English in Marathi mode: Kids/Youth/Young Adult Transform, Parenting 360°, 30-Day Transform, phone/email/URLs. Homepage hero keeps the cross-language brand presentation (Marathi title + English tagline eyebrow, mirroring the original site) — intentional.
+- Homepage hero image replaced per user-supplied campus aerial photo → enhanced to 1264×848, saved as `/assets/hero-campus.webp`; overlay strengthened (0.55→0.85 green gradient + radial vignette + heading text-shadow) so hero text is clearly readable (user complaint: text not visible on old image).
+- Testing agent pass (iteration_1): default Marathi, toggle, persistence, contact form Marathi success, gallery filters/lightbox, all program pages, tab titles — all pass. One HIGH bug (Life Skills intro left in English) found and fixed; `yarn typecheck` clean.
+- Stale `/app/rupantaram-website.zip` predates the bilingual work; user said no new ZIP needed.
+
 ## Verified
 - `/` and `/youth-transform` both load through the public URL; enquiry dialog fill → submit → success toast confirmed; cross-page links work; typecheck clean.
 - Public URL https://transform-teens.preview.emergentagent.com returns 200; `/api/status` responds.
@@ -95,6 +105,5 @@ Build a premium, responsive, English-only landing page for **Youth Transform**, 
 
 ## Backlog
 - P0: Real enrollment backend (save leads to MongoDB) + brochure PDF download.
-- P1: Other program pages (Kids Transform, Young Adult Transform, Parenting 360, 30-Day Journey).
-- P1: Marathi language toggle (Mukta font) mirroring the main Rupantaram site.
-- P2: Batch schedule section, real testimonials, admin view of leads.
+- P1: Parenting 360° dedicated program page.
+- P2: Batch schedule section, real testimonials/photos to replace placeholders, admin view of leads.

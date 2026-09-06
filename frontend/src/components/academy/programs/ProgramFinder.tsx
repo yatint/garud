@@ -2,31 +2,34 @@ import type { LucideIcon } from "lucide-react";
 import { Briefcase, Home, Smile, TrendingUp, Zap } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
+import { useLang } from "@/lib/lang";
 
 interface Stop {
   icon: LucideIcon;
-  age: string;
+  enAge: string;
+  mrAge: string;
   program: string;
   slug: string;
   tint: string;
 }
 
 const STOPS: Stop[] = [
-  { icon: Smile, age: "6–12", program: "Kids Transform", slug: "kids", tint: "bg-[#f68a4a]" },
-  { icon: Zap, age: "13–18", program: "Youth Transform", slug: "youth", tint: "bg-[#18463b]" },
-  { icon: Briefcase, age: "19+", program: "Young Adult Transform", slug: "young-adult", tint: "bg-[#f0a500]" },
-  { icon: Home, age: "Parents", program: "Parenting 360°", slug: "parents", tint: "bg-[#0b5d3b]" },
-  { icon: TrendingUp, age: "Complete Growth Journey", program: "30-Day Transformation", slug: "growth", tint: "bg-[#e0701f]" },
+  { icon: Smile, enAge: "6–12", mrAge: "६–१२", program: "Kids Transform", slug: "kids", tint: "bg-[#f68a4a]" },
+  { icon: Zap, enAge: "13–18", mrAge: "१३–१८", program: "Youth Transform", slug: "youth", tint: "bg-[#18463b]" },
+  { icon: Briefcase, enAge: "19+", mrAge: "१९+", program: "Young Adult Transform", slug: "young-adult", tint: "bg-[#f0a500]" },
+  { icon: Home, enAge: "Parents", mrAge: "पालक", program: "Parenting 360°", slug: "parents", tint: "bg-[#0b5d3b]" },
+  { icon: TrendingUp, enAge: "Complete Growth Journey", mrAge: "संपूर्ण प्रगती प्रवास", program: "30-Day Transformation", slug: "growth", tint: "bg-[#e0701f]" },
 ];
 
 export const ProgramFinder = () => {
+  const { t } = useLang();
   return (
     <section id="program-finder" data-testid="program-finder-section" className="bg-[#fbfafa] py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           index="02"
-          eyebrow="Which Program Is Right for You?"
-          title="Follow the Age, Find the Program"
+          eyebrow={t("Which Program Is Right for You?", "तुमच्यासाठी योग्य कार्यक्रम कोणता?")}
+          title={t("Follow the Age, Find the Program", "वय पहा, कार्यक्रम शोधा")}
           align="center"
         />
 
@@ -41,7 +44,7 @@ export const ProgramFinder = () => {
                   <s.icon size={26} />
                 </span>
                 <p className="mt-5 font-heading text-sm font-black uppercase tracking-[0.14em] text-[#18463b]">
-                  {s.age}
+                  {t(s.enAge, s.mrAge)}
                 </p>
                 <p className="mt-1.5 text-sm font-semibold text-[#7a7a7a]">{s.program}</p>
               </div>

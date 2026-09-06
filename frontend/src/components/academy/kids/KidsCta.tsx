@@ -1,11 +1,13 @@
 import { ArrowRight, Phone } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import { useLang } from "@/lib/lang";
 
 interface KidsCtaProps {
   onEnroll: () => void;
 }
 
 export const KidsCta = ({ onEnroll }: KidsCtaProps) => {
+  const { t } = useLang();
   return (
     <section
       data-testid="kids-final-cta"
@@ -20,11 +22,15 @@ export const KidsCta = ({ onEnroll }: KidsCtaProps) => {
       <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6">
         <Reveal>
           <h2 className="font-heading text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Give Your Child the <span className="text-brand-gradient">Gift of Life Skills</span>
+            {t("Give Your Child the", "तुमच्या मुलाला")}{" "}
+            <span className="text-brand-gradient">{t("Gift of Life Skills", "जीवनकौशल्यांची भेट")}</span>{" "}
+            {t("", "द्या")}
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/75 sm:text-lg">
-            Help your child grow with confidence, discipline, strong values, and lifelong habits
-            through the Kids Transform journey.
+            {t(
+              "Help your child grow with confidence, discipline, strong values, and lifelong habits through the Kids Transform journey.",
+              "Kids Transform प्रवासाद्वारे तुमच्या मुलाला आत्मविश्वास, शिस्त, दृढ मूल्ये आणि आजीवन सवयींसह वाढण्यास मदत करा."
+            )}
           </p>
         </Reveal>
 
@@ -35,7 +41,7 @@ export const KidsCta = ({ onEnroll }: KidsCtaProps) => {
               onClick={onEnroll}
               className="group inline-flex items-center gap-2 rounded-full border border-[#f68a4a] bg-[#f68a4a] px-9 py-4 text-sm font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:-translate-y-[3px] hover:border-white hover:bg-white hover:text-[#18463b] active:scale-95"
             >
-              Enroll Your Child
+              {t("Enroll Your Child", "तुमच्या मुलाची नोंदणी करा")}
               <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
             </button>
             <a
@@ -44,7 +50,7 @@ export const KidsCta = ({ onEnroll }: KidsCtaProps) => {
               className="inline-flex items-center gap-2 rounded-full border border-white/30 px-9 py-4 text-sm font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:-translate-y-[3px] hover:border-[#f68a4a] hover:text-[#f8b183] active:scale-95"
             >
               <Phone size={16} />
-              Contact Us
+              {t("Contact Us", "संपर्क करा")}
             </a>
           </div>
         </Reveal>

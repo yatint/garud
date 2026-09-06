@@ -2,6 +2,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, Menu, Phone, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { LangToggle } from "@/components/LangToggle";
+import { useLang } from "@/lib/lang";
 import { scrollToId } from "@/lib/scroll";
 
 const OFFSET = -124;
@@ -37,21 +39,22 @@ const YoutubeIcon = () => (
 const SOCIALS = [FacebookIcon, XIcon, InstagramIcon, LinkedinIcon, YoutubeIcon];
 const SOCIAL_SLUGS = ["facebook", "x", "instagram", "linkedin", "youtube"];
 
-const PROGRAM_MENU = [
-  { label: "All Programs Overview", href: "/programs" },
-  { label: "Kids Transform (6–12)", href: "/programs/kids-transform" },
-  { label: "Youth Transform (13–18)", href: "/youth-transform" },
-  { label: "Young Adult Transform (19+)", href: "/programs/young-adult-transform" },
-  { label: "Parenting 360°", href: "/programs" },
-  { label: "30-Day Transformation", href: "/programs/30-day-transform" },
-];
-
 interface AcademyNavbarProps {
   onEnquire: () => void;
 }
 
 export const AcademyNavbar = ({ onEnquire }: AcademyNavbarProps) => {
   const [open, setOpen] = useState(false);
+  const { t } = useLang();
+
+  const PROGRAM_MENU = [
+    { label: t("All Programs Overview", "सर्व कार्यक्रम"), href: "/programs" },
+    { label: t("Kids Transform (6–12)", "Kids Transform (६–१२)"), href: "/programs/kids-transform" },
+    { label: t("Youth Transform (13–18)", "Youth Transform (१३–१८)"), href: "/youth-transform" },
+    { label: t("Young Adult Transform (19+)", "Young Adult Transform (१९+)"), href: "/programs/young-adult-transform" },
+    { label: "Parenting 360°", href: "/programs" },
+    { label: t("30-Day Transformation", "३० दिवसांचे रूपांतर"), href: "/programs/30-day-transform" },
+  ];
 
   const go = (target: string) => {
     setOpen(false);
@@ -93,6 +96,7 @@ export const AcademyNavbar = ({ onEnquire }: AcademyNavbarProps) => {
           </button>
 
           <div className="ml-auto flex items-center gap-3">
+            <LangToggle />
             <a
               data-testid="topbar-phone-link"
               href="tel:+919011658888"
@@ -115,17 +119,17 @@ export const AcademyNavbar = ({ onEnquire }: AcademyNavbarProps) => {
 
       <div className="hidden bg-[#18463b] lg:block">
         <nav
-          className="mx-auto flex h-12 max-w-7xl items-center justify-center gap-9 px-4"
+          className="mx-auto flex h-12 max-w-7xl items-center justify-center gap-8 px-4"
           data-testid="academy-nav-links"
         >
           <button data-testid="academy-nav-link-home" onClick={() => go("#top")} className={linkClass}>
-            Home
+            {t("Home", "मुख्यपृष्ठ")}
           </button>
           <Link to="/about" data-testid="academy-nav-link-about" className={linkClass}>
-            About
+            {t("About", "आमच्याविषयी")}
           </Link>
           <Link to="/why-us" data-testid="academy-nav-link-why-us" className={linkClass}>
-            Why Us
+            {t("Why Us", "आमची खासियत")}
           </Link>
 
           <div className="group relative">
@@ -134,7 +138,7 @@ export const AcademyNavbar = ({ onEnquire }: AcademyNavbarProps) => {
               data-testid="academy-nav-link-programs"
               className={`${linkClass} inline-flex items-center gap-1`}
             >
-              Programs
+              {t("Programs", "कार्यक्रम")}
               <ChevronDown size={13} className="transition-transform duration-300 group-hover:rotate-180" />
             </Link>
             <div className="invisible absolute left-1/2 top-full z-50 -translate-x-1/2 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
@@ -154,23 +158,23 @@ export const AcademyNavbar = ({ onEnquire }: AcademyNavbarProps) => {
           </div>
 
           <Link to="/life-skills" data-testid="academy-nav-link-life-skills" className={linkClass}>
-            Life Skills
+            {t("Life Skills", "जीवनकौशल्ये")}
           </Link>
           <Link to="/gallery" data-testid="academy-nav-gallery-link" className={linkClass}>
-            Gallery
+            {t("Gallery", "गॅलरी")}
           </Link>
           <Link to="/success-stories" data-testid="academy-nav-link-success-stories" className={linkClass}>
-            Success Stories
+            {t("Success Stories", "यशोगाथा")}
           </Link>
           <Link to="/contact" data-testid="academy-nav-link-contact" className={linkClass}>
-            Contact
+            {t("Contact", "संपर्क")}
           </Link>
           <button
             data-testid="academy-nav-enquire-button"
             onClick={onEnquire}
-            className="ml-2 rounded-full border border-[#f68a4a] bg-[#f68a4a] px-5 py-2 font-heading text-[12px] font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:border-white hover:bg-white hover:text-[#18463b]"
+            className="ml-1 rounded-full border border-[#f68a4a] bg-[#f68a4a] px-5 py-2 font-heading text-[12px] font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:border-white hover:bg-white hover:text-[#18463b]"
           >
-            Enquire Now
+            {t("Enquire Now", "चौकशी करा")}
           </button>
         </nav>
       </div>
@@ -186,74 +190,31 @@ export const AcademyNavbar = ({ onEnquire }: AcademyNavbarProps) => {
             className="overflow-hidden border-b border-[#e1dfdf] bg-white/95 backdrop-blur-xl lg:hidden"
           >
             <div className="flex flex-col gap-1 px-6 py-4">
+              <button
+                data-testid="academy-mobile-nav-link-home"
+                onClick={() => go("#top")}
+                className="rounded-lg px-3 py-3 text-left text-sm font-semibold text-[#444] transition-colors hover:bg-[#f6f7f0] hover:text-[#18463b]"
+              >
+                {t("Home", "मुख्यपृष्ठ")}
+              </button>
               {[
-                { label: "Home", target: "#top" },
+                { label: t("About Us", "आमच्याविषयी"), href: "/about", slug: "about" },
+                { label: t("Why Choose Us", "आमची खासियत"), href: "/why-us", slug: "why-us" },
+                { label: t("All Programs", "सर्व कार्यक्रम"), href: "/programs", slug: "programs" },
+                { label: t("Life Skills", "जीवनकौशल्ये"), href: "/life-skills", slug: "life-skills" },
+                { label: t("Gallery", "गॅलरी"), href: "/gallery", slug: "gallery" },
+                { label: t("Success Stories", "यशोगाथा"), href: "/success-stories", slug: "success-stories" },
+                { label: t("Contact", "संपर्क"), href: "/contact", slug: "contact" },
               ].map((l) => (
-                <button
-                  key={l.target}
-                  data-testid={`academy-mobile-nav-link-${l.label.toLowerCase().replace(/[^a-z]+/g, "-")}`}
-                  onClick={() => go(l.target)}
-                  className="rounded-lg px-3 py-3 text-left text-sm font-semibold text-[#444] transition-colors hover:bg-[#f6f7f0] hover:text-[#18463b]"
+                <Link
+                  key={l.slug}
+                  to={l.href}
+                  data-testid={`academy-mobile-nav-${l.slug}-link`}
+                  className="rounded-lg px-3 py-3 text-left text-sm font-semibold text-[#18463b]"
                 >
-                  {l.label}
-                </button>
+                  {l.label} →
+                </Link>
               ))}
-              <Link
-                to="/life-skills"
-                data-testid="academy-mobile-nav-life-skills-link"
-                className="rounded-lg px-3 py-3 text-left text-sm font-semibold text-[#18463b]"
-              >
-                Life Skills →
-              </Link>
-              <Link
-                to="/success-stories"
-                data-testid="academy-mobile-nav-success-stories-link"
-                className="rounded-lg px-3 py-3 text-left text-sm font-semibold text-[#18463b]"
-              >
-                Success Stories →
-              </Link>
-              <Link
-                to="/contact"
-                data-testid="academy-mobile-nav-contact-link"
-                className="rounded-lg px-3 py-3 text-left text-sm font-semibold text-[#18463b]"
-              >
-                Contact →
-              </Link>
-              <Link
-                to="/about"
-                data-testid="academy-mobile-nav-about-link"
-                className="rounded-lg px-3 py-3 text-left text-sm font-semibold text-[#18463b]"
-              >
-                About Us →
-              </Link>
-              <Link
-                to="/why-us"
-                data-testid="academy-mobile-nav-why-us-link"
-                className="rounded-lg px-3 py-3 text-left text-sm font-semibold text-[#18463b]"
-              >
-                Why Choose Us →
-              </Link>
-              <Link
-                to="/programs"
-                data-testid="academy-mobile-nav-programs-link"
-                className="rounded-lg px-3 py-3 text-left text-sm font-semibold text-[#18463b]"
-              >
-                All Programs →
-              </Link>
-              <Link
-                to="/gallery"
-                data-testid="academy-mobile-nav-gallery-link"
-                className="rounded-lg px-3 py-3 text-left text-sm font-semibold text-[#18463b]"
-              >
-                Gallery →
-              </Link>
-              <Link
-                to="/youth-transform"
-                data-testid="academy-mobile-nav-youth-link"
-                className="rounded-lg px-3 py-3 text-left text-sm font-semibold text-[#18463b]"
-              >
-                Youth Transform Program →
-              </Link>
               <button
                 data-testid="academy-mobile-nav-enquire-button"
                 onClick={() => {
@@ -262,7 +223,7 @@ export const AcademyNavbar = ({ onEnquire }: AcademyNavbarProps) => {
                 }}
                 className="mt-2 rounded-full bg-[#f68a4a] px-6 py-3 text-xs font-bold uppercase tracking-[0.14em] text-white"
               >
-                Enquire Now
+                {t("Enquire Now", "चौकशी करा")}
               </button>
             </div>
           </motion.nav>

@@ -1,5 +1,6 @@
 import { ArrowRight, Phone } from "lucide-react";
 import { Reveal } from "./Reveal";
+import { useLang } from "@/lib/lang";
 import { scrollToId } from "@/lib/scroll";
 
 interface FinalCtaProps {
@@ -7,6 +8,7 @@ interface FinalCtaProps {
 }
 
 export const FinalCta = ({ onEnroll }: FinalCtaProps) => {
+  const { t } = useLang();
   return (
     <section
       id="register"
@@ -22,14 +24,17 @@ export const FinalCta = ({ onEnroll }: FinalCtaProps) => {
       <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6">
         <Reveal>
           <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#f8b183]">
-            Limited Seats Per Batch
+            {t("Limited Seats Per Batch", "प्रत्येक बॅचमध्ये मर्यादित जागा")}
           </p>
           <h2 className="mt-5 font-heading text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Ready to Transform <span className="text-brand-gradient">Your Future?</span>
+            {t("Ready to Transform", "भविष्य बदलायला")}{" "}
+            <span className="text-brand-gradient">{t("Your Future?", "तयार आहात?")}</span>
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/75 sm:text-lg">
-            Join the next Youth Transform batch and begin your journey toward confidence,
-            character, and success. Three days. One turning point.
+            {t(
+              "Join the next Youth Transform batch and begin your journey toward confidence, character, and success. Three days. One turning point.",
+              "पुढील Youth Transform बॅचमध्ये सहभागी व्हा आणि आत्मविश्वास, चारित्र्य आणि यशाकडचा प्रवास सुरू करा. तीन दिवस. एक निर्णायक वळण."
+            )}
           </p>
         </Reveal>
 
@@ -40,7 +45,7 @@ export const FinalCta = ({ onEnroll }: FinalCtaProps) => {
               onClick={onEnroll}
               className="group inline-flex items-center gap-2 rounded-full border border-[#f68a4a] bg-[#f68a4a] px-9 py-4 text-sm font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:-translate-y-[3px] hover:border-white hover:bg-white hover:text-[#18463b] hover:shadow-[0_10px_30px_rgba(0,0,0,0.25)] active:scale-95"
             >
-              Register Now
+              {t("Register Now", "नोंदणी करा")}
               <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
             </button>
             <button
@@ -49,7 +54,7 @@ export const FinalCta = ({ onEnroll }: FinalCtaProps) => {
               className="inline-flex items-center gap-2 rounded-full border border-white/30 px-9 py-4 text-sm font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:-translate-y-[3px] hover:border-[#f68a4a] hover:text-[#f8b183] active:scale-95"
             >
               <Phone size={16} />
-              Contact Us
+              {t("Contact Us", "संपर्क करा")}
             </button>
           </div>
         </Reveal>

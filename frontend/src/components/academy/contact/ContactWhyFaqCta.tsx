@@ -4,38 +4,50 @@ import { CalendarCheck, ClipboardCheck, Compass, Home, MessageCircle, Phone, Plu
 import { useState } from "react";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
+import { useLang } from "@/lib/lang";
 
-const WHY: Array<{ icon: LucideIcon; title: string; text: string; slug: string }> = [
-  { icon: Compass, title: "Career & Program Counselling", text: "Find the right program for your goals.", slug: "counselling" },
-  { icon: Home, title: "Parent Guidance Sessions", text: "One-on-one guidance for parents.", slug: "parent-guidance" },
-  { icon: ClipboardCheck, title: "Student Assessments", text: "Understand strengths before you begin.", slug: "assessments" },
-  { icon: CalendarCheck, title: "Batch Registration", text: "Reserve your seat in upcoming batches.", slug: "registration" },
+const WHY: Array<{ icon: LucideIcon; enTitle: string; mrTitle: string; enText: string; mrText: string; slug: string }> = [
+  { icon: Compass, enTitle: "Career & Program Counselling", mrTitle: "करिअर आणि कार्यक्रम समुपदेशन", enText: "Find the right program for your goals.", mrText: "तुमच्या ध्येयांसाठी योग्य कार्यक्रम शोधा.", slug: "counselling" },
+  { icon: Home, enTitle: "Parent Guidance Sessions", mrTitle: "पालक मार्गदर्शन सत्रे", enText: "One-on-one guidance for parents.", mrText: "पालकांसाठी वैयक्तिक मार्गदर्शन.", slug: "parent-guidance" },
+  { icon: ClipboardCheck, enTitle: "Student Assessments", mrTitle: "विद्यार्थी मूल्यमापन", enText: "Understand strengths before you begin.", mrText: "सुरुवातीपूर्वी शक्ती समजून घ्या.", slug: "assessments" },
+  { icon: CalendarCheck, enTitle: "Batch Registration", mrTitle: "तुकडी नोंदणी", enText: "Reserve your seat in upcoming batches.", mrText: "आगामी तुकड्यांत तुमची जागा राखीव करा.", slug: "registration" },
 ];
 
 const FAQS = [
   {
-    q: "How do I enroll in a program?",
-    a: "Call us or submit the enquiry form on this page. Our team will call you back with upcoming batch dates, venue options, and the registration process.",
+    enQ: "How do I enroll in a program?",
+    mrQ: "कार्यक्रमात प्रवेश कसा घ्यावा?",
+    enA: "Call us or submit the enquiry form on this page. Our team will call you back with upcoming batch dates, venue options, and the registration process.",
+    mrA: "आम्हाला कॉल करा किंवा या पानावरील चौकशी फॉर्म सबमिट करा. आगामी तुकड्यांच्या तारखा, ठिकाण पर्याय आणि नोंदणी प्रक्रियेसह आमची टीम तुम्हाला परत कॉल करेल.",
   },
   {
-    q: "Which program is suitable for my child?",
-    a: "Programs are age-based: Kids Transform (6–12), Youth Transform (13–18), and Young Adult Transform (19+). Our counsellors will help you choose the right fit during a free guidance call.",
+    enQ: "Which program is suitable for my child?",
+    mrQ: "माझ्या मुलासाठी कोणता कार्यक्रम योग्य?",
+    enA: "Programs are age-based: Kids Transform (6–12), Youth Transform (13–18), and Young Adult Transform (19+). Our counsellors will help you choose the right fit during a free guidance call.",
+    mrA: "कार्यक्रम वयानुसार आहेत: Kids Transform (६–१२), Youth Transform (१३–१८) आणि Young Adult Transform (१९+). मोफत मार्गदर्शन कॉलमध्ये आमचे समुपदेशक योग्य पर्याय निवडण्यास मदत करतील.",
   },
   {
-    q: "Can parents attend counselling before registration?",
-    a: "Yes. Pre-registration counselling for parents is available at all four centers — we encourage it, so expectations are clear on both sides.",
+    enQ: "Can parents attend counselling before registration?",
+    mrQ: "नोंदणीपूर्वी पालक समुपदेशन घेऊ शकतात का?",
+    enA: "Yes. Pre-registration counselling for parents is available at all four centers — we encourage it, so expectations are clear on both sides.",
+    mrA: "होय. चारही केंद्रांवर नोंदणीपूर्व पालक समुपदेशन उपलब्ध आहे — दोन्ही बाजूंच्या अपेक्षा स्पष्ट व्हाव्यात म्हणून आम्ही त्यास प्रोत्साहन देतो.",
   },
   {
-    q: "Are programs available in all four locations?",
-    a: "Yes. Scheduled batches run across Karjat, Alibag, Pen, and Lonavala throughout the year. Dates vary by program and center.",
+    enQ: "Are programs available in all four locations?",
+    mrQ: "चारही ठिकाणी कार्यक्रम उपलब्ध आहेत का?",
+    enA: "Yes. Scheduled batches run across Karjat, Alibag, Pen, and Lonavala throughout the year. Dates vary by program and center.",
+    mrA: "होय. कर्जत, अलिबाग, पेन आणि लोणावळा येथे वर्षभर नियोजित तुकड्या चालतात. तारखा कार्यक्रम आणि केंद्रानुसार बदलतात.",
   },
   {
-    q: "How do I receive the brochure?",
-    a: "Share your details through the enquiry form or WhatsApp us, and our team will send the program brochure to you directly.",
+    enQ: "How do I receive the brochure?",
+    mrQ: "माहितीपत्रक कसे मिळेल?",
+    enA: "Share your details through the enquiry form or WhatsApp us, and our team will send the program brochure to you directly.",
+    mrA: "चौकशी फॉर्मद्वारे तुमचा तपशील शेअर करा किंवा आम्हाला WhatsApp करा — आमची टीम तुम्हाला थेट कार्यक्रम माहितीपत्रक पाठवेल.",
   },
 ];
 
 export const ContactWhyFaqCta = () => {
+  const { t } = useLang();
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
@@ -44,8 +56,8 @@ export const ContactWhyFaqCta = () => {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             index="03"
-            eyebrow="Why Visit Rupantaram?"
-            title="More Than Just Admissions"
+            eyebrow={t("Why Visit Rupantaram?", "रूपांतरम्ला का भेट द्यावी?")}
+            title={t("More Than Just Admissions", "केवळ प्रवेशापेक्षा बरेच काही")}
             align="center"
           />
           <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -58,8 +70,8 @@ export const ContactWhyFaqCta = () => {
                   <span className="mx-auto flex h-13 w-13 items-center justify-center rounded-full bg-[#f6f7f0] p-3.5 text-[#18463b] transition-all duration-300 group-hover:bg-[#f68a4a] group-hover:text-white">
                     <w.icon size={22} />
                   </span>
-                  <h3 className="mt-5 font-heading text-base font-bold text-[#18463b]">{w.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[#555]">{w.text}</p>
+                  <h3 className="mt-5 font-heading text-base font-bold text-[#18463b]">{t(w.enTitle, w.mrTitle)}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-[#555]">{t(w.enText, w.mrText)}</p>
                 </div>
               </Reveal>
             ))}
@@ -71,15 +83,15 @@ export const ContactWhyFaqCta = () => {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             index="04"
-            eyebrow="FAQs"
-            title="Quick Answers Before You Call"
+            eyebrow={t("FAQs", "वारंवार विचारले जाणारे प्रश्न")}
+            title={t("Quick Answers Before You Call", "कॉल करण्यापूर्वी जलद उत्तरे")}
             align="center"
           />
           <div className="mt-14 flex flex-col gap-4" data-testid="contact-faq-list">
             {FAQS.map((f, i) => {
               const open = openIndex === i;
               return (
-                <Reveal key={f.q} delay={i * 0.04}>
+                <Reveal key={f.enQ} delay={i * 0.04}>
                   <div
                     data-testid={`contact-faq-item-${i + 1}`}
                     className={`overflow-hidden rounded-xl border transition-colors duration-300 ${
@@ -94,7 +106,7 @@ export const ContactWhyFaqCta = () => {
                       className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
                     >
                       <span className="font-heading text-base font-bold text-[#18463b] sm:text-lg">
-                        {f.q}
+                        {t(f.enQ, f.mrQ)}
                       </span>
                       <motion.span
                         animate={{ rotate: open ? 45 : 0 }}
@@ -120,7 +132,7 @@ export const ContactWhyFaqCta = () => {
                             data-testid={`contact-faq-answer-${i + 1}`}
                             className="px-6 pb-6 text-sm leading-relaxed text-[#555] sm:text-base"
                           >
-                            {f.a}
+                            {t(f.enA, f.mrA)}
                           </p>
                         </motion.div>
                       )}
@@ -145,11 +157,14 @@ export const ContactWhyFaqCta = () => {
         <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6">
           <Reveal>
             <h2 className="font-heading text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Ready to Take the <span className="text-brand-gradient">First Step?</span>
+              {t("Ready to Take the", "पहिले पाऊल टाकायला")}{" "}
+              <span className="text-brand-gradient">{t("First Step?", "तयार?")}</span>
             </h2>
             <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/75 sm:text-lg">
-              Connect with the Rupantaram team and discover the program that's right for your
-              journey of confidence, discipline, and personal transformation.
+              {t(
+                "Connect with the Rupantaram team and discover the program that's right for your journey of confidence, discipline, and personal transformation.",
+                "रूपांतरम् टीमशी संपर्क करा आणि आत्मविश्वास, शिस्त आणि वैयक्तिक परिवर्तनाच्या तुमच्या प्रवासासाठी योग्य कार्यक्रम शोधा."
+              )}
             </p>
           </Reveal>
           <Reveal delay={0.15}>
@@ -160,7 +175,7 @@ export const ContactWhyFaqCta = () => {
                 className="group inline-flex items-center gap-2 rounded-full border border-[#f68a4a] bg-[#f68a4a] px-9 py-4 text-sm font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:-translate-y-[3px] hover:border-white hover:bg-white hover:text-[#18463b] active:scale-95"
               >
                 <Phone size={16} />
-                Call Us
+                {t("Call Us", "कॉल करा")}
               </a>
               <a
                 data-testid="contact-cta-whatsapp-button"
@@ -170,7 +185,7 @@ export const ContactWhyFaqCta = () => {
                 className="inline-flex items-center gap-2 rounded-full border border-white/30 px-9 py-4 text-sm font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:-translate-y-[3px] hover:border-[#f68a4a] hover:text-[#f8b183] active:scale-95"
               >
                 <MessageCircle size={16} />
-                WhatsApp Us
+                {t("WhatsApp Us", "WhatsApp वर संदेश पाठवा")}
               </a>
             </div>
           </Reveal>

@@ -1,23 +1,26 @@
 import type { LucideIcon } from "lucide-react";
 import { Crosshair, Flame, Heart, HeartHandshake, Hourglass, Mic } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import { useLang } from "@/lib/lang";
 
 interface Benefit {
   icon: LucideIcon;
-  title: string;
+  enTitle: string;
+  mrTitle: string;
   slug: string;
 }
 
 const BENEFITS: Benefit[] = [
-  { icon: Flame, title: "Confident", slug: "confident" },
-  { icon: Hourglass, title: "Disciplined", slug: "disciplined" },
-  { icon: HeartHandshake, title: "Respectful", slug: "respectful" },
-  { icon: Mic, title: "Communicative", slug: "communicative" },
-  { icon: Crosshair, title: "Focused", slug: "focused" },
-  { icon: Heart, title: "Emotionally Balanced", slug: "balanced" },
+  { icon: Flame, enTitle: "Confident", mrTitle: "आत्मविश्वासू", slug: "confident" },
+  { icon: Hourglass, enTitle: "Disciplined", mrTitle: "शिस्तबद्ध", slug: "disciplined" },
+  { icon: HeartHandshake, enTitle: "Respectful", mrTitle: "आदरशील", slug: "respectful" },
+  { icon: Mic, enTitle: "Communicative", mrTitle: "संवादी", slug: "communicative" },
+  { icon: Crosshair, enTitle: "Focused", mrTitle: "एकाग्र", slug: "focused" },
+  { icon: Heart, enTitle: "Emotionally Balanced", mrTitle: "भावनिकदृष्ट्या संतुलित", slug: "balanced" },
 ];
 
 export const KidsBenefits = () => {
+  const { t } = useLang();
   return (
     <section
       data-testid="kids-benefits-section"
@@ -31,10 +34,10 @@ export const KidsBenefits = () => {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal className="text-center">
           <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#f8b183]">
-            Why Parents Love This Program
+            {t("Why Parents Love This Program", "पालकांना हा कार्यक्रम का आवडतो")}
           </p>
           <h2 className="mt-4 font-heading text-3xl font-black tracking-tight text-white sm:text-4xl lg:text-5xl">
-            After Kids Transform, Children Become More…
+            {t("After Kids Transform, Children Become More…", "Kids Transform नंतर मुले अधिक…")}
           </h2>
         </Reveal>
 
@@ -49,7 +52,7 @@ export const KidsBenefits = () => {
                   <b.icon size={22} />
                 </span>
                 <h3 className="mt-4 font-heading text-sm font-bold text-white sm:text-base">
-                  {b.title}
+                  {t(b.enTitle, b.mrTitle)}
                 </h3>
               </div>
             </Reveal>

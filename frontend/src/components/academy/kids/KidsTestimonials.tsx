@@ -1,21 +1,23 @@
 import { Quote } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
+import { useLang } from "@/lib/lang";
 
 const PLACEHOLDERS = [
-  { label: "Parent Testimonial", slug: "parent-1" },
-  { label: "Student Transformation Story", slug: "student-1" },
-  { label: "Parent Testimonial", slug: "parent-2" },
+  { enLabel: "Parent Testimonial", mrLabel: "पालकांचा अनुभव", slug: "parent-1" },
+  { enLabel: "Student Transformation Story", mrLabel: "विद्यार्थ्याची परिवर्तन कथा", slug: "student-1" },
+  { enLabel: "Parent Testimonial", mrLabel: "पालकांचा अनुभव", slug: "parent-2" },
 ];
 
 export const KidsTestimonials = () => {
+  const { t } = useLang();
   return (
     <section data-testid="kids-testimonials-section" className="bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           index="07"
-          eyebrow="Stories"
-          title="What Parents Will Tell You"
+          eyebrow={t("Stories", "कथा")}
+          title={t("What Parents Will Tell You", "पालक तुम्हाला काय सांगतील")}
           align="center"
         />
 
@@ -35,7 +37,7 @@ export const KidsTestimonials = () => {
                   <span className="mx-auto h-2.5 w-32 rounded-full bg-[#eceae6]" />
                 </div>
                 <figcaption className="mt-6 font-heading text-xs font-bold uppercase tracking-[0.2em] text-[#999]">
-                  {p.label} — Coming Soon
+                  {t(p.enLabel, p.mrLabel)} — {t("Coming Soon", "लवकरच येत आहे")}
                 </figcaption>
               </figure>
             </Reveal>

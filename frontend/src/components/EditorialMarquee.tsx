@@ -1,16 +1,20 @@
-const ITEMS = [
-  "Goal Setting",
-  "Confidence",
-  "Leadership",
-  "Public Speaking",
-  "Emotional Intelligence",
-  "Digital Discipline",
-  "Time Mastery",
-  "Career Clarity",
+import { useLang } from "@/lib/lang";
+
+const DEFAULT_ITEMS: Array<[string, string]> = [
+  ["Goal Setting", "ध्येय निश्चिती"],
+  ["Confidence", "आत्मविश्वास"],
+  ["Leadership", "नेतृत्व"],
+  ["Public Speaking", "सार्वजनिक भाषण"],
+  ["Emotional Intelligence", "भावनिक बुद्धिमत्ता"],
+  ["Digital Discipline", "डिजिटल शिस्त"],
+  ["Time Mastery", "वेळ व्यवस्थापन"],
+  ["Career Clarity", "करिअर स्पष्टता"],
 ];
 
-export const EditorialMarquee = ({ items = ITEMS }: { items?: string[] }) => {
-  const row = [...items, ...items];
+export const EditorialMarquee = ({ items }: { items?: string[] }) => {
+  const { t } = useLang();
+  const list = items ?? DEFAULT_ITEMS.map(([en, mr]) => t(en, mr));
+  const row = [...list, ...list];
   return (
     <div
       data-testid="editorial-marquee"

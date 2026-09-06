@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Download } from "lucide-react";
+import { useLang } from "@/lib/lang";
 import { scrollToId } from "@/lib/scroll";
 
 const HERO_IMG =
@@ -10,12 +11,13 @@ interface YoungHeroProps {
 }
 
 export const YoungHero = ({ onEnroll }: YoungHeroProps) => {
+  const { t } = useLang();
   return (
     <section id="top" data-testid="young-hero" className="relative">
       <div className="relative flex min-h-[72vh] items-center justify-center overflow-hidden [border-radius:0_0_50%_50%/0_0_72px_72px]">
         <img
           src={HERO_IMG}
-          alt="Young adults together outdoors, full of ambition"
+          alt={t("Young adults together outdoors, full of ambition", "महत्त्वाकांक्षेने भरलेले तरुण एकत्र")}
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(24,70,59,0.55)_0%,rgba(24,70,59,0.7)_60%,rgba(24,70,59,0.85)_100%)]" />
@@ -30,7 +32,7 @@ export const YoungHero = ({ onEnroll }: YoungHeroProps) => {
           >
             <span className="h-2 w-2 rounded-full bg-[#f68a4a] animate-gold-pulse" />
             <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-white">
-              Ages 19+ · 3-Day Program
+              {t("Ages 19+ · 3-Day Program", "वय १९+ · ३-दिवसांचा कार्यक्रम")}
             </span>
           </motion.div>
 
@@ -51,8 +53,10 @@ export const YoungHero = ({ onEnroll }: YoungHeroProps) => {
             className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/85 sm:text-lg"
             data-testid="young-hero-subtitle"
           >
-            A 3-day transformational journey that empowers young adults to discover purpose,
-            develop leadership, strengthen communication, and prepare for real-life success.
+            {t(
+              "A 3-day transformational journey that empowers young adults to discover purpose, develop leadership, strengthen communication, and prepare for real-life success.",
+              "३ दिवसांचा परिवर्तनकारी प्रवास — तरुणांना ध्येय शोधणे, नेतृत्व विकसित करणे, संवाद बळकट करणे आणि खऱ्या आयुष्यातील यशाची तयारी करण्यासाठी."
+            )}
           </motion.p>
 
           <motion.div
@@ -66,7 +70,7 @@ export const YoungHero = ({ onEnroll }: YoungHeroProps) => {
               onClick={onEnroll}
               className="group inline-flex items-center gap-2 rounded-full border border-[#f68a4a] bg-[#f68a4a] px-8 py-4 font-heading text-sm font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:-translate-y-[3px] hover:border-white hover:bg-white hover:text-[#18463b] active:scale-95"
             >
-              Register Now
+              {t("Register Now", "आत्ताच नोंदणी करा")}
               <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
             </button>
             <button
@@ -75,7 +79,7 @@ export const YoungHero = ({ onEnroll }: YoungHeroProps) => {
               className="inline-flex items-center gap-2 rounded-full border border-white/35 px-8 py-4 font-heading text-sm font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:-translate-y-[3px] hover:border-[#f68a4a] hover:text-[#f8b183] active:scale-95"
             >
               <Download size={16} />
-              Download Brochure
+              {t("Download Brochure", "माहितीपत्रक डाउनलोड करा")}
             </button>
           </motion.div>
         </div>

@@ -19,7 +19,6 @@ export default function KidsTransform() {
   const [enquiryOpen, setEnquiryOpen] = useState(false);
 
   useEffect(() => {
-    document.title = "Kids Transform | Rupantaram Life Skills Academy";
     document
       .querySelector('meta[name="description"]')
       ?.setAttribute(

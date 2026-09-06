@@ -1,6 +1,6 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
-import { scrollToId } from "@/lib/scroll";
+import { useLang } from "@/lib/lang";
 
 const FacebookIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -25,24 +25,6 @@ const LinkedinIcon = () => (
   </svg>
 );
 
-const LINKS = [
-  { label: "About Us", target: "#about" },
-  { label: "Life Skills", target: "#skills" },
-  { label: "Programs", target: "#programs" },
-  { label: "Our Method", target: "#method" },
-  { label: "Success Stories", target: "#stories" },
-  { label: "Centers", target: "#centers" },
-  { label: "FAQs", target: "#faq" },
-];
-
-const PROGRAMS = [
-  "Kids Transform (Ages 6–12)",
-  "Youth Transform (Ages 13–18)",
-  "Young Adult Transform (19+)",
-  "Parenting 360° (1 Day)",
-  "30-Day Transformation Journey",
-];
-
 const SOCIALS = [
   { icon: FacebookIcon, label: "Facebook", slug: "facebook" },
   { icon: InstagramIcon, label: "Instagram", slug: "instagram" },
@@ -51,30 +33,42 @@ const SOCIALS = [
 ];
 
 export const AcademyFooter = () => {
+  const { t } = useLang();
+
+  const LINKS = [
+    { label: t("About Us", "आमच्याविषयी"), href: "/about", slug: "about" },
+    { label: t("Why Us", "आमची खासियत"), href: "/why-us", slug: "why-us" },
+    { label: t("Programs", "कार्यक्रम"), href: "/programs", slug: "programs" },
+    { label: t("Life Skills", "जीवनकौशल्ये"), href: "/life-skills", slug: "life-skills" },
+    { label: t("Gallery", "गॅलरी"), href: "/gallery", slug: "gallery" },
+    { label: t("Success Stories", "यशोगाथा"), href: "/success-stories", slug: "success-stories" },
+    { label: t("Contact", "संपर्क"), href: "/contact", slug: "contact" },
+  ];
+
+  const PROGRAMS = [
+    t("Kids Transform (Ages 6–12)", "Kids Transform (६–१२ वर्षे)"),
+    t("Youth Transform (Ages 13–18)", "Youth Transform (१३–१८ वर्षे)"),
+    t("Young Adult Transform (19+)", "Young Adult Transform (१९+)"),
+    t("Parenting 360° (1 Day)", "Parenting 360° (१ दिवस)"),
+    t("30-Day Transformation Journey", "३० दिवसांचा रूपांतर प्रवास"),
+  ];
+
   return (
     <footer id="contact" data-testid="academy-footer" className="border-t border-[#0b5d3b] bg-[#18463b]">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <div className="flex items-center gap-3">
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f68a4a] font-heading text-xl font-black text-white">
-                R
-              </span>
-              <div className="leading-tight">
-                <p className="font-heading text-base font-extrabold uppercase tracking-[0.14em] text-white">
-                  Rupantaram
-                </p>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#f8b183]">
-                  Garud Zep Group
-                </p>
-              </div>
+              <img src="/assets/logo.webp" alt="Rupantaram" className="h-12 w-auto rounded-lg bg-white p-1" />
             </div>
             <p className="mt-5 text-sm leading-relaxed text-white/65">
-              A life skills & personality transformation academy. This is not teaching — this is
-              transformation.
+              {t(
+                "A life skills & personality transformation academy. This is not teaching — this is transformation.",
+                "जीवनकौशल्य व व्यक्तिमत्त्व परिवर्तन अकादमी. हे केवळ शिकवणे नाही — हे रूपांतर आहे."
+              )}
             </p>
             <p className="mt-4 font-heading text-sm font-bold uppercase tracking-[0.18em] text-[#f8b183]">
-              Chala Manus Ghadvu Ya
+              {t("Chala Manus Ghadvu Ya", "चला माणूस घडवू या")}
             </p>
             <div className="mt-5 flex gap-3">
               {SOCIALS.map((s) => (
@@ -94,35 +88,26 @@ export const AcademyFooter = () => {
 
           <div>
             <h3 className="font-heading text-sm font-bold uppercase tracking-[0.2em] text-[#f68a4a]">
-              Quick Links
+              {t("Quick Links", "महत्त्वाचे दुवे")}
             </h3>
             <ul className="mt-5 flex flex-col gap-3">
               {LINKS.map((l) => (
-                <li key={l.target}>
-                  <button
-                    data-testid={`academy-footer-link-${l.label.toLowerCase().replace(/[^a-z]+/g, "-")}`}
-                    onClick={() => scrollToId(l.target, -124)}
+                <li key={l.slug}>
+                  <Link
+                    to={l.href}
+                    data-testid={`academy-footer-link-${l.slug}`}
                     className="text-sm text-white/60 transition-colors duration-300 hover:text-[#f8b183]"
                   >
                     {l.label}
-                  </button>
+                  </Link>
                 </li>
               ))}
-              <li>
-                <Link
-                  to="/gallery"
-                  data-testid="academy-footer-gallery-link"
-                  className="text-sm font-semibold text-[#f8b183] transition-colors hover:text-white"
-                >
-                  Gallery →
-                </Link>
-              </li>
             </ul>
           </div>
 
           <div>
             <h3 className="font-heading text-sm font-bold uppercase tracking-[0.2em] text-[#f68a4a]">
-              Programs
+              {t("Programs", "कार्यक्रम")}
             </h3>
             <ul className="mt-5 flex flex-col gap-3">
               {PROGRAMS.map((p) => (
@@ -136,7 +121,7 @@ export const AcademyFooter = () => {
                   data-testid="academy-footer-youth-link"
                   className="text-sm font-semibold text-[#f8b183] transition-colors hover:text-white"
                 >
-                  Explore Youth Transform →
+                  {t("Explore Youth Transform →", "Youth Transform पहा →")}
                 </Link>
               </li>
             </ul>
@@ -144,12 +129,14 @@ export const AcademyFooter = () => {
 
           <div>
             <h3 className="font-heading text-sm font-bold uppercase tracking-[0.2em] text-[#f68a4a]">
-              Contact
+              {t("Contact", "संपर्क")}
             </h3>
             <ul className="mt-5 flex flex-col gap-4 text-sm text-white/60">
               <li className="flex items-start gap-3">
                 <MapPin size={16} className="mt-0.5 shrink-0 text-[#f68a4a]" />
-                <span data-testid="academy-footer-centers">Karjat · Alibag · Pen · Lonavala, Maharashtra</span>
+                <span data-testid="academy-footer-centers">
+                  {t("Karjat · Alibag · Pen · Lonavala, Maharashtra", "कर्जत · आलिबाग · पेन · लोणावळा, महाराष्ट्र")}
+                </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={16} className="shrink-0 text-[#f68a4a]" />
@@ -179,10 +166,10 @@ export const AcademyFooter = () => {
 
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
           <p className="text-xs text-white/45">
-            © 2026 Garud Zep – Rupantaram. All rights reserved.
+            {t("© 2026 Garud Zep – Rupantaram. All rights reserved.", "© २०२६ गरुड झेप – रूपांतरम्. सर्व हक्क राखीव.")}
           </p>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/45">
-            Not Teaching — Transformation
+            {t("Not Teaching — Transformation", "शिकवणे नाही — रूपांतर")}
           </p>
         </div>
       </div>

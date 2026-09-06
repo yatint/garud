@@ -14,7 +14,6 @@ export default function SuccessStories() {
   const [enquiryOpen, setEnquiryOpen] = useState(false);
 
   useEffect(() => {
-    document.title = "Success Stories | Rupantaram Life Skills Academy";
     document
       .querySelector('meta[name="description"]')
       ?.setAttribute(

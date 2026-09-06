@@ -1,14 +1,15 @@
 import { ArrowRight, MapPin, Quote, UserRound } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
+import { useLang } from "@/lib/lang";
 
 const ROWS = [
-  { before: "Low Confidence", after: "Speaks with Confidence" },
-  { before: "Poor Discipline", after: "Consistent Daily Habits" },
-  { before: "Communication Gap", after: "Stronger Family Bonding" },
-  { before: "No Clear Goals", after: "Purpose & Direction" },
-  { before: "Excessive Screen Time", after: "Better Time Management" },
-  { before: "Fear of Public Speaking", after: "Improved Communication" },
+  { enBefore: "Low Confidence", mrBefore: "कमी आत्मविश्वास", enAfter: "Speaks with Confidence", mrAfter: "आत्मविश्वासाने बोलते" },
+  { enBefore: "Poor Discipline", mrBefore: "शिस्तीचा अभाव", enAfter: "Consistent Daily Habits", mrAfter: "सातत्यपूर्ण दैनिक सवयी" },
+  { enBefore: "Communication Gap", mrBefore: "संवादाची तडजोड", enAfter: "Stronger Family Bonding", mrAfter: "दृढ कौटुंबिक बंध" },
+  { enBefore: "No Clear Goals", mrBefore: "स्पष्ट ध्येय नाही", enAfter: "Purpose & Direction", mrAfter: "ध्येय आणि दिशा" },
+  { enBefore: "Excessive Screen Time", mrBefore: "जास्त स्क्रीन वेळ", enAfter: "Better Time Management", mrAfter: "चांगले वेळ व्यवस्थापन" },
+  { enBefore: "Fear of Public Speaking", mrBefore: "मंचाभय", enAfter: "Improved Communication", mrAfter: "सुधारलेला संवाद" },
 ];
 
 const PARENTS = [
@@ -18,15 +19,19 @@ const PARENTS = [
 ];
 
 export const SuccessBeforeAfter = () => {
+  const { t } = useLang();
   return (
     <>
       <section data-testid="success-before-after-section" className="bg-[#fbfafa] py-20 lg:py-28">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             index="03"
-            eyebrow="Before & After"
-            title="The Transformation Framework"
-            description="This is the change our programs are designed to create — a framework, not a testimonial."
+            eyebrow={t("Before & After", "आधी आणि नंतर")}
+            title={t("The Transformation Framework", "परिवर्तनाची चौकट")}
+            description={t(
+              "This is the change our programs are designed to create — a framework, not a testimonial.",
+              "आमचे कार्यक्रम हा बदल घडवण्यासाठी तयार केले आहेत — ही चौकट आहे, अनुभवकथा नव्हे."
+            )}
             align="center"
           />
 
@@ -37,24 +42,24 @@ export const SuccessBeforeAfter = () => {
             >
               <div className="grid grid-cols-[1fr_auto_1fr] bg-[#18463b]">
                 <p className="px-5 py-4 text-center font-heading text-xs font-bold uppercase tracking-[0.18em] text-white/60 sm:text-sm">
-                  Before
+                  {t("Before", "आधी")}
                 </p>
                 <span className="w-10" />
                 <p className="px-5 py-4 text-center font-heading text-xs font-bold uppercase tracking-[0.18em] text-[#f8b183] sm:text-sm">
-                  After
+                  {t("After", "नंतर")}
                 </p>
               </div>
               {ROWS.map((r, i) => (
                 <div
-                  key={r.before}
+                  key={r.enBefore}
                   data-testid={`before-after-row-${i + 1}`}
                   className={`grid grid-cols-[1fr_auto_1fr] items-center border-t border-[#e1dfdf] ${i % 2 === 0 ? "bg-white" : "bg-[#fdfdfb]"}`}
                 >
-                  <p className="px-5 py-4 text-center text-sm font-medium text-[#999]">{r.before}</p>
+                  <p className="px-5 py-4 text-center text-sm font-medium text-[#999]">{t(r.enBefore, r.mrBefore)}</p>
                   <span className="flex h-8 w-10 items-center justify-center text-[#f68a4a]">
                     <ArrowRight size={18} />
                   </span>
-                  <p className="px-5 py-4 text-center text-sm font-bold text-[#18463b]">{r.after}</p>
+                  <p className="px-5 py-4 text-center text-sm font-bold text-[#18463b]">{t(r.enAfter, r.mrAfter)}</p>
                 </div>
               ))}
             </div>
@@ -66,8 +71,8 @@ export const SuccessBeforeAfter = () => {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             index="04"
-            eyebrow="Parent Experiences"
-            title="What Parents Share"
+            eyebrow={t("Parent Experiences", "पालकांचे अनुभव")}
+            title={t("What Parents Share", "पालक काय सांगतात")}
             align="center"
           />
           <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -88,12 +93,12 @@ export const SuccessBeforeAfter = () => {
                   </div>
                   <figcaption className="mt-6">
                     <p className="font-heading text-sm font-bold text-[#18463b]">
-                      Parent Name (Placeholder)
+                      {t("Parent Name (Placeholder)", "पालकांचे नाव (लवकरच)")}
                     </p>
                     <p className="mt-1 text-xs font-semibold text-[#999]">{p.program}</p>
                     <p className="mt-1 inline-flex items-center gap-1 text-xs text-[#bbb]">
                       <MapPin size={11} />
-                      Location (Placeholder)
+                      {t("Location (Placeholder)", "ठिकाण (लवकरच)")}
                     </p>
                   </figcaption>
                 </figure>

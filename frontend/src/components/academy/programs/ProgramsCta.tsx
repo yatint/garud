@@ -1,11 +1,13 @@
 import { ArrowRight, Phone } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import { useLang } from "@/lib/lang";
 
 interface ProgramsCtaProps {
   onEnquire: () => void;
 }
 
 export const ProgramsCta = ({ onEnquire }: ProgramsCtaProps) => {
+  const { t } = useLang();
   return (
     <section
       data-testid="programs-final-cta"
@@ -20,12 +22,15 @@ export const ProgramsCta = ({ onEnquire }: ProgramsCtaProps) => {
       <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6">
         <Reveal>
           <h2 className="font-heading text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Start Your <span className="text-brand-gradient">Transformation</span> Today
+            {t("Start Your", "आजच तुमच्या")}{" "}
+            <span className="text-brand-gradient">{t("Transformation", "परिवर्तनाची")}</span>{" "}
+            {t("Today", "सुरुवात करा")}
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/75 sm:text-lg">
-            Whether you're a student seeking confidence, a young adult searching for direction, or
-            a parent building a stronger family, Rupantaram has a program designed for your
-            journey.
+            {t(
+              "Whether you're a student seeking confidence, a young adult searching for direction, or a parent building a stronger family, Rupantaram has a program designed for your journey.",
+              "तुम्ही आत्मविश्वास शोधणारे विद्यार्थी असाल, दिशा शोधणारे तरुण असाल किंवा बलवत कुटुंब घडवणारे पालक असाल — रूपांतरम्मध्ये तुमच्या प्रवासासाठी कार्यक्रम आहे."
+            )}
           </p>
         </Reveal>
 
@@ -36,7 +41,7 @@ export const ProgramsCta = ({ onEnquire }: ProgramsCtaProps) => {
               onClick={onEnquire}
               className="group inline-flex items-center gap-2 rounded-full border border-[#f68a4a] bg-[#f68a4a] px-9 py-4 text-sm font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:-translate-y-[3px] hover:border-white hover:bg-white hover:text-[#18463b] active:scale-95"
             >
-              Enroll Now
+              {t("Enroll Now", "आत्ताच प्रवेश घ्या")}
               <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
             </button>
             <a
@@ -45,7 +50,7 @@ export const ProgramsCta = ({ onEnquire }: ProgramsCtaProps) => {
               className="inline-flex items-center gap-2 rounded-full border border-white/30 px-9 py-4 text-sm font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:-translate-y-[3px] hover:border-[#f68a4a] hover:text-[#f8b183] active:scale-95"
             >
               <Phone size={16} />
-              Talk to Our Team
+              {t("Talk to Our Team", "आमच्या टीमशी बोला")}
             </a>
           </div>
         </Reveal>

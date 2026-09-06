@@ -1,17 +1,11 @@
 import type { ReactNode } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ArrowRight, Download, GraduationCap, Users } from "lucide-react";
+import { useLang } from "@/lib/lang";
 import { scrollToId } from "@/lib/scroll";
 
 const HERO_IMG =
   "https://images.unsplash.com/photo-1774205884995-fb3561261518?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=1200";
-
-const STATS = [
-  { value: "3", label: "Intensive Days" },
-  { value: "13–18", label: "Age Group" },
-  { value: "8", label: "Life Outcomes" },
-  { value: "100%", label: "Activity-Based" },
-];
 
 const MaskedLine = ({
   children,
@@ -42,6 +36,15 @@ interface HeroSectionProps {
 }
 
 export const HeroSection = ({ started, onEnroll }: HeroSectionProps) => {
+  const { t } = useLang();
+
+  const STATS = [
+    { value: "3", label: t("Intensive Days", "घट्ट दिवस") },
+    { value: "13–18", label: t("Age Group", "वयोगट") },
+    { value: "8", label: t("Life Outcomes", "जीवनपरिणाम") },
+    { value: "100%", label: t("Activity-Based", "उपक्रम-आधारित") },
+  ];
+
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
   const rotateX = useSpring(useTransform(my, [-0.5, 0.5], [5, -5]), { stiffness: 120, damping: 18 });
@@ -76,23 +79,25 @@ export const HeroSection = ({ started, onEnroll }: HeroSectionProps) => {
           >
             <span className="h-2 w-2 rounded-full bg-[#f68a4a] animate-gold-pulse" />
             <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#e0701f]">
-              3-Day Flagship Program · Ages 13–18
+              {t("3-Day Flagship Program · Ages 13–18", "३ दिवसांचा प्रमुख कार्यक्रम · १३–१८ वर्षे")}
             </span>
           </motion.div>
 
           <p className="mb-4 font-heading text-sm font-bold uppercase tracking-[0.3em] text-[#7a7a7a]">
-            Rupantaram Presents
+            {t("Rupantaram Presents", "रूपांतरम् सादर करते")}
           </p>
 
           <h1 className="font-heading text-5xl font-black leading-[0.98] tracking-tight text-[#18463b] sm:text-6xl lg:text-7xl">
             <MaskedLine started={started} delay={0.25}>
-              Discover <span className="text-brand-gradient">Yourself.</span>
+              {t("Discover", "स्वतःला")}{" "}
+              <span className="text-brand-gradient">{t("Yourself.", "ओळखा.")}</span>
             </MaskedLine>
             <MaskedLine started={started} delay={0.38}>
-              Build Confidence.
+              {t("Build Confidence.", "आत्मविश्वास वाढवा.")}
             </MaskedLine>
             <MaskedLine started={started} delay={0.51}>
-              Create Your <span className="text-brand-gradient">Future.</span>
+              {t("Create Your", "तुमचे")}{" "}
+              <span className="text-brand-gradient">{t("Future.", "भविष्य घडवा.")}</span>
             </MaskedLine>
           </h1>
 
@@ -103,10 +108,11 @@ export const HeroSection = ({ started, onEnroll }: HeroSectionProps) => {
             className="mt-7 max-w-xl text-base leading-relaxed text-[#555] sm:text-lg"
             data-testid="hero-subtitle"
           >
-            <span className="font-heading font-bold text-[#18463b]">Youth Transform</span> — a
-            3-day life skills & personality development program that turns teenagers into
-            confident, disciplined, purpose-driven young leaders. No lectures. Pure experiential
-            learning.
+            <span className="font-heading font-bold text-[#18463b]">Youth Transform</span>{" "}
+            {t(
+              "— a 3-day life skills & personality development program that turns teenagers into confident, disciplined, purpose-driven young leaders. No lectures. Pure experiential learning.",
+              "— किशोरवयीन मुलांना आत्मविश्वासू, शिस्तबद्ध आणि ध्येयनिष्ठ तरुण बनवणारा ३ दिवसांचा जीवनकौशल्य व व्यक्तिमत्त्व विकास कार्यक्रम. उपदेश नाहीत. शंभर टक्के अनुभवातून शिकणे."
+            )}
           </motion.p>
 
           <motion.div
@@ -120,7 +126,7 @@ export const HeroSection = ({ started, onEnroll }: HeroSectionProps) => {
               onClick={onEnroll}
               className="group inline-flex items-center gap-2 rounded-full border border-[#f68a4a] bg-[#f68a4a] px-8 py-4 text-sm font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:-translate-y-[3px] hover:border-[#18463b] hover:bg-[#18463b] hover:shadow-[0_5px_20px_rgba(0,0,0,0.2)] active:scale-95"
             >
-              Enroll Now
+              {t("Enroll Now", "नोंदणी करा")}
               <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
             </button>
             <button
@@ -129,7 +135,7 @@ export const HeroSection = ({ started, onEnroll }: HeroSectionProps) => {
               className="inline-flex items-center gap-2 rounded-full border border-[#18463b]/25 px-8 py-4 text-sm font-bold uppercase tracking-[0.14em] text-[#18463b] transition-all duration-300 hover:-translate-y-[3px] hover:border-[#f68a4a] hover:text-[#f68a4a] active:scale-95"
             >
               <Download size={16} />
-              Download Brochure
+              {t("Download Brochure", "ब्रोशर डाउनलोड करा")}
             </button>
           </motion.div>
 
@@ -164,7 +170,7 @@ export const HeroSection = ({ started, onEnroll }: HeroSectionProps) => {
             <div className="relative overflow-hidden rounded-2xl border border-[#e1dfdf] shadow-[0_30px_70px_rgba(24,70,59,0.18)]">
               <img
                 src={HERO_IMG}
-                alt="Confident students of the Youth Transform program"
+                alt={t("Confident students of the Youth Transform program", "Youth Transform कार्यक्रमातील आत्मविश्वासू विद्यार्थी")}
                 className="aspect-[4/5] w-full object-cover"
               />
               <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgba(24,70,59,0.55)_100%)]" />
@@ -179,8 +185,12 @@ export const HeroSection = ({ started, onEnroll }: HeroSectionProps) => {
                 <GraduationCap size={20} />
               </span>
               <span>
-                <span className="block font-heading text-sm font-bold text-[#18463b]">Day 3 Finale</span>
-                <span className="block text-xs text-[#7a7a7a]">Graduation & Certificate</span>
+                <span className="block font-heading text-sm font-bold text-[#18463b]">
+                  {t("Day 3 Finale", "तिसरा दिवस — समारंभ")}
+                </span>
+                <span className="block text-xs text-[#7a7a7a]">
+                  {t("Graduation & Certificate", "पदवी व प्रमाणपत्र")}
+                </span>
               </span>
             </motion.div>
 
@@ -193,8 +203,12 @@ export const HeroSection = ({ started, onEnroll }: HeroSectionProps) => {
                 <Users size={20} />
               </span>
               <span>
-                <span className="block font-heading text-sm font-bold text-[#18463b]">Small Batches</span>
-                <span className="block text-xs text-[#7a7a7a]">Personal Mentoring</span>
+                <span className="block font-heading text-sm font-bold text-[#18463b]">
+                  {t("Small Batches", "छोट्या बॅच")}
+                </span>
+                <span className="block text-xs text-[#7a7a7a]">
+                  {t("Personal Mentoring", "वैयक्तिक मार्गदर्शन")}
+                </span>
               </span>
             </motion.div>
           </motion.div>

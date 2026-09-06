@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Download } from "lucide-react";
+import { useLang } from "@/lib/lang";
 import { scrollToId } from "@/lib/scroll";
 
 const HERO_IMG =
@@ -10,12 +11,13 @@ interface ThirtyHeroProps {
 }
 
 export const ThirtyHero = ({ onEnroll }: ThirtyHeroProps) => {
+  const { t } = useLang();
   return (
     <section id="top" data-testid="thirty-hero" className="relative">
       <div className="relative flex min-h-[72vh] items-center justify-center overflow-hidden [border-radius:0_0_50%_50%/0_0_72px_72px]">
         <img
           src={HERO_IMG}
-          alt="Students and mentors on a hill at sunrise"
+          alt={t("Students and mentors on a hill at sunrise", "सूर्योदयाच्या वेळी डोंगरावरील विद्यार्थी आणि मार्गदर्शक")}
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(24,70,59,0.55)_0%,rgba(24,70,59,0.7)_60%,rgba(24,70,59,0.85)_100%)]" />
@@ -30,7 +32,7 @@ export const ThirtyHero = ({ onEnroll }: ThirtyHeroProps) => {
           >
             <span className="h-2 w-2 rounded-full bg-[#f68a4a] animate-gold-pulse" />
             <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-white">
-              Flagship · 30 Days · Students, Youth & Families
+              {t("Flagship · 30 Days · Students, Youth & Families", "प्रमुख · ३० दिवस · विद्यार्थी, तरुण आणि कुटुंबे")}
             </span>
           </motion.div>
 
@@ -51,8 +53,10 @@ export const ThirtyHero = ({ onEnroll }: ThirtyHeroProps) => {
             className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/85 sm:text-lg"
             data-testid="thirty-hero-subtitle"
           >
-            A structured 30-day journey to build discipline, confidence, leadership, emotional
-            balance, and lifelong positive habits through daily guided transformation.
+            {t(
+              "A structured 30-day journey to build discipline, confidence, leadership, emotional balance, and lifelong positive habits through daily guided transformation.",
+              "दैनिक मार्गदर्शित परिवर्तनाद्वारे शिस्त, आत्मविश्वास, नेतृत्व, भावनिक संतुलन आणि आजीवन सकारात्मक सवयी घडवण्याचा संरचित ३०-दिवसांचा प्रवास."
+            )}
           </motion.p>
 
           <motion.div
@@ -66,7 +70,7 @@ export const ThirtyHero = ({ onEnroll }: ThirtyHeroProps) => {
               onClick={onEnroll}
               className="group inline-flex items-center gap-2 rounded-full border border-[#f68a4a] bg-[#f68a4a] px-8 py-4 font-heading text-sm font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:-translate-y-[3px] hover:border-white hover:bg-white hover:text-[#18463b] active:scale-95"
             >
-              Join the Next Batch
+              {t("Join the Next Batch", "पुढील तुकडीत सहभागी व्हा")}
               <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
             </button>
             <button
@@ -75,7 +79,7 @@ export const ThirtyHero = ({ onEnroll }: ThirtyHeroProps) => {
               className="inline-flex items-center gap-2 rounded-full border border-white/35 px-8 py-4 font-heading text-sm font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:-translate-y-[3px] hover:border-[#f68a4a] hover:text-[#f8b183] active:scale-95"
             >
               <Download size={16} />
-              Download Brochure
+              {t("Download Brochure", "माहितीपत्रक डाउनलोड करा")}
             </button>
           </motion.div>
         </div>

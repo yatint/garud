@@ -1,24 +1,26 @@
 import { Check, X } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
+import { useLang } from "@/lib/lang";
 
 const ROWS = [
-  { ordinary: "Focus on marks", rupantaram: "Focus on life skills & personality" },
-  { ordinary: "One-way teaching", rupantaram: "Interactive workshops & activities" },
-  { ordinary: "Limited communication training", rupantaram: "Public speaking & confidence building" },
-  { ordinary: "No parent involvement", rupantaram: "Dedicated Parenting 360° program" },
-  { ordinary: "Academic pressure", rupantaram: "Emotional balance & mental resilience" },
-  { ordinary: "Theory based", rupantaram: "Practical implementation in daily life" },
+  { enOrdinary: "Focus on marks", mrOrdinary: "गुणांवर भर", enRupantaram: "Focus on life skills & personality", mrRupantaram: "जीवनकौशल्ये आणि व्यक्तिमत्त्वावर भर" },
+  { enOrdinary: "One-way teaching", mrOrdinary: "एकमुखी शिकवण", enRupantaram: "Interactive workshops & activities", mrRupantaram: "परस्पर संवादी कार्यशाळा आणि उपक्रम" },
+  { enOrdinary: "Limited communication training", mrOrdinary: "मर्यादित संवाद प्रशिक्षण", enRupantaram: "Public speaking & confidence building", mrRupantaram: "सार्वजनिक भाषण आणि आत्मविश्वास वाढ" },
+  { enOrdinary: "No parent involvement", mrOrdinary: "पालकांचा सहभाग नाही", enRupantaram: "Dedicated Parenting 360° program", mrRupantaram: "स्वतंत्र पालकत्व 360° कार्यक्रम" },
+  { enOrdinary: "Academic pressure", mrOrdinary: "अभ्यासाचा ताण", enRupantaram: "Emotional balance & mental resilience", mrRupantaram: "भावनिक संतुलन आणि मानसिक लवचिकता" },
+  { enOrdinary: "Theory based", mrOrdinary: "सैद्धांतिक आधारित", enRupantaram: "Practical implementation in daily life", mrRupantaram: "दैनंदिन आयुष्यात प्रत्यक्ष अंमलबजावणी" },
 ];
 
 export const Comparison = () => {
+  const { t } = useLang();
   return (
     <section data-testid="why-comparison-section" className="bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           index="02"
-          eyebrow="The Rupantaram Difference"
-          title="Not a Coaching Class. A Transformation Academy."
+          eyebrow={t("The Rupantaram Difference", "रूपांतरम् चा फरक")}
+          title={t("Not a Coaching Class. A Transformation Academy.", "कोचिंग क्लास नव्हे. परिवर्तन अकादमी.")}
           align="center"
         />
 
@@ -30,19 +32,19 @@ export const Comparison = () => {
             <div className="grid grid-cols-2">
               <div className="bg-[#fbfafa] px-6 py-5 text-center">
                 <p className="font-heading text-sm font-bold uppercase tracking-[0.18em] text-[#999]">
-                  Ordinary Coaching
+                  {t("Ordinary Coaching", "सामान्य कोचिंग")}
                 </p>
               </div>
               <div className="bg-[#18463b] px-6 py-5 text-center">
                 <p className="font-heading text-sm font-bold uppercase tracking-[0.18em] text-[#f8b183]">
-                  Rupantaram
+                  {t("Rupantaram", "रूपांतरम्")}
                 </p>
               </div>
             </div>
 
             {ROWS.map((r, i) => (
               <div
-                key={r.ordinary}
+                key={r.enOrdinary}
                 data-testid={`comparison-row-${i + 1}`}
                 className={`grid grid-cols-2 ${i % 2 === 0 ? "" : "bg-[#fdfdfb]"}`}
               >
@@ -50,13 +52,13 @@ export const Comparison = () => {
                   <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#f1f1ef] text-[#aaa]">
                     <X size={14} strokeWidth={3} />
                   </span>
-                  <p className="text-sm font-medium text-[#7a7a7a] sm:text-base">{r.ordinary}</p>
+                  <p className="text-sm font-medium text-[#7a7a7a] sm:text-base">{t(r.enOrdinary, r.mrOrdinary)}</p>
                 </div>
                 <div className="flex items-center gap-3 border-l border-t border-[#0b5d3b] bg-[#18463b] px-5 py-5 sm:px-7">
                   <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#f68a4a] text-white">
                     <Check size={14} strokeWidth={3} />
                   </span>
-                  <p className="text-sm font-semibold text-white sm:text-base">{r.rupantaram}</p>
+                  <p className="text-sm font-semibold text-white sm:text-base">{t(r.enRupantaram, r.mrRupantaram)}</p>
                 </div>
               </div>
             ))}

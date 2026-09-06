@@ -1,11 +1,13 @@
 import { ArrowRight, Phone } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import { useLang } from "@/lib/lang";
 
 interface YoungCtaProps {
   onEnroll: () => void;
 }
 
 export const YoungCta = ({ onEnroll }: YoungCtaProps) => {
+  const { t } = useLang();
   return (
     <section
       data-testid="young-final-cta"
@@ -20,11 +22,15 @@ export const YoungCta = ({ onEnroll }: YoungCtaProps) => {
       <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6">
         <Reveal>
           <h2 className="font-heading text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Your Future Begins with the <span className="text-brand-gradient">Right Direction</span>
+            {t("Your Future Begins with the", "तुमच्या भविष्याची सुरुवात")}{" "}
+            <span className="text-brand-gradient">{t("Right Direction", "योग्य दिशेने")}</span>{" "}
+            {t("", "होते")}
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/75 sm:text-lg">
-            Take the next step toward becoming a confident, disciplined, and purpose-driven
-            individual through Young Adult Transform.
+            {t(
+              "Take the next step toward becoming a confident, disciplined, and purpose-driven individual through Young Adult Transform.",
+              "Young Adult Transform द्वारे आत्मविश्वासू, शिस्तबद्ध आणि ध्येयपूर्ण व्यक्ती बनण्याकडे पुढचे पाऊल टाका."
+            )}
           </p>
         </Reveal>
 
@@ -35,7 +41,7 @@ export const YoungCta = ({ onEnroll }: YoungCtaProps) => {
               onClick={onEnroll}
               className="group inline-flex items-center gap-2 rounded-full border border-[#f68a4a] bg-[#f68a4a] px-9 py-4 text-sm font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:-translate-y-[3px] hover:border-white hover:bg-white hover:text-[#18463b] active:scale-95"
             >
-              Join the Next Batch
+              {t("Join the Next Batch", "पुढील तुकडीत सहभागी व्हा")}
               <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
             </button>
             <a
@@ -44,7 +50,7 @@ export const YoungCta = ({ onEnroll }: YoungCtaProps) => {
               className="inline-flex items-center gap-2 rounded-full border border-white/30 px-9 py-4 text-sm font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:-translate-y-[3px] hover:border-[#f68a4a] hover:text-[#f8b183] active:scale-95"
             >
               <Phone size={16} />
-              Contact Our Team
+              {t("Contact Our Team", "आमच्या टीमशी संपर्क करा")}
             </a>
           </div>
         </Reveal>

@@ -18,38 +18,40 @@ import {
 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
+import { useLang } from "@/lib/lang";
 
-const DAILY: Array<{ icon: LucideIcon; title: string; slug: string }> = [
-  { icon: ClipboardCheck, title: "Habit Tracking", slug: "habit-tracking" },
-  { icon: NotebookPen, title: "Reflection Journal", slug: "journal" },
-  { icon: BookOpen, title: "Reading", slug: "reading" },
-  { icon: Flower2, title: "Meditation & Mindfulness", slug: "meditation" },
-  { icon: Dumbbell, title: "Physical Activity", slug: "physical" },
-  { icon: Home, title: "Family Communication", slug: "family" },
-  { icon: Target, title: "Goal Review", slug: "goal-review" },
-  { icon: Heart, title: "Gratitude Practice", slug: "gratitude" },
+const DAILY: Array<{ icon: LucideIcon; enTitle: string; mrTitle: string; slug: string }> = [
+  { icon: ClipboardCheck, enTitle: "Habit Tracking", mrTitle: "सवयींचा मागोवा", slug: "habit-tracking" },
+  { icon: NotebookPen, enTitle: "Reflection Journal", mrTitle: "आत्मपरिक्षण वही", slug: "journal" },
+  { icon: BookOpen, enTitle: "Reading", mrTitle: "वाचन", slug: "reading" },
+  { icon: Flower2, enTitle: "Meditation & Mindfulness", mrTitle: "ध्यान आणि माइंडफुलनेस", slug: "meditation" },
+  { icon: Dumbbell, enTitle: "Physical Activity", mrTitle: "शारीरिक व्यायाम", slug: "physical" },
+  { icon: Home, enTitle: "Family Communication", mrTitle: "कौटुंबिक संवाद", slug: "family" },
+  { icon: Target, enTitle: "Goal Review", mrTitle: "ध्येय आढावा", slug: "goal-review" },
+  { icon: Heart, enTitle: "Gratitude Practice", mrTitle: "कृतज्ञता साधना", slug: "gratitude" },
 ];
 
-const CORE: Array<{ icon: LucideIcon; title: string; text: string; slug: string }> = [
-  { icon: Hourglass, title: "Self Discipline", text: "Routine over mood, every single day.", slug: "discipline" },
-  { icon: Target, title: "Goal Setting", text: "Clear targets with daily review.", slug: "goals" },
-  { icon: Crown, title: "Leadership", text: "Take charge of yourself and others.", slug: "leadership" },
-  { icon: Mic, title: "Communication", text: "Speak and listen with confidence.", slug: "communication" },
-  { icon: HeartHandshake, title: "Emotional Intelligence", text: "Understand and manage emotions.", slug: "emotional" },
-  { icon: Sun, title: "Positive Thinking", text: "Train a resilient, hopeful mind.", slug: "positive" },
-  { icon: Timer, title: "Time Management", text: "A place for everything in your day.", slug: "time" },
-  { icon: ShieldCheck, title: "Character & Values", text: "Integrity that outlasts the program.", slug: "character" },
+const CORE: Array<{ icon: LucideIcon; enTitle: string; mrTitle: string; enText: string; mrText: string; slug: string }> = [
+  { icon: Hourglass, enTitle: "Self Discipline", mrTitle: "आत्मशिस्त", enText: "Routine over mood, every single day.", mrText: "रोज, मूडपेक्षा दिनक्रम महत्त्वाचा.", slug: "discipline" },
+  { icon: Target, enTitle: "Goal Setting", mrTitle: "ध्येय निश्चिती", enText: "Clear targets with daily review.", mrText: "दैनिक आढाव्यासह स्पष्ट लक्ष्ये.", slug: "goals" },
+  { icon: Crown, enTitle: "Leadership", mrTitle: "नेतृत्व", enText: "Take charge of yourself and others.", mrText: "स्वतःची आणि इतरांची जबाबदारी घ्या.", slug: "leadership" },
+  { icon: Mic, enTitle: "Communication", mrTitle: "संवाद", enText: "Speak and listen with confidence.", mrText: "आत्मविश्वासाने बोला आणि ऐका.", slug: "communication" },
+  { icon: HeartHandshake, enTitle: "Emotional Intelligence", mrTitle: "भावनिक बुद्धिमत्ता", enText: "Understand and manage emotions.", mrText: "भावना समजून घ्या आणि सांभाळा.", slug: "emotional" },
+  { icon: Sun, enTitle: "Positive Thinking", mrTitle: "सकारात्मक विचार", enText: "Train a resilient, hopeful mind.", mrText: "लवचिक, आशावादी मन घडवा.", slug: "positive" },
+  { icon: Timer, enTitle: "Time Management", mrTitle: "वेळ व्यवस्थापन", enText: "A place for everything in your day.", mrText: "तुमच्या दिवसातील प्रत्येक गोष्टीला ठिकाण.", slug: "time" },
+  { icon: ShieldCheck, enTitle: "Character & Values", mrTitle: "चारित्र्य आणि मूल्ये", enText: "Integrity that outlasts the program.", mrText: "कार्यक्रमापलीकडे टिकणारे प्रामाणिकपणा.", slug: "character" },
 ];
 
 export const ThirtyDailyCore = () => {
+  const { t } = useLang();
   return (
     <>
       <section data-testid="thirty-daily-section" className="bg-[#fbfafa] py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             index="04"
-            eyebrow="What You'll Practice Daily"
-            title="Your Daily Transformation Toolkit"
+            eyebrow={t("What You'll Practice Daily", "रोज काय साधना कराल")}
+            title={t("Your Daily Transformation Toolkit", "तुमचा दैनिक परिवर्तन संच")}
             align="center"
           />
           <div className="mt-14 grid grid-cols-2 gap-5 md:grid-cols-4">
@@ -63,7 +65,7 @@ export const ThirtyDailyCore = () => {
                     <d.icon size={22} />
                   </span>
                   <h3 className="mt-4 font-heading text-sm font-bold text-[#18463b] sm:text-base">
-                    {d.title}
+                    {t(d.enTitle, d.mrTitle)}
                   </h3>
                 </div>
               </Reveal>
@@ -76,8 +78,8 @@ export const ThirtyDailyCore = () => {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             index="05"
-            eyebrow="Core Areas of Transformation"
-            title="Eight Areas That Change Together"
+            eyebrow={t("Core Areas of Transformation", "परिवर्तनाचे मुख्य घटक")}
+            title={t("Eight Areas That Change Together", "एकत्र बदलणारे आठ घटक")}
             align="center"
           />
           <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -90,8 +92,8 @@ export const ThirtyDailyCore = () => {
                   <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f6f7f0] text-[#18463b] transition-all duration-300 group-hover:bg-[#f68a4a] group-hover:text-white">
                     <c.icon size={20} />
                   </span>
-                  <h3 className="mt-4 font-heading text-base font-bold text-[#18463b]">{c.title}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-[#555]">{c.text}</p>
+                  <h3 className="mt-4 font-heading text-base font-bold text-[#18463b]">{t(c.enTitle, c.mrTitle)}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-[#555]">{t(c.enText, c.mrText)}</p>
                 </div>
               </Reveal>
             ))}

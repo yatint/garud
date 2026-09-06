@@ -18,7 +18,6 @@ export default function YoungAdultTransform() {
   const [enquiryOpen, setEnquiryOpen] = useState(false);
 
   useEffect(() => {
-    document.title = "Young Adult Transform | Rupantaram Life Skills Academy";
     document
       .querySelector('meta[name="description"]')
       ?.setAttribute(

@@ -15,7 +15,6 @@ export default function ThirtyDayTransform() {
   const [enquiryOpen, setEnquiryOpen] = useState(false);
 
   useEffect(() => {
-    document.title = "30-Day Transform | Rupantaram Life Skills Academy";
     document
       .querySelector('meta[name="description"]')
       ?.setAttribute(

@@ -9,31 +9,35 @@ import {
 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
+import { useLang } from "@/lib/lang";
 
 interface Item {
   icon: LucideIcon;
-  title: string;
-  text: string;
+  enTitle: string;
+  mrTitle: string;
+  enText: string;
+  mrText: string;
   slug: string;
 }
 
 const ITEMS: Item[] = [
-  { icon: Gamepad2, title: "Interactive Games", text: "Every lesson begins as a game.", slug: "games" },
-  { icon: Palette, title: "Creative Activities", text: "Art, craft, and imagination at work.", slug: "creative" },
-  { icon: MessagesSquare, title: "Group Discussions", text: "Every child gets heard.", slug: "discussions" },
-  { icon: Flower2, title: "Yoga & Meditation", text: "Calm minds and healthy bodies.", slug: "yoga" },
-  { icon: BookOpen, title: "Story-Based Learning", text: "Values taught through stories.", slug: "stories" },
-  { icon: GraduationCap, title: "Mentor Guidance", text: "Caring mentors for every child.", slug: "mentors" },
+  { icon: Gamepad2, enTitle: "Interactive Games", mrTitle: "परस्पर खेळ", enText: "Every lesson begins as a game.", mrText: "प्रत्येक धडा खेळापासून सुरू होतो.", slug: "games" },
+  { icon: Palette, enTitle: "Creative Activities", mrTitle: "सर्जनशील उपक्रम", enText: "Art, craft, and imagination at work.", mrText: "कला, हस्तकला आणि कल्पनाशक्ती कामाला.", slug: "creative" },
+  { icon: MessagesSquare, enTitle: "Group Discussions", mrTitle: "समूह चर्चा", enText: "Every child gets heard.", mrText: "प्रत्येक मूल ऐकले जाते.", slug: "discussions" },
+  { icon: Flower2, enTitle: "Yoga & Meditation", mrTitle: "योग आणि ध्यान", enText: "Calm minds and healthy bodies.", mrText: "शांत मन आणि निरोगी शरीर.", slug: "yoga" },
+  { icon: BookOpen, enTitle: "Story-Based Learning", mrTitle: "कथांद्वारे शिक्षण", enText: "Values taught through stories.", mrText: "कथांमधून मूल्यांचा संस्कार.", slug: "stories" },
+  { icon: GraduationCap, enTitle: "Mentor Guidance", mrTitle: "मार्गदर्शकांचे सहकार्य", enText: "Caring mentors for every child.", mrText: "प्रत्येक मुलासाठी काळजीवाहू मार्गदर्शक.", slug: "mentors" },
 ];
 
 export const KidsMethod = () => {
+  const { t } = useLang();
   return (
     <section data-testid="kids-method-section" className="bg-[#fbfafa] py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           index="04"
-          eyebrow="Our Learning Method"
-          title="Designed for How Children Actually Learn"
+          eyebrow={t("Our Learning Method", "आमची शिक्षण पद्धत")}
+          title={t("Designed for How Children Actually Learn", "मुले खरोखर जसे शिकतात तसे रचलेले")}
           align="center"
         />
 
@@ -47,8 +51,8 @@ export const KidsMethod = () => {
                 <span className="flex h-13 w-13 items-center justify-center rounded-full border border-[#18463b]/20 bg-[#fbfafa] p-3.5 text-[#18463b] transition-all duration-300 group-hover:border-[#f68a4a] group-hover:bg-[#f68a4a] group-hover:text-white">
                   <it.icon size={22} />
                 </span>
-                <h3 className="mt-4 font-heading text-sm font-bold text-[#18463b]">{it.title}</h3>
-                <p className="mt-2 text-xs leading-relaxed text-[#7a7a7a]">{it.text}</p>
+                <h3 className="mt-4 font-heading text-sm font-bold text-[#18463b]">{t(it.enTitle, it.mrTitle)}</h3>
+                <p className="mt-2 text-xs leading-relaxed text-[#7a7a7a]">{t(it.enText, it.mrText)}</p>
               </div>
             </Reveal>
           ))}

@@ -2,16 +2,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeft, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { LangToggle } from "@/components/LangToggle";
+import { useLang } from "@/lib/lang";
 import { scrollToId } from "@/lib/scroll";
-
-const LINKS = [
-  { label: "About", target: "#program" },
-  { label: "Outcomes", target: "#outcomes" },
-  { label: "3-Day Journey", target: "#journey" },
-  { label: "Method", target: "#method" },
-  { label: "Benefits", target: "#benefits" },
-  { label: "FAQs", target: "#faq" },
-];
 
 interface NavbarProps {
   onEnroll: () => void;
@@ -20,6 +13,16 @@ interface NavbarProps {
 export const Navbar = ({ onEnroll }: NavbarProps) => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { t } = useLang();
+
+  const LINKS = [
+    { label: t("About", "कार्यक्रमाविषयी"), target: "#program", slug: "about" },
+    { label: t("Outcomes", "परिणाम"), target: "#outcomes", slug: "outcomes" },
+    { label: t("3-Day Journey", "३ दिवसांचा प्रवास"), target: "#journey", slug: "3-day-journey" },
+    { label: t("Method", "पद्धत"), target: "#method", slug: "method" },
+    { label: t("Benefits", "फायदे"), target: "#benefits", slug: "benefits" },
+    { label: t("FAQs", "प्रश्न"), target: "#faq", slug: "faqs" },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -56,24 +59,24 @@ export const Navbar = ({ onEnroll }: NavbarProps) => {
               Youth Transform
             </span>
             <span className="block text-[10px] font-semibold uppercase tracking-[0.22em] text-[#f68a4a]">
-              Rupantaram Academy
+              {t("Rupantaram Academy", "रूपांतरम् अकादमी")}
             </span>
           </span>
         </button>
 
-        <nav className="hidden items-center gap-7 lg:flex" data-testid="nav-links">
+        <nav className="hidden items-center gap-6 lg:flex" data-testid="nav-links">
           <Link
             to="/"
             data-testid="nav-link-home"
             className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#f68a4a] transition-colors duration-300 hover:text-[#18463b]"
           >
             <ArrowLeft size={14} />
-            Academy Home
+            {t("Academy Home", "मुख्यपृष्ठ")}
           </Link>
           {LINKS.map((l) => (
             <button
               key={l.target}
-              data-testid={`nav-link-${l.label.toLowerCase().replace(/[^a-z]+/g, "-")}`}
+              data-testid={`nav-link-${l.slug}`}
               onClick={() => go(l.target)}
               className="text-sm font-semibold text-[#555] transition-colors duration-300 hover:text-[#18463b]"
             >
@@ -83,30 +86,34 @@ export const Navbar = ({ onEnroll }: NavbarProps) => {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
+          <LangToggle />
           <button
             data-testid="nav-brochure-button"
             onClick={() => go("#program")}
             className="rounded-full border border-[#18463b]/40 px-5 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-[#18463b] transition-all duration-300 hover:border-[#18463b] hover:bg-[#18463b]/5"
           >
-            Brochure
+            {t("Brochure", "ब्रोशर")}
           </button>
           <button
             data-testid="nav-enroll-button"
             onClick={onEnroll}
             className="rounded-full border border-[#f68a4a] bg-[#f68a4a] px-6 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:-translate-y-[2px] hover:border-[#18463b] hover:bg-[#18463b] active:scale-95"
           >
-            Enroll Now
+            {t("Enroll Now", "नोंदणी करा")}
           </button>
         </div>
 
-        <button
-          data-testid="mobile-menu-button"
-          onClick={() => setOpen((v) => !v)}
-          className="flex h-10 w-10 items-center justify-center rounded-lg border border-[#e1dfdf] text-[#18463b] lg:hidden"
-          aria-label="Toggle menu"
-        >
-          {open ? <X size={20} /> : <Menu size={20} />}
-        </button>
+        <div className="flex items-center gap-2 lg:hidden">
+          <LangToggle />
+          <button
+            data-testid="mobile-menu-button"
+            onClick={() => setOpen((v) => !v)}
+            className="flex h-10 w-10 items-center justify-center rounded-lg border border-[#e1dfdf] text-[#18463b]"
+            aria-label="Toggle menu"
+          >
+            {open ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
       </div>
 
       <AnimatePresence>
@@ -120,10 +127,17 @@ export const Navbar = ({ onEnroll }: NavbarProps) => {
             className="overflow-hidden border-b border-[#e1dfdf] bg-white/95 backdrop-blur-xl lg:hidden"
           >
             <div className="flex flex-col gap-1 px-6 py-4">
+              <Link
+                to="/"
+                data-testid="mobile-nav-link-home"
+                className="rounded-lg px-3 py-3 text-left text-sm font-semibold text-[#f68a4a]"
+              >
+                ← {t("Academy Home", "मुख्यपृष्ठ")}
+              </Link>
               {LINKS.map((l) => (
                 <button
                   key={l.target}
-                  data-testid={`mobile-nav-link-${l.label.toLowerCase().replace(/[^a-z]+/g, "-")}`}
+                  data-testid={`mobile-nav-link-${l.slug}`}
                   onClick={() => go(l.target)}
                   className="rounded-lg px-3 py-3 text-left text-sm font-semibold text-[#444] transition-colors hover:bg-[#f6f7f0] hover:text-[#18463b]"
                 >
@@ -138,7 +152,7 @@ export const Navbar = ({ onEnroll }: NavbarProps) => {
                 }}
                 className="mt-2 rounded-full bg-[#f68a4a] px-6 py-3 text-xs font-bold uppercase tracking-[0.14em] text-white"
               >
-                Enroll Now
+                {t("Enroll Now", "नोंदणी करा")}
               </button>
             </div>
           </motion.nav>

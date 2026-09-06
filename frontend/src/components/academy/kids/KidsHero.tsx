@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Download } from "lucide-react";
+import { useLang } from "@/lib/lang";
 import { scrollToId } from "@/lib/scroll";
 
 const HERO_IMG =
@@ -10,12 +11,13 @@ interface KidsHeroProps {
 }
 
 export const KidsHero = ({ onEnroll }: KidsHeroProps) => {
+  const { t } = useLang();
   return (
     <section id="top" data-testid="kids-hero" className="relative">
       <div className="relative flex min-h-[72vh] items-center justify-center overflow-hidden [border-radius:0_0_50%_50%/0_0_72px_72px]">
         <img
           src={HERO_IMG}
-          alt="Children laughing and playing during an activity"
+          alt={t("Children laughing and playing during an activity", "उपक्रमादरम्यान हसत खेळत असलेली मुले")}
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(24,70,59,0.55)_0%,rgba(24,70,59,0.7)_60%,rgba(24,70,59,0.85)_100%)]" />
@@ -30,7 +32,7 @@ export const KidsHero = ({ onEnroll }: KidsHeroProps) => {
           >
             <span className="h-2 w-2 rounded-full bg-[#f68a4a] animate-gold-pulse" />
             <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-white">
-              Ages 6–12 · 3-Day Program
+              {t("Ages 6–12 · 3-Day Program", "वय ६–१२ · ३-दिवसांचा कार्यक्रम")}
             </span>
           </motion.div>
 
@@ -51,9 +53,10 @@ export const KidsHero = ({ onEnroll }: KidsHeroProps) => {
             className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/85 sm:text-lg"
             data-testid="kids-hero-subtitle"
           >
-            A 3-day life skills and personality development journey that helps children build
-            confidence, discipline, communication, values, and positive habits through joyful
-            learning.
+            {t(
+              "A 3-day life skills and personality development journey that helps children build confidence, discipline, communication, values, and positive habits through joyful learning.",
+              "३ दिवसांचा जीवनकौशल्य आणि व्यक्तिमत्त्व विकास प्रवास — आनंदी शिक्षणाद्वारे मुलांमध्ये आत्मविश्वास, शिस्त, संवाद, मूल्ये आणि सकारात्मक सवयी घडवण्यासाठी."
+            )}
           </motion.p>
 
           <motion.div
@@ -67,7 +70,7 @@ export const KidsHero = ({ onEnroll }: KidsHeroProps) => {
               onClick={onEnroll}
               className="group inline-flex items-center gap-2 rounded-full border border-[#f68a4a] bg-[#f68a4a] px-8 py-4 font-heading text-sm font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:-translate-y-[3px] hover:border-white hover:bg-white hover:text-[#18463b] active:scale-95"
             >
-              Register Now
+              {t("Register Now", "आत्ताच नोंदणी करा")}
               <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
             </button>
             <button
@@ -76,7 +79,7 @@ export const KidsHero = ({ onEnroll }: KidsHeroProps) => {
               className="inline-flex items-center gap-2 rounded-full border border-white/35 px-8 py-4 font-heading text-sm font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:-translate-y-[3px] hover:border-[#f68a4a] hover:text-[#f8b183] active:scale-95"
             >
               <Download size={16} />
-              Download Brochure
+              {t("Download Brochure", "माहितीपत्रक डाउनलोड करा")}
             </button>
           </motion.div>
         </div>

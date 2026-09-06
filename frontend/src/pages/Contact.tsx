@@ -14,7 +14,6 @@ export default function Contact() {
   const [enquiryOpen, setEnquiryOpen] = useState(false);
 
   useEffect(() => {
-    document.title = "Contact Rupantaram | Life Skills & Personality Transformation Academy";
     document
       .querySelector('meta[name="description"]')
       ?.setAttribute(

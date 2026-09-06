@@ -1,16 +1,21 @@
 import { Award } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
+import { useLang } from "@/lib/lang";
 
 export const KidsCertificate = () => {
+  const { t } = useLang();
   return (
     <section data-testid="kids-certificate-section" className="bg-[#fbfafa] py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           index="06"
-          eyebrow="Certificate"
-          title="Celebrate Every Child's Transformation"
-          description="Every participant receives a Rupantaram Certificate of Completion after successfully completing the program."
+          eyebrow={t("Certificate", "प्रमाणपत्र")}
+          title={t("Celebrate Every Child's Transformation", "प्रत्येक मुलाच्या परिवर्तनाचा उत्सव")}
+          description={t(
+            "Every participant receives a Rupantaram Certificate of Completion after successfully completing the program.",
+            "कार्यक्रम यशस्वीरीत्या पूर्ण केल्यानंतर प्रत्येक सहभागीला रूपांतरम् पूर्णता प्रमाणपत्र दिले जाते."
+          )}
           align="center"
         />
 
@@ -24,30 +29,32 @@ export const KidsCertificate = () => {
               <div className="rounded-lg border-2 border-[#18463b]/70 px-6 py-10 text-center sm:px-12">
                 <img src="/assets/logo.webp" alt="Rupantaram" className="mx-auto h-14 w-auto" />
                 <p className="mt-4 text-[10px] font-bold uppercase tracking-[0.3em] text-[#7a7a7a]">
-                  Rupantaram Life Skills Academy
+                  {t("Rupantaram Life Skills Academy", "रूपांतरम् जीवनकौशल्य अकादमी")}
                 </p>
                 <h3 className="mt-3 font-heading text-3xl font-black tracking-wide text-[#18463b]">
-                  Certificate of Completion
+                  {t("Certificate of Completion", "पूर्णता प्रमाणपत्र")}
                 </h3>
                 <div className="mx-auto mt-4 h-0.5 w-24 bg-[#f68a4a]" />
-                <p className="mt-6 text-sm text-[#555]">This certificate is proudly presented to</p>
+                <p className="mt-6 text-sm text-[#555]">{t("This certificate is proudly presented to", "हे प्रमाणपत्र अभिमानाने प्रदान करण्यात येत आहे")}</p>
                 <p className="mx-auto mt-4 max-w-xs border-b border-dashed border-[#999] pb-2 font-heading text-xl font-bold text-[#18463b]">
-                  Your Child's Name
+                  {t("Your Child's Name", "तुमच्या मुलाचे नाव")}
                 </p>
                 <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-[#555]">
-                  for successfully completing <strong>Kids Transform</strong> — a 3-day life skills
-                  and personality development journey.
+                  {t(
+                    "for successfully completing Kids Transform — a 3-day life skills and personality development journey.",
+                    "Kids Transform — ३ दिवसांचा जीवनकौशल्य आणि व्यक्तिमत्त्व विकास प्रवास यशस्वीरीत्या पूर्ण केल्याबद्दल."
+                  )}
                 </p>
                 <div className="mt-8 flex items-end justify-between">
                   <div className="text-left">
-                    <p className="w-28 border-b border-[#999] pb-1 text-[10px] text-[#999]">Date</p>
+                    <p className="w-28 border-b border-[#999] pb-1 text-[10px] text-[#999]">{t("Date", "दिनांक")}</p>
                   </div>
                   <span className="flex h-16 w-16 items-center justify-center rounded-full border-4 border-[#f68a4a]/40 bg-[#f68a4a] text-white shadow-lg">
                     <Award size={28} />
                   </span>
                   <div className="text-right">
                     <p className="w-28 border-b border-[#999] pb-1 text-[10px] text-[#999]">
-                      Program Director
+                      {t("Program Director", "कार्यक्रम संचालक")}
                     </p>
                   </div>
                 </div>

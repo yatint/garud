@@ -1,0 +1,38 @@
+{
+  "summary": "Frontend-only bilingual (mr/en) verification for Rupantaram site. Marathi is default on fresh localStorage, header language toggle switches to English, persists across reload, and toggles back to Marathi. Homepage hero shows the new campus aerial with clearly readable white text over dark overlay. Contact form submits and shows Marathi success 'चौकशी मिळाली!'; all 5 FAQ toggles work. Overview pages (programs, why-us, life-skills, success-stories, gallery) load in Marathi. Gallery filters and lightbox testids exist and filter buttons are Marathi. Program detail pages (kids-transform, youth-transform, young-adult-transform, 30-day-transform) load in Marathi with English brand names as designed. Youth Transform EnrollDialog is fully Marathi. Browser tab titles contain रूपांतरम् on Marathi pages and switch to English on toggle. No console errors observed. One clear content bug: /#/life-skills has an untranslated English section ('01 INTRODUCTION', heading 'Why Life Skills Matter' and two full English paragraphs) that leaks into Marathi mode.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [
+      {
+        "component": "LifeSkills page (/#/life-skills) — 'Why Life Skills Matter' introduction section",
+        "issue": "Mixed-language leftover in Marathi mode: eyebrow label '01 INTRODUCTION', heading 'Why Life Skills Matter' and two body paragraphs ('Success in life is not determined only by academic knowledge...' and 'At Rupantaram, every program is built around practical life skills...') stay in English when the rest of the page is Marathi. These strings appear to not use the t(en, mr) helper.",
+        "selector": "life-skills section immediately below hero (INTRODUCTION block)",
+        "priority": "HIGH"
+      }
+    ],
+    "integration_issues": [],
+    "design_issues": [
+      {
+        "screen": "Homepage hero (AcademyHero)",
+        "issues": ["The eyebrow tagline 'LIFE SKILLS & PERSONALITY TRANSFORMATION ACADEMY' remains in English above the Marathi hero title 'चला माणूस घडवू या'. If this is intended as an English brand slogan (like the program names), it is fine — otherwise it should also be bilingual. Please confirm intent."]
+      }
+    ]
+  },
+  "test_report_links": [],
+  "action_items": [
+    "Wrap the 'Why Life Skills Matter' introduction block on /#/life-skills (eyebrow '01 INTRODUCTION', heading, and two paragraphs) in the useLang t(en, mr) helper and provide Marathi copy.",
+    "Confirm whether the homepage hero eyebrow 'LIFE SKILLS & PERSONALITY TRANSFORMATION ACADEMY' is intentionally English-only or should be bilingual; if bilingual, translate it via t()."
+  ],
+  "critical_code_review_comments": [
+    "Language coverage looks near-complete (~52/53 components) but the LifeSkills 'Why Life Skills Matter' intro was missed — recommend a quick grep for any remaining raw English string literals inside .tsx page components (e.g. `grep -R \"Success in life\" src`) to catch any siblings.",
+    "Consider adding a lightweight dev-only guard/lint that flags long English string literals in .tsx that are not passed through t(), to prevent future regressions when new content is added."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "n/a (frontend-only)", "frontend": "~95% (1 content bug on Life Skills page; everything else passes)"},
+  "test_credentials": "n/a (no auth)",
+  "seed_data_creation": "none",
+  "retest_needed": true,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Preview URL uses HashRouter — use /#/... paths. Homepage preloader ~1.8s; sleep >=5s after load before asserting hero content. Default language is Marathi with a fresh localStorage; clear it before testing default. Lang toggle has data-testid='lang-toggle'. Gallery items have testids gallery-item-1..12; filter buttons gallery-filter-{all,workshops,yoga-mindfulness,stage-speaking,team-activities}. Youth Transform enroll dialog trigger testids: nav-enroll-button and hero-enroll-button. On retest, re-check /#/life-skills 'Why Life Skills Matter' intro block for Marathi coverage.",
+  "rca of the issue": "The Life Skills page's INTRODUCTION section (eyebrow, heading, and body paragraphs directly under the hero on /#/life-skills) was authored as literal JSX strings rather than through the useLang t(en, mr) helper used elsewhere in this batch. Because those strings never pass through the language provider, they render identically in both Marathi and English modes, producing a visible mixed-language block in Marathi. Fix: locate the JSX for this section (likely in the LifeSkills page component or a nearby WhyLifeSkills/Intro component) and replace the hardcoded English with t('English...', 'Marathi...') calls, matching the pattern used in the rest of the page."
+}

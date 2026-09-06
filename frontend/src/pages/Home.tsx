@@ -19,18 +19,20 @@ import { AcademyCta } from "@/components/academy/AcademyCta";
 import { AcademyFooter } from "@/components/academy/AcademyFooter";
 import { EnquiryDialog } from "@/components/academy/EnquiryDialog";
 import { destroyLenis, initLenis, startLenis, stopLenis } from "@/lib/scroll";
-
-const PILLARS = [
-  "Thought Transformation",
-  "Habit Transformation",
-  "Character & Values",
-  "Leadership & Service",
-  "Purposeful Living",
-];
+import { useLang } from "@/lib/lang";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
   const [enquiryOpen, setEnquiryOpen] = useState(false);
+  const { t } = useLang();
+
+  const PILLARS = [
+    t("Thought Transformation", "विचारांचे रूपांतर"),
+    t("Habit Transformation", "सवयींचे रूपांतर"),
+    t("Character & Values", "चारित्र्य व मूल्ये"),
+    t("Leadership & Service", "नेतृत्व व सेवा"),
+    t("Purposeful Living", "सुध्येय जीवन"),
+  ];
 
   useEffect(() => {
     const lenis = initLenis();

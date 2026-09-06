@@ -9,31 +9,35 @@ import {
 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
+import { useLang } from "@/lib/lang";
 
 interface Item {
   icon: LucideIcon;
-  title: string;
-  text: string;
+  enTitle: string;
+  mrTitle: string;
+  enText: string;
+  mrText: string;
   slug: string;
 }
 
 const ITEMS: Item[] = [
-  { icon: Presentation, title: "Interactive Workshops", text: "Hands-on sessions, zero lectures.", slug: "workshops" },
-  { icon: Users, title: "Group Activities", text: "Learn with and from your peers.", slug: "group" },
-  { icon: Trophy, title: "Practical Challenges", text: "Real scenarios, real decisions.", slug: "challenges" },
-  { icon: BookOpen, title: "Reflection Sessions", text: "Pause, process, and internalize.", slug: "reflection" },
-  { icon: GraduationCap, title: "Mentor Guidance", text: "Personal feedback from trained mentors.", slug: "mentors" },
-  { icon: Flower2, title: "Mindfulness & Self Development", text: "Build inner calm and focus.", slug: "mindfulness" },
+  { icon: Presentation, enTitle: "Interactive Workshops", mrTitle: "परस्पर संवादी कार्यशाळा", enText: "Hands-on sessions, zero lectures.", mrText: "प्रात्यक्षिक सत्रे, भाषणे शून्य.", slug: "workshops" },
+  { icon: Users, enTitle: "Group Activities", mrTitle: "समूह उपक्रम", enText: "Learn with and from your peers.", mrText: "सहकाऱ्यांसोबत आणि त्यांच्याकडून शिका.", slug: "group" },
+  { icon: Trophy, enTitle: "Practical Challenges", mrTitle: "प्रात्यक्षिक आव्हाने", enText: "Real scenarios, real decisions.", mrText: "खऱ्या परिस्थिती, खरे निर्णय.", slug: "challenges" },
+  { icon: BookOpen, enTitle: "Reflection Sessions", mrTitle: "आत्मपरिक्षण सत्रे", enText: "Pause, process, and internalize.", mrText: "थांबा, विचार करा आणि आत्मसात करा.", slug: "reflection" },
+  { icon: GraduationCap, enTitle: "Mentor Guidance", mrTitle: "मार्गदर्शकांचे मार्गदर्शन", enText: "Personal feedback from trained mentors.", mrText: "प्रशिक्षित मार्गदर्शकांचा वैयक्तिक अभिप्राय.", slug: "mentors" },
+  { icon: Flower2, enTitle: "Mindfulness & Self Development", mrTitle: "माइंडफुलनेस आणि स्व-विकास", enText: "Build inner calm and focus.", mrText: "आंतरिक शांतता आणि एकाग्रता घडवा.", slug: "mindfulness" },
 ];
 
 export const YoungExperience = () => {
+  const { t } = useLang();
   return (
     <section data-testid="young-experience-section" className="bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           index="05"
-          eyebrow="Learning Experience"
-          title="Built for How Adults Actually Grow"
+          eyebrow={t("Learning Experience", "शिक्षण अनुभव")}
+          title={t("Built for How Adults Actually Grow", "प्रौढ खरोखर जसे वाढतात तशी रचना")}
           align="center"
         />
 
@@ -47,8 +51,8 @@ export const YoungExperience = () => {
                 <span className="flex h-13 w-13 items-center justify-center rounded-full border border-[#18463b]/20 bg-white p-3.5 text-[#18463b] transition-all duration-300 group-hover:border-[#f68a4a] group-hover:bg-[#f68a4a] group-hover:text-white">
                   <it.icon size={22} />
                 </span>
-                <h3 className="mt-4 font-heading text-sm font-bold text-[#18463b]">{it.title}</h3>
-                <p className="mt-2 text-xs leading-relaxed text-[#7a7a7a]">{it.text}</p>
+                <h3 className="mt-4 font-heading text-sm font-bold text-[#18463b]">{t(it.enTitle, it.mrTitle)}</h3>
+                <p className="mt-2 text-xs leading-relaxed text-[#7a7a7a]">{t(it.enText, it.mrText)}</p>
               </div>
             </Reveal>
           ))}

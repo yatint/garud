@@ -177,6 +177,17 @@
   box-shadow: 0 16px 40px rgba(24, 70, 59, 0.1);
 }
 
+html.lang-mr body,
+html.lang-mr h1,
+html.lang-mr h2,
+html.lang-mr h3,
+html.lang-mr h4,
+html.lang-mr h5,
+html.lang-mr h6,
+html.lang-mr .font-heading {
+  font-family: 'Mukta', 'Noto Sans Devanagari', 'Nirmala UI', Mangal, sans-serif;
+}
+
 .lenis.lenis-smooth {
   scroll-behavior: auto !important;
 }

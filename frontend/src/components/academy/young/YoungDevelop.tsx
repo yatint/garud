@@ -11,34 +11,38 @@ import {
 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
+import { useLang } from "@/lib/lang";
 
 interface Item {
   icon: LucideIcon;
-  title: string;
-  text: string;
+  enTitle: string;
+  mrTitle: string;
+  enText: string;
+  mrText: string;
   slug: string;
   tint: string;
 }
 
 const ITEMS: Item[] = [
-  { icon: Eye, title: "Self Awareness", text: "Understand your strengths, emotions, and patterns.", slug: "self-awareness", tint: "bg-[#f68a4a]/12 text-[#f68a4a] group-hover:bg-[#f68a4a]" },
-  { icon: Compass, title: "Career Direction", text: "Choose a path with clarity, not confusion.", slug: "career", tint: "bg-[#18463b]/10 text-[#18463b] group-hover:bg-[#18463b]" },
-  { icon: Crown, title: "Leadership Skills", text: "Lead yourself first, then others.", slug: "leadership", tint: "bg-[#f0a500]/12 text-[#c98a0a] group-hover:bg-[#f0a500]" },
-  { icon: Mic, title: "Communication", text: "Speak, present, and connect with impact.", slug: "communication", tint: "bg-[#0b5d3b]/10 text-[#0b5d3b] group-hover:bg-[#0b5d3b]" },
-  { icon: Scale, title: "Decision Making", text: "Make responsible choices under pressure.", slug: "decisions", tint: "bg-[#e0701f]/10 text-[#e0701f] group-hover:bg-[#e0701f]" },
-  { icon: Wallet, title: "Financial Awareness", text: "Understand money, saving, and priorities.", slug: "financial", tint: "bg-[#f68a4a]/12 text-[#f68a4a] group-hover:bg-[#f68a4a]" },
-  { icon: Heart, title: "Emotional Maturity", text: "Handle stress, setbacks, and relationships.", slug: "emotional", tint: "bg-[#18463b]/10 text-[#18463b] group-hover:bg-[#18463b]" },
-  { icon: Timer, title: "Time Management", text: "Own your day before it owns you.", slug: "time", tint: "bg-[#f0a500]/12 text-[#c98a0a] group-hover:bg-[#f0a500]" },
+  { icon: Eye, enTitle: "Self Awareness", mrTitle: "आत्मजाणीव", enText: "Understand your strengths, emotions, and patterns.", mrText: "स्वतःच्या शक्ती, भावना आणि सवयी समजून घ्या.", slug: "self-awareness", tint: "bg-[#f68a4a]/12 text-[#f68a4a] group-hover:bg-[#f68a4a]" },
+  { icon: Compass, enTitle: "Career Direction", mrTitle: "करिअर दिशा", enText: "Choose a path with clarity, not confusion.", mrText: "गोंधळात नव्हे, स्पष्टतेने मार्ग निवडा.", slug: "career", tint: "bg-[#18463b]/10 text-[#18463b] group-hover:bg-[#18463b]" },
+  { icon: Crown, enTitle: "Leadership Skills", mrTitle: "नेतृत्व कौशल्ये", enText: "Lead yourself first, then others.", mrText: "आधी स्वतःचे, मग इतरांचे नेतृत्व करा.", slug: "leadership", tint: "bg-[#f0a500]/12 text-[#c98a0a] group-hover:bg-[#f0a500]" },
+  { icon: Mic, enTitle: "Communication", mrTitle: "संवाद", enText: "Speak, present, and connect with impact.", mrText: "प्रभावीपणे बोला, सादर करा आणि जोडले जा.", slug: "communication", tint: "bg-[#0b5d3b]/10 text-[#0b5d3b] group-hover:bg-[#0b5d3b]" },
+  { icon: Scale, enTitle: "Decision Making", mrTitle: "निर्णयक्षमता", enText: "Make responsible choices under pressure.", mrText: "ताणाखालीही जबाबदार निर्णय घ्या.", slug: "decisions", tint: "bg-[#e0701f]/10 text-[#e0701f] group-hover:bg-[#e0701f]" },
+  { icon: Wallet, enTitle: "Financial Awareness", mrTitle: "आर्थिक जाणीव", enText: "Understand money, saving, and priorities.", mrText: "पैसे, बचत आणि प्राधान्ये समजून घ्या.", slug: "financial", tint: "bg-[#f68a4a]/12 text-[#f68a4a] group-hover:bg-[#f68a4a]" },
+  { icon: Heart, enTitle: "Emotional Maturity", mrTitle: "भावनिक परिपक्वता", enText: "Handle stress, setbacks, and relationships.", mrText: "ताण, अपयश आणि नाती सामर्थ्याने सांभाळा.", slug: "emotional", tint: "bg-[#18463b]/10 text-[#18463b] group-hover:bg-[#18463b]" },
+  { icon: Timer, enTitle: "Time Management", mrTitle: "वेळ व्यवस्थापन", enText: "Own your day before it owns you.", mrText: "दिवस तुम्हाला घेण्यापूर्वी तुम्ही दिवसाचे स्वामी व्हा.", slug: "time", tint: "bg-[#f0a500]/12 text-[#c98a0a] group-hover:bg-[#f0a500]" },
 ];
 
 export const YoungDevelop = () => {
+  const { t } = useLang();
   return (
     <section data-testid="young-develop-section" className="bg-[#fbfafa] py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           index="02"
-          eyebrow="What You'll Develop"
-          title="Eight Capabilities for Adulthood"
+          eyebrow={t("What You'll Develop", "तुमच्यात काय घडेल")}
+          title={t("Eight Capabilities for Adulthood", "प्रौढत्वासाठी आठ क्षमता")}
           align="center"
         />
 
@@ -55,8 +59,8 @@ export const YoungDevelop = () => {
                   <it.icon size={20} />
                 </span>
                 <div>
-                  <h3 className="font-heading text-base font-bold text-[#18463b]">{it.title}</h3>
-                  <p className="mt-1 text-xs leading-relaxed text-[#7a7a7a] sm:text-sm">{it.text}</p>
+                  <h3 className="font-heading text-base font-bold text-[#18463b]">{t(it.enTitle, it.mrTitle)}</h3>
+                  <p className="mt-1 text-xs leading-relaxed text-[#7a7a7a] sm:text-sm">{t(it.enText, it.mrText)}</p>
                 </div>
               </div>
             </Reveal>

@@ -1,42 +1,70 @@
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
+import { useLang } from "@/lib/lang";
 
 const DAYS = [
   {
     num: "01",
-    day: "Day 1",
-    title: "Know Yourself",
+    enDay: "Day 1",
+    mrDay: "दिवस १",
+    enTitle: "Know Yourself",
+    mrTitle: "स्वतःला जाणा",
     img: "https://images.unsplash.com/photo-1522075782449-e45a34f1ddfb?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=900",
-    items: ["Self-discovery", "Personality understanding", "Confidence building", "Identifying strengths"],
+    items: [
+      { en: "Self-discovery", mr: "स्व-शोध" },
+      { en: "Personality understanding", mr: "व्यक्तिमत्त्वाची समज" },
+      { en: "Confidence building", mr: "आत्मविश्वास निर्मिती" },
+      { en: "Identifying strengths", mr: "शक्ती ओळखणे" },
+    ],
     slug: "day-1",
   },
   {
     num: "02",
-    day: "Day 2",
-    title: "Build Your Leadership",
+    enDay: "Day 2",
+    mrDay: "दिवस २",
+    enTitle: "Build Your Leadership",
+    mrTitle: "तुमचे नेतृत्व घडवा",
     img: "https://images.unsplash.com/photo-1630068846062-3ffe78aa5049?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=900",
-    items: ["Communication", "Team collaboration", "Leadership activities", "Emotional intelligence", "Responsible decision making"],
+    items: [
+      { en: "Communication", mr: "संवाद" },
+      { en: "Team collaboration", mr: "संघ सहकार्य" },
+      { en: "Leadership activities", mr: "नेतृत्व उपक्रम" },
+      { en: "Emotional intelligence", mr: "भावनिक बुद्धिमत्ता" },
+      { en: "Responsible decision making", mr: "जबाबदार निर्णयक्षमता" },
+    ],
     slug: "day-2",
   },
   {
     num: "03",
-    day: "Day 3",
-    title: "Design Your Future",
+    enDay: "Day 3",
+    mrDay: "दिवस ३",
+    enTitle: "Design Your Future",
+    mrTitle: "तुमचे भविष्य रचा",
     img: "https://images.unsplash.com/photo-1544531586-fde5298cdd40?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=900",
-    items: ["Career clarity", "Goal planning", "Public speaking", "Personal action plan", "Certificate ceremony"],
+    items: [
+      { en: "Career clarity", mr: "करिअर स्पष्टता" },
+      { en: "Goal planning", mr: "ध्येय नियोजन" },
+      { en: "Public speaking", mr: "सार्वजनिक भाषण" },
+      { en: "Personal action plan", mr: "वैयक्तिक कृती आराखडा" },
+      { en: "Certificate ceremony", mr: "प्रमाणपत्र समारंभ" },
+    ],
     slug: "day-3",
   },
 ];
 
 export const YoungJourney = () => {
+  const { t } = useLang();
   return (
     <section data-testid="young-journey-section" className="bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           index="03"
-          eyebrow="The 3-Day Transformation Journey"
-          title="From Self-Knowledge to a Future Blueprint"
-          description="Three intensive days that take you from honest self-discovery to a concrete personal action plan."
+          eyebrow={t("The 3-Day Transformation Journey", "३-दिवसांचा परिवर्तन प्रवास")}
+          title={t("From Self-Knowledge to a Future Blueprint", "स्व-जाणीवेपासून भविष्याच्या आराखड्यापर्यंत")}
+          description={t(
+            "Three intensive days that take you from honest self-discovery to a concrete personal action plan.",
+            "तीन प्रगाढ दिवस — प्रामाणिक स्व-शोधापासून ते ठोस वैयक्तिक कृती आराखड्यापर्यंत."
+          )}
           align="center"
         />
 
@@ -54,25 +82,25 @@ export const YoungJourney = () => {
                   </span>
                   <div>
                     <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[#e0701f]">
-                      {d.day}
+                      {t(d.enDay, d.mrDay)}
                     </p>
-                    <h3 className="font-heading text-2xl font-black text-[#18463b]">{d.title}</h3>
+                    <h3 className="font-heading text-2xl font-black text-[#18463b]">{t(d.enTitle, d.mrTitle)}</h3>
                   </div>
                 </div>
 
                 <div className="overflow-hidden rounded-xl border border-[#e1dfdf]">
                   <img
                     src={d.img}
-                    alt={`${d.day} — ${d.title}`}
+                    alt={t(`${d.enDay} — ${d.enTitle}`, `${d.mrDay} — ${d.mrTitle}`)}
                     className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
 
                 <ul className="mt-6 flex flex-col gap-2.5">
                   {d.items.map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-sm text-[#555]">
+                    <li key={item.en} className="flex items-center gap-3 text-sm text-[#555]">
                       <span className="h-1.5 w-1.5 rotate-45 bg-[#f68a4a]" />
-                      {item}
+                      {t(item.en, item.mr)}
                     </li>
                   ))}
                 </ul>

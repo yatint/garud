@@ -1,11 +1,13 @@
 import { PenLine, Phone } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import { useLang } from "@/lib/lang";
 
 interface ShareStoryProps {
   onEnquire: () => void;
 }
 
 export const ShareStory = ({ onEnquire }: ShareStoryProps) => {
+  const { t } = useLang();
   return (
     <section
       id="share-story"
@@ -21,11 +23,14 @@ export const ShareStory = ({ onEnquire }: ShareStoryProps) => {
       <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6">
         <Reveal>
           <h2 className="font-heading text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Your Story Could <span className="text-brand-gradient">Inspire Someone Else</span>
+            {t("Your Story Could", "तुमची कथा कोणालातरी")}{" "}
+            <span className="text-brand-gradient">{t("Inspire Someone Else", "प्रेरणा देऊ शकते")}</span>
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/75 sm:text-lg">
-            Completed a Rupantaram program? We'd love to feature your transformation journey.
-            Share your experience with our team.
+            {t(
+              "Completed a Rupantaram program? We'd love to feature your transformation journey. Share your experience with our team.",
+              "रूपांतरम्चा कार्यक्रम पूर्ण केला? तुमचा परिवर्तन प्रवास आम्हाला अभिमानाने सामायिक करायला आवडेल. तुमचा अनुभव आमच्या टीमसोबत शेअर करा."
+            )}
           </p>
         </Reveal>
 
@@ -37,7 +42,7 @@ export const ShareStory = ({ onEnquire }: ShareStoryProps) => {
               className="group inline-flex items-center gap-2 rounded-full border border-[#f68a4a] bg-[#f68a4a] px-9 py-4 text-sm font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:-translate-y-[3px] hover:border-white hover:bg-white hover:text-[#18463b] active:scale-95"
             >
               <PenLine size={16} />
-              Submit Your Story
+              {t("Submit Your Story", "तुमची कथा पाठवा")}
             </button>
             <a
               data-testid="share-story-contact-button"
@@ -45,7 +50,7 @@ export const ShareStory = ({ onEnquire }: ShareStoryProps) => {
               className="inline-flex items-center gap-2 rounded-full border border-white/30 px-9 py-4 text-sm font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:-translate-y-[3px] hover:border-[#f68a4a] hover:text-[#f8b183] active:scale-95"
             >
               <Phone size={16} />
-              Contact Us
+              {t("Contact Us", "संपर्क करा")}
             </a>
           </div>
         </Reveal>

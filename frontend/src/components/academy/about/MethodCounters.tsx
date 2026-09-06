@@ -2,21 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useInView } from "framer-motion";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
-
-const STEPS = [
-  { num: "01", title: "Self Discovery", text: "Understand strengths, emotions, and aspirations.", slug: "self-discovery" },
-  { num: "02", title: "Skill Development", text: "Learn communication, leadership, and time skills.", slug: "skill-development" },
-  { num: "03", title: "Behavioral Practice", text: "Build daily habits through activities and challenges.", slug: "behavioral-practice" },
-  { num: "04", title: "Mentorship & Reflection", text: "Guided feedback and honest self-review.", slug: "mentorship" },
-  { num: "05", title: "Real-Life Transformation", text: "Visible change at home, school, and work.", slug: "transformation" },
-];
-
-const COUNTERS = [
-  { value: 4, suffix: "", label: "Training Centers", slug: "centers" },
-  { value: 4, suffix: "", label: "Specialized Programs", slug: "programs" },
-  { value: 25, suffix: "+", label: "Life Skills Modules", slug: "modules" },
-  { value: 100, suffix: "%", label: "Practical Learning Approach", slug: "practical" },
-];
+import { useLang } from "@/lib/lang";
 
 const CountUp = ({ to, suffix }: { to: number; suffix: string }) => {
   const ref = useRef<HTMLSpanElement>(null);
@@ -46,14 +32,31 @@ const CountUp = ({ to, suffix }: { to: number; suffix: string }) => {
 };
 
 export const MethodCounters = () => {
+  const { t } = useLang();
+
+  const STEPS = [
+    { num: "01", en: "Self Discovery", mr: "स्व-शोध", textEn: "Understand strengths, emotions, and aspirations.", textMr: "ताकद, भावना आणि आकांक्षा समजून घ्या.", slug: "self-discovery" },
+    { num: "02", en: "Skill Development", mr: "कौशल्य विकास", textEn: "Learn communication, leadership, and time skills.", textMr: "संवाद, नेतृत्व आणि वेळ कौशल्ये शिका.", slug: "skill-development" },
+    { num: "03", en: "Behavioral Practice", mr: "वर्तन सराव", textEn: "Build daily habits through activities and challenges.", textMr: "उपक्रम व आव्हानांतून रोजच्या सवयी बनवा.", slug: "behavioral-practice" },
+    { num: "04", en: "Mentorship & Reflection", mr: "मार्गदर्शन व चिंतन", textEn: "Guided feedback and honest self-review.", textMr: "मार्गदर्शकांचा अभिप्राय व प्रामाणिक आत्मपरिक्षण.", slug: "mentorship" },
+    { num: "05", en: "Real-Life Transformation", mr: "खरे रूपांतर", textEn: "Visible change at home, school, and work.", textMr: "घरी, शाळेत व कामावर दिसणारा बदल.", slug: "transformation" },
+  ];
+
+  const COUNTERS = [
+    { value: 4, suffix: "", en: "Training Centers", mr: "प्रशिक्षण केंद्रे", slug: "centers" },
+    { value: 4, suffix: "", en: "Specialized Programs", mr: "विशेष कार्यक्रम", slug: "programs" },
+    { value: 25, suffix: "+", en: "Life Skills Modules", mr: "जीवनकौशल्य घटक", slug: "modules" },
+    { value: 100, suffix: "%", en: "Practical Learning Approach", mr: "उपक्रम-आधारित शिक्षण", slug: "practical" },
+  ];
+
   return (
     <>
       <section data-testid="about-methodology-section" className="bg-white py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             index="05"
-            eyebrow="Our Training Methodology"
-            title="How Transformation Happens"
+            eyebrow={t("Our Training Methodology", "आमची प्रशिक्षण पद्धत")}
+            title={t("How Transformation Happens", "रूपांतर कसे घडते")}
             align="center"
           />
 
@@ -66,10 +69,10 @@ export const MethodCounters = () => {
                     {s.num}
                   </span>
                   <h3 className="mt-5 font-heading text-base font-bold text-[#18463b] sm:text-lg">
-                    {s.title}
+                    {t(s.en, s.mr)}
                   </h3>
                   <p className="mx-auto mt-2 max-w-[220px] text-sm leading-relaxed text-[#7a7a7a]">
-                    {s.text}
+                    {t(s.textEn, s.textMr)}
                   </p>
                 </div>
               </Reveal>
@@ -86,7 +89,7 @@ export const MethodCounters = () => {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal>
             <p className="text-center text-xs font-bold uppercase tracking-[0.28em] text-[#f8b183]">
-              Why Families Choose Rupantaram
+              {t("Why Families Choose Rupantaram", "कुटुंबे रूपांतरम् का निवडतात")}
             </p>
           </Reveal>
           <div className="mt-10 grid grid-cols-2 gap-10 lg:grid-cols-4">
@@ -96,7 +99,7 @@ export const MethodCounters = () => {
                   <CountUp to={c.value} suffix={c.suffix} />
                 </p>
                 <p className="mt-3 text-xs font-semibold uppercase tracking-[0.18em] text-white/70 sm:text-sm">
-                  {c.label}
+                  {t(c.en, c.mr)}
                 </p>
               </div>
             ))}

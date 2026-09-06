@@ -16,7 +16,6 @@ export default function Programs() {
   const [enquiryOpen, setEnquiryOpen] = useState(false);
 
   useEffect(() => {
-    document.title = "Our Programs | Rupantaram Life Skills Academy";
     const lenis = initLenis();
     let raf = 0;
     const loop = (time: number) => {

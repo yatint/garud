@@ -5,29 +5,36 @@ import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useLang } from "@/lib/lang";
 
 const CARDS = [
   {
     icon: Phone,
-    title: "Phone",
+    enTitle: "Phone",
+    mrTitle: "फोन",
     lines: ["+91 90116 58888", "+91 90116 78888"],
-    sub: "Call us for admissions & program enquiries",
+    enSub: "Call us for admissions & program enquiries",
+    mrSub: "प्रवेश आणि कार्यक्रम चौकशीसाठी कॉल करा",
     href: "tel:+919011658888",
     slug: "phone",
   },
   {
     icon: Mail,
-    title: "Email",
+    enTitle: "Email",
+    mrTitle: "ईमेल",
     lines: ["info@garudzeprupantaram.com"],
-    sub: "We'll respond within one business day",
+    enSub: "We'll respond within one business day",
+    mrSub: "एका कामकाजाच्या दिवसात उत्तर देऊ",
     href: "mailto:info@garudzeprupantaram.com",
     slug: "email",
   },
   {
     icon: Globe,
-    title: "Website",
+    enTitle: "Website",
+    mrTitle: "वेबसाइट",
     lines: ["www.garudzeprupantaram.com"],
-    sub: "Explore programs and upcoming batches",
+    enSub: "Explore programs and upcoming batches",
+    mrSub: "कार्यक्रम आणि आगामी तुकड्या पहा",
     href: "https://www.garudzeprupantaram.com",
     slug: "website",
   },
@@ -45,6 +52,7 @@ const fieldClass =
   "border-[#e1dfdf] bg-white text-[#222] placeholder:text-[#999] focus-visible:border-[#f68a4a]";
 
 export const ContactInfoForm = () => {
+  const { t } = useLang();
   const [submitted, setSubmitted] = useState(false);
   const [name, setName] = useState("");
 
@@ -68,13 +76,13 @@ export const ContactInfoForm = () => {
                   <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#18463b] text-[#f5c253] transition-colors duration-300 group-hover:bg-[#f68a4a] group-hover:text-white">
                     <c.icon size={24} />
                   </span>
-                  <h3 className="mt-5 font-heading text-lg font-bold text-[#18463b]">{c.title}</h3>
+                  <h3 className="mt-5 font-heading text-lg font-bold text-[#18463b]">{t(c.enTitle, c.mrTitle)}</h3>
                   {c.lines.map((l) => (
                     <p key={l} className="mt-1.5 text-sm font-semibold text-[#333]">
                       {l}
                     </p>
                   ))}
-                  <p className="mt-3 text-xs text-[#7a7a7a]">{c.sub}</p>
+                  <p className="mt-3 text-xs text-[#7a7a7a]">{t(c.enSub, c.mrSub)}</p>
                 </a>
               </Reveal>
             ))}
@@ -86,9 +94,12 @@ export const ContactInfoForm = () => {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             index="01"
-            eyebrow="Send an Enquiry"
-            title="Tell Us About Your Journey"
-            description="Share your details and our mentors will call you back with the right program, batch, and center."
+            eyebrow={t("Send an Enquiry", "चौकशी पाठवा")}
+            title={t("Tell Us About Your Journey", "तुमच्या प्रवासाबद्दल सांगा")}
+            description={t(
+              "Share your details and our mentors will call you back with the right program, batch, and center.",
+              "तुमचा तपशील शेअर करा — आमचे मार्गदर्शक योग्य कार्यक्रम, तुकडी आणि केंद्रासह तुम्हाला परत कॉल करतील."
+            )}
             align="center"
           />
 
@@ -100,18 +111,20 @@ export const ContactInfoForm = () => {
                     <CheckCircle2 size={30} />
                   </span>
                   <h3 className="mt-6 font-heading text-2xl font-black text-[#18463b]">
-                    Enquiry Received!
+                    {t("Enquiry Received!", "चौकशी मिळाली!")}
                   </h3>
                   <p className="mt-3 max-w-md text-sm leading-relaxed text-[#555]">
-                    Thank you{name ? `, ${name}` : ""}. Our team will call you back within one
-                    business day with program, batch, and venue details.
+                    {t(
+                      `Thank you${name ? `, ${name}` : ""}. Our team will call you back within one business day with program, batch, and venue details.`,
+                      `धन्यवाद${name ? `, ${name}` : ""}. कार्यक्रम, तुकडी आणि ठिकाणाच्या माहितीसह आमची टीम एका कामकाजाच्या दिवसात तुम्हाला परत कॉल करेल.`
+                    )}
                   </p>
                   <button
                     data-testid="enquiry-another-button"
                     onClick={() => setSubmitted(false)}
                     className="mt-8 rounded-full border border-[#18463b]/25 px-6 py-3 text-xs font-bold uppercase tracking-[0.14em] text-[#18463b] transition-all duration-300 hover:border-[#f68a4a] hover:text-[#f68a4a]"
                   >
-                    Send Another Enquiry
+                    {t("Send Another Enquiry", "आणखी एक चौकशी पाठवा")}
                   </button>
                 </div>
               ) : (
@@ -119,13 +132,13 @@ export const ContactInfoForm = () => {
                   <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                     <div className="flex flex-col gap-2">
                       <Label htmlFor="cf-name" className="text-xs font-bold uppercase tracking-[0.14em] text-[#555]">
-                        Full Name
+                        {t("Full Name", "पूर्ण नाव")}
                       </Label>
-                      <Input id="cf-name" data-testid="contact-name-input" required value={name} onChange={(e) => setName(e.target.value)} placeholder="Your full name" className={fieldClass} />
+                      <Input id="cf-name" data-testid="contact-name-input" required value={name} onChange={(e) => setName(e.target.value)} placeholder={t("Your full name", "तुमचे पूर्ण नाव")} className={fieldClass} />
                     </div>
                     <div className="flex flex-col gap-2">
                       <Label htmlFor="cf-mobile" className="text-xs font-bold uppercase tracking-[0.14em] text-[#555]">
-                        Mobile Number
+                        {t("Mobile Number", "मोबाईल क्रमांक")}
                       </Label>
                       <Input id="cf-mobile" data-testid="contact-mobile-input" required type="tel" placeholder="+91 ..." className={fieldClass} />
                     </div>
@@ -133,20 +146,20 @@ export const ContactInfoForm = () => {
                   <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                     <div className="flex flex-col gap-2">
                       <Label htmlFor="cf-email" className="text-xs font-bold uppercase tracking-[0.14em] text-[#555]">
-                        Email Address
+                        {t("Email Address", "ईमेल पत्ता")}
                       </Label>
                       <Input id="cf-email" data-testid="contact-email-input" type="email" placeholder="you@example.com" className={fieldClass} />
                     </div>
                     <div className="flex flex-col gap-2">
                       <Label htmlFor="cf-city" className="text-xs font-bold uppercase tracking-[0.14em] text-[#555]">
-                        City
+                        {t("City", "शहर")}
                       </Label>
-                      <Input id="cf-city" data-testid="contact-city-input" placeholder="e.g. Karjat" className={fieldClass} />
+                      <Input id="cf-city" data-testid="contact-city-input" placeholder={t("e.g. Karjat", "उदा. कर्जत")} className={fieldClass} />
                     </div>
                   </div>
                   <div className="flex flex-col gap-2">
                     <Label htmlFor="cf-program" className="text-xs font-bold uppercase tracking-[0.14em] text-[#555]">
-                      Select Program
+                      {t("Select Program", "कार्यक्रम निवडा")}
                     </Label>
                     <select
                       id="cf-program"
@@ -163,13 +176,13 @@ export const ContactInfoForm = () => {
                   </div>
                   <div className="flex flex-col gap-2">
                     <Label htmlFor="cf-message" className="text-xs font-bold uppercase tracking-[0.14em] text-[#555]">
-                      Message
+                      {t("Message", "संदेश")}
                     </Label>
                     <textarea
                       id="cf-message"
                       data-testid="contact-message-input"
                       rows={4}
-                      placeholder="Anything that helps us guide you better"
+                      placeholder={t("Anything that helps us guide you better", "तुम्हाला अधिक चांगले मार्गदर्शन करण्यास मदत होईल असे काहीही")}
                       className="w-full rounded-md border border-[#e1dfdf] bg-white px-3 py-2 text-sm text-[#222] placeholder:text-[#999] focus:border-[#f68a4a] focus:outline-none"
                     />
                   </div>
@@ -178,7 +191,7 @@ export const ContactInfoForm = () => {
                     data-testid="contact-form-submit-button"
                     className="mt-1 rounded-full border border-[#f68a4a] bg-[#f68a4a] px-6 py-4 text-sm font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:-translate-y-[2px] hover:border-[#18463b] hover:bg-[#18463b] active:scale-95"
                   >
-                    Submit Enquiry
+                    {t("Submit Enquiry", "चौकशी सबमिट करा")}
                   </button>
                 </form>
               )}

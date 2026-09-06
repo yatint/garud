@@ -1,0 +1,23 @@
+{
+  "summary": "Frontend-only regression on rebuilt /#/youth-transform page and pages affected by deletion of old legacy components. Youth Transform now matches the academy design system: SlimNavbar with English toggle + चौकशी करा, curved hero (badge 'वय १३–१८ · ३-दिवसांचा कार्यक्रम', title YOUTH TRANSFORM with 'Transform' in orange gradient, Marathi subtitle), आत्ताच नोंदणी करा + माहितीपत्रक डाउनलोड करा CTAs — visually consistent with kids-transform hero. All named testids resolve (youth-hero, youth-hero-badge, youth-hero-title, youth-hero-subtitle, youth-hero-register-button, youth-hero-brochure-button, youth-faq-section, youth-faq-toggle-1..6, youth-faq-answer-*, youth-final-cta, youth-cta-register-button, youth-cta-contact-button). Behavior: brochure button scrolls to about section (scrollY=560); register + CTA buttons open EnquiryDialog; dialog submission with real testids (enquiry-name-input, enquiry-mobile-input, enquiry-email-input, enquiry-city-input, enquiry-form-submit-button) shows Marathi success 'चौकशी यशस्वीरीत्या पाठवली! धन्यवाद Test Parent — आमची टीम २४ तासांच्या आत तुम्हाला कॉल करेल.' and dialog closes. Language toggle switches all copy to English, persists across full reload, toggles back to Marathi. All 6 FAQ toggles found; toggle-3 opens the answer correctly. Regression: /, /#/programs/kids-transform, /#/programs/young-adult-transform, /#/programs/30-day-transform, /#/contact, /#/programs, /#/life-skills all load with 0 console errors and correct Marathi titles. Home page contains 3 links to youth-transform (dropdown + others); programs-card-link-youth navigates correctly. No console errors, no page errors, no references to deleted components (HeroSection/OutcomesGrid/WhoShouldJoin/TimelineJourney/LearningMethods/BenefitsList/FaqAccordion/FinalCta/EnrollDialog/AboutProgram) anywhere in src/.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "Note: iteration_1 flagged the /#/life-skills 'Why Life Skills Matter' intro block still leaking English in Marathi mode — this was outside the current review scope but remains unfixed. Consider addressing in a follow-up.",
+    "Youth Transform testid naming is now consistent (youth-* prefix). Suggest applying the same review pattern to kids/young-adult/30-day pages if not already."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "n/a", "frontend": "100% (all requested youth-transform + regression checks pass)"},
+  "test_credentials": "n/a",
+  "seed_data_creation": "none",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "EnquiryDialog input testids are enquiry-{name,mobile,email,city}-input, enquiry-program-select, enquiry-message-input, enquiry-form-submit-button. Youth Transform hero/faq/cta all use youth-* prefix. Homepage preloader ~2s — wait >=3s. Fresh localStorage yields Marathi default; toggle persists via key 'rupantaram-lang'. Life-skills intro Marathi leak from iteration_1 still stands.",
+  "rca of the issue": "n/a — no bugs found on the rebuilt youth-transform page or regression pages."
+}

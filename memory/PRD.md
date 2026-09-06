@@ -93,6 +93,13 @@ Build a premium, responsive, English-only landing page for **Youth Transform**, 
 - Testing agent pass (iteration_1): default Marathi, toggle, persistence, contact form Marathi success, gallery filters/lightbox, all program pages, tab titles — all pass. One HIGH bug (Life Skills intro left in English) found and fixed; `yarn typecheck` clean.
 - Stale `/app/rupantaram-website.zip` predates the bilingual work; user said no new ZIP needed.
 
+## Implemented — Youth Transform Page Redesign (2026-09-06)
+- User report: /youth-transform layout looked different from other pages (it was still the original first-phase navy/gold landing page). Rebuilt from scratch on the academy design system to match Kids/Young Adult/30-Day program pages: SlimNavbar, curved hero (badge, gradient title, Register/Brochure CTAs), About, 8 outcome cards, 3-day journey cards with images, 8 learning-method cards, ideal-for checklist, green benefits band, certificate mockup, testimonial placeholders, 6-FAQ accordion, final CTA, AcademyFooter + EnquiryDialog.
+- New bilingual components in `src/components/academy/youth/`; all youth-specific content (outcomes, journey, FAQs, benefits) preserved from the old page's copy.
+- Hero image replaced with upright stock photo of Indian students (old one rendered sideways in wide crop).
+- Deleted 12 legacy components now unused (Navbar, HeroSection, AboutProgram, OutcomesGrid, WhoShouldJoin, TimelineJourney, LearningMethods, BenefitsList, FaqAccordion, FinalCta, Footer, EnrollDialog). EditorialMarquee + Preloader kept (used by Home).
+- Testing agent (iteration_2): 100% pass — design consistency, both languages, FAQ, enquiry dialog, inbound links, and full regression on all other pages; typecheck clean.
+
 ## Verified
 - `/` and `/youth-transform` both load through the public URL; enquiry dialog fill → submit → success toast confirmed; cross-page links work; typecheck clean.
 - Public URL https://transform-teens.preview.emergentagent.com returns 200; `/api/status` responds.

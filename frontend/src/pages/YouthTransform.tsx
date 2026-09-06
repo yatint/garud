@@ -1,27 +1,31 @@
-import { AnimatePresence } from "framer-motion";
 import { useCallback, useEffect, useState } from "react";
 import { Toaster } from "@/components/ui/sonner";
-import { Preloader } from "@/components/Preloader";
-import { Navbar } from "@/components/Navbar";
-import { HeroSection } from "@/components/HeroSection";
-import { EditorialMarquee } from "@/components/EditorialMarquee";
-import { AboutProgram } from "@/components/AboutProgram";
-import { OutcomesGrid } from "@/components/OutcomesGrid";
-import { WhoShouldJoin } from "@/components/WhoShouldJoin";
-import { TimelineJourney } from "@/components/TimelineJourney";
-import { LearningMethods } from "@/components/LearningMethods";
-import { BenefitsList } from "@/components/BenefitsList";
-import { FaqAccordion } from "@/components/FaqAccordion";
-import { FinalCta } from "@/components/FinalCta";
-import { Footer } from "@/components/Footer";
-import { EnrollDialog } from "@/components/EnrollDialog";
-import { destroyLenis, initLenis, startLenis, stopLenis } from "@/lib/scroll";
+import { SlimNavbar } from "@/components/academy/SlimNavbar";
+import { YouthHero } from "@/components/academy/youth/YouthHero";
+import { YouthAbout } from "@/components/academy/youth/YouthAbout";
+import { YouthOutcomes } from "@/components/academy/youth/YouthOutcomes";
+import { YouthJourney } from "@/components/academy/youth/YouthJourney";
+import { YouthMethod } from "@/components/academy/youth/YouthMethod";
+import { YouthIdeal } from "@/components/academy/youth/YouthIdeal";
+import { YouthBenefits } from "@/components/academy/youth/YouthBenefits";
+import { YouthCertificate } from "@/components/academy/youth/YouthCertificate";
+import { YouthTestimonials } from "@/components/academy/youth/YouthTestimonials";
+import { YouthFaq } from "@/components/academy/youth/YouthFaq";
+import { YouthCta } from "@/components/academy/youth/YouthCta";
+import { AcademyFooter } from "@/components/academy/AcademyFooter";
+import { EnquiryDialog } from "@/components/academy/EnquiryDialog";
+import { destroyLenis, initLenis } from "@/lib/scroll";
 
 export default function YouthTransform() {
-  const [loading, setLoading] = useState(true);
-  const [enrollOpen, setEnrollOpen] = useState(false);
+  const [enquiryOpen, setEnquiryOpen] = useState(false);
 
   useEffect(() => {
+    document
+      .querySelector('meta[name="description"]')
+      ?.setAttribute(
+        "content",
+        "Youth Transform is a 3-day life skills and personality transformation program for teenagers aged 13–18, building confidence, discipline, leadership, emotional intelligence, and career direction."
+      );
     const lenis = initLenis();
     let raf = 0;
     const loop = (time: number) => {
@@ -35,40 +39,27 @@ export default function YouthTransform() {
     };
   }, []);
 
-  useEffect(() => {
-    if (loading) {
-      stopLenis();
-      document.body.style.overflow = "hidden";
-    } else {
-      startLenis();
-      document.body.style.overflow = "";
-    }
-  }, [loading]);
-
-  const finishLoading = useCallback(() => setLoading(false), []);
-  const openEnroll = useCallback(() => setEnrollOpen(true), []);
+  const openEnquiry = useCallback(() => setEnquiryOpen(true), []);
 
   return (
     <div className="min-h-screen bg-white font-sans text-[#222]">
       <div className="grain-overlay" />
-      <AnimatePresence>{loading && <Preloader onDone={finishLoading} />}</AnimatePresence>
-
-      <Navbar onEnroll={openEnroll} />
+      <SlimNavbar onEnquire={openEnquiry} />
       <main>
-        <HeroSection started={!loading} onEnroll={openEnroll} />
-        <EditorialMarquee />
-        <AboutProgram />
-        <OutcomesGrid />
-        <WhoShouldJoin />
-        <TimelineJourney />
-        <LearningMethods />
-        <BenefitsList />
-        <FaqAccordion />
-        <FinalCta onEnroll={openEnroll} />
+        <YouthHero onEnroll={openEnquiry} />
+        <YouthAbout />
+        <YouthOutcomes />
+        <YouthJourney />
+        <YouthMethod />
+        <YouthIdeal />
+        <YouthBenefits />
+        <YouthCertificate />
+        <YouthTestimonials />
+        <YouthFaq />
+        <YouthCta onEnroll={openEnquiry} />
       </main>
-      <Footer />
-
-      <EnrollDialog open={enrollOpen} onOpenChange={setEnrollOpen} />
+      <AcademyFooter />
+      <EnquiryDialog open={enquiryOpen} onOpenChange={setEnquiryOpen} />
       <Toaster position="top-center" richColors />
     </div>
   );

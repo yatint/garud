@@ -78,6 +78,11 @@ Build a premium, responsive, English-only landing page for **Youth Transform**, 
 - Navbar: Life Skills → /life-skills, Success Stories → /success-stories, Contact → /contact; dropdown Kids/Young Adult/30-Day route to their pages.
 - Phone numbers updated site-wide to the official +91 90116 58888 (and 90116 78888 in footer); footer email now info@garudzeprupantaram.com.
 
+## Static Export (2026-09-05)
+- App switched to HashRouter + `base: "./"` so the production build runs on any static host (cPanel etc.) — URLs work as `index.html#/about` style.
+- `yarn build` → `frontend/dist/`; zipped to `/app/rupantaram-website.zip` (~450K). Verified standalone via plain static server (home + #/programs render fully).
+- Note: React SPA compiles to one index.html + JS/CSS bundles — not 12 separate hand-written HTML files.
+
 ## Verified
 - `/` and `/youth-transform` both load through the public URL; enquiry dialog fill → submit → success toast confirmed; cross-page links work; typecheck clean.
 - Public URL https://transform-teens.preview.emergentagent.com returns 200; `/api/status` responds.

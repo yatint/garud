@@ -37,6 +37,7 @@ if (!hotReloadDisabled) {
 export default defineConfig(async () => {
   const emergentOverlay = await loadEmergentOverlay();
   return {
+    base: "./",
     plugins: [
       react(),
       tailwindcss(),

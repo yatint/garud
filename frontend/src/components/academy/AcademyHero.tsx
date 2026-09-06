@@ -35,8 +35,8 @@ export const AcademyHero = ({ started }: { started: boolean }) => {
     <section id="top" data-testid="academy-hero" className="relative">
       <div className="relative flex min-h-[92vh] items-center justify-center overflow-hidden [border-radius:0_0_50%_50%/0_0_110px_110px]">
         <img
-          src="/assets/hero-banner.webp"
-          alt="Rupantaram training campus surrounded by greenery"
+          src="/assets/hero-sunset.webp"
+          alt="Rupantaram training center at sunset with lawns"
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(24,70,59,0.28)_0%,rgba(24,70,59,0.42)_55%,rgba(24,70,59,0.6)_100%)]" />

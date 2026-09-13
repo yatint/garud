@@ -161,6 +161,13 @@ Build a premium, responsive, English-only landing page for **Youth Transform**, 
 - Kids age group changed 6–12 → 6–13 site-wide (user confirmed): Programs card, Program Finder, Contact FAQ answer, Enquiry dialog, footer, About programs strip, homepage programs card, navbar dropdown label, Kids page meta description.
 - Verified via screenshots (Marathi) of both heroes; typecheck clean.
 
+## Implemented — Homepage Sections 01–03 + Why-Us Promise (2026-09-06)
+- Section 01 (AcademyAbout): eyebrow "गरुडझेप – रूपांतरम्", title "आतून घडणारा बदल… आयुष्य घडवणारा प्रवास", both user paragraphs verbatim, closing "हे केवळ शिक्षण नाही — हे खऱ्या अर्थाने परिवर्तन आहे".
+- Section 02 (AcademySkills): title "शाळेत न शिकवली जाणारी २५ जीवनकौशल्ये" + user intro; 3 pillars now numbered with lead lines (१. आत्मसंयम आणि अभ्यास कौशल्ये — 11 skills, २. चारित्र्य, नेतृत्व आणि नातेसंबंध — 8 skills, ३. भविष्यासाठी सज्जता — 6 skills = 25 total); new closing note "हे केवळ शिक्षण नाही — हे आयुष्य घडवणारे परिवर्तन आहे."
+- Section 03 (AcademyFounder): "संस्थापकांचा संदेश" with user's quote, the 3 "खरा बदल" moments as a list, closing line, and "— संस्थापक, गरुडझेप – रूपांतरम्" sign-off.
+- Why-Us (PromiseCta): core promise replaced with user's poetic version — anti-"instant success" opening, 4 attribute lines, identity line, and closing "येथे यश हे केवळ एक टप्पा नाही, तर आयुष्यभर टिकणारी एक सवय बनते".
+- All with English translations for the toggle; verified via screenshots (Marathi); typecheck clean.
+
 ## Verified
 - `/` and `/youth-transform` both load through the public URL; enquiry dialog fill → submit → success toast confirmed; cross-page links work; typecheck clean.
 - Public URL https://transform-teens.preview.emergentagent.com returns 200; `/api/status` responds.

@@ -26,11 +26,30 @@ export const PromiseCta = ({ onEnquire }: PromiseCtaProps) => {
               className="mt-7 font-heading text-3xl font-black leading-snug tracking-tight text-white sm:text-4xl lg:text-[2.8rem]"
               data-testid="promise-statement"
             >
-              {t("We don't promise instant success. We promise", "आम्ही त्वरित यशाचे आश्वासन देत नाही. आम्ही")}{" "}
-              <span className="text-brand-gradient">{t("lifelong transformation", "आजीवन परिवर्तनाचे")}</span>{" "}
               {t(
-                "through discipline, values, self-awareness and continuous growth.",
-                "शिस्त, मूल्ये, आत्मपरिक्षण आणि सातत्यपूर्ण प्रगतीद्वारे वचन देतो."
+                "We don't lure dreams with glittering words of instant success.",
+                "आम्ही स्वप्नांना झटपट यशाच्या चमकदार शब्दांनी फसवत नाही."
+              )}{" "}
+              <span className="text-brand-gradient">
+                {t(
+                  "Our promise is of real transformation that gives life direction.",
+                  "आमचे वचन आहे — आयुष्याला दिशा देणाऱ्या खऱ्या परिवर्तनाचे."
+                )}
+              </span>
+            </p>
+            <div className="mx-auto mt-8 flex max-w-2xl flex-col gap-2 text-base leading-relaxed text-white/75 sm:text-lg">
+              <p>{t("A personality standing on the foundation of discipline,", "शिस्तीच्या आधारावर उभे राहणारे व्यक्तिमत्त्व,")}</p>
+              <p>{t("a character shaped by values,", "मूल्यांमधून घडणारा स्वभाव,")}</p>
+              <p>{t("clarity born of self-awareness,", "स्व-जाणीवेतून मिळणारी स्पष्टता")}</p>
+              <p>{t("and progress achieved through persistent effort —", "आणि सातत्यपूर्ण प्रयत्नांतून साध्य होणारी प्रगती —")}</p>
+              <p className="mt-2 font-semibold text-white">
+                {t("this is the true identity of our work.", "याच आमच्या कार्याची खरी ओळख आहे.")}
+              </p>
+            </div>
+            <p className="mx-auto mt-8 max-w-2xl font-heading text-xl font-bold leading-snug text-[#f8b183] sm:text-2xl" data-testid="promise-closing">
+              {t(
+                "Here, success is not just a milestone — it becomes a habit that lasts a lifetime.",
+                "येथे यश हे केवळ एक टप्पा नाही, तर आयुष्यभर टिकणारी एक सवय बनते"
               )}
             </p>
             <div className="mx-auto mt-9 h-1 w-20 rounded-full bg-[#f68a4a]" />

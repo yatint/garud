@@ -19,8 +19,8 @@ export const ThirtyCta = ({ onEnroll }: ThirtyCtaProps) => {
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[#7a7a7a] sm:text-lg">
             {t(
-              "Commit to 30 days of guided transformation and begin a lifelong journey of discipline, character, confidence, and meaningful growth.",
-              "३० दिवसांच्या मार्गदर्शित परिवर्तनाला वचनबद्ध व्हा आणि शिस्त, चारित्र्य, आत्मविश्वास आणि सार्थक प्रगतीचा आजीवन प्रवास सुरू करा."
+              "“30-Day Transform” — because big changes don't happen in a single day… they are built through small daily actions and change your life forever!",
+              "“३० दिवसांचा रूपांतर” — कारण मोठे बदल एका दिवसात होत नाहीत… ते दररोजच्या छोट्या कृतीतून घडतात आणि आयुष्य कायमचे बदलून टाकतात!"
             )}
           </p>
         </Reveal>

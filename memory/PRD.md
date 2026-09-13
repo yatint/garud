@@ -135,6 +135,17 @@ Build a premium, responsive, English-only landing page for **Youth Transform**, 
   - Wired inbound links: navbar programs dropdown, Programs overview card ("View Details"), Life Skills table row — all now point to /programs/parenting-360.
 - Verified via screenshots (Marathi); typecheck clean. All five programs now have dedicated pages.
 
+## Implemented — 30-Day Transform Content Update (2026-09-06)
+- User supplied Marathi content ("३० दिवसांचा रूपांतर") for /programs/30-day-transform; same restructure pattern:
+  - Hero: title ३० दिवसांचा रूपांतर / 30-Day Transform, badge "प्रमुख कार्यक्रम | ३० दिवस | विद्यार्थी, तरुण व कुटुंबे", new subtitle.
+  - About (01): both new paragraphs; tagline "कृती · चिंतन · सवयी".
+  - उद्दिष्टे (02): 5 icon cards (CalendarCheck/Flame/Crown/HeartHandshake/Sprout).
+  - मुख्य घटक (03): 5 numbered cards — Daily Guided Actions, Habit Building System, Mindset & Emotional Balance, Leadership & Responsibility, Family Involvement.
+  - रचना (04): 3 stages (दिवस १–१० / ११–२० / २१–३०) replacing the old 4-week timeline.
+  - वैशिष्ट्ये (05): 4 feature cards; कोणासाठी (06): 4 checklist items; अपेक्षित परिणाम: 5 chips green band; CTA carries the new closing quote.
+  - Replaced ThirtyDailyCore/ThirtyExperienceOutcomes with ThirtyObjectives/ThirtyComponents/ThirtyFeatures/ThirtyIdeal/ThirtyBenefits; App.tsx Marathi tab title now "३० दिवसांचा रूपांतर".
+- Verified via screenshots (Marathi); typecheck clean.
+
 ## Verified
 - `/` and `/youth-transform` both load through the public URL; enquiry dialog fill → submit → success toast confirmed; cross-page links work; typecheck clean.
 - Public URL https://transform-teens.preview.emergentagent.com returns 200; `/api/status` responds.

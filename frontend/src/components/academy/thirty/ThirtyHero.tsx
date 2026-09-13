@@ -32,7 +32,7 @@ export const ThirtyHero = ({ onEnroll }: ThirtyHeroProps) => {
           >
             <span className="h-2 w-2 rounded-full bg-[#f68a4a] animate-gold-pulse" />
             <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-white">
-              {t("Flagship · 30 Days · Students, Youth & Families", "प्रमुख · ३० दिवस · विद्यार्थी, तरुण आणि कुटुंबे")}
+              {t("Flagship Program · 30 Days · Students, Youth & Families", "प्रमुख कार्यक्रम | ३० दिवस | विद्यार्थी, तरुण व कुटुंबे")}
             </span>
           </motion.div>
 
@@ -43,7 +43,7 @@ export const ThirtyHero = ({ onEnroll }: ThirtyHeroProps) => {
             className="font-heading text-4xl font-extrabold uppercase leading-tight tracking-wide text-white sm:text-5xl lg:text-6xl"
             data-testid="thirty-hero-title"
           >
-            30-Day <span className="text-brand-gradient">Transform</span>
+            {t("30-Day", "३० दिवसांचा")} <span className="text-brand-gradient">{t("Transform", "रूपांतर")}</span>
           </motion.h1>
 
           <motion.p
@@ -54,8 +54,8 @@ export const ThirtyHero = ({ onEnroll }: ThirtyHeroProps) => {
             data-testid="thirty-hero-subtitle"
           >
             {t(
-              "A structured 30-day journey to build discipline, confidence, leadership, emotional balance, and lifelong positive habits through daily guided transformation.",
-              "दैनिक मार्गदर्शित परिवर्तनाद्वारे शिस्त, आत्मविश्वास, नेतृत्व, भावनिक संतुलन आणि आजीवन सकारात्मक सवयी घडवण्याचा संरचित ३०-दिवसांचा प्रवास."
+              "Motivation alone is not enough — a well-planned 30-day life-transformation journey of consistent action, the right guidance, and positive habits.",
+              "केवळ प्रेरणा पुरेशी नसते — सातत्यपूर्ण कृती, योग्य मार्गदर्शन आणि सकारात्मक सवयींसाठी सुनियोजित ३० दिवसांचा जीवनपरिवर्तन प्रवास."
             )}
           </motion.p>
 

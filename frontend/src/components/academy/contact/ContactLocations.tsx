@@ -6,7 +6,7 @@ import { useLang } from "@/lib/lang";
 const LOCATIONS = [
   { enName: "Karjat", mrName: "कर्जत", enSubtitle: "Life Skills Training Center", mrSubtitle: "जीवनकौशल्य प्रशिक्षण केंद्र", slug: "karjat", query: "Karjat, Maharashtra" },
   { enName: "Alibag", mrName: "अलिबाग", enSubtitle: "Transformation Workshop Center", mrSubtitle: "परिवर्तन कार्यशाळा केंद्र", slug: "alibag", query: "Alibag, Maharashtra" },
-  { enName: "Pen", mrName: "पेन", enSubtitle: "Personality Development Center", mrSubtitle: "व्यक्तिमत्त्व विकास केंद्र", slug: "pen", query: "Pen, Maharashtra" },
+  { enName: "Pen", mrName: "पेण", enSubtitle: "Personality Development Center", mrSubtitle: "व्यक्तिमत्त्व विकास केंद्र", slug: "pen", query: "Pen, Maharashtra" },
   { enName: "Lonavala", mrName: "लोणावळा", enSubtitle: "Leadership & Life Skills Center", mrSubtitle: "नेतृत्व आणि जीवनकौशल्य केंद्र", slug: "lonavala", query: "Lonavala, Maharashtra" },
 ];
 

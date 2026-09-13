@@ -17,7 +17,7 @@ const REASONS: Reason[] = [
   {
     icon: Award,
     en: "People, Not Marks",
-    mr: "मार्क नव्हे, माणूस",
+    mr: "गुण नव्हे, माणूस",
     textEn: "Scoring marks is the beginning; building a human being is the goal. Our measure is not the report card.",
     textMr: "मार्क मिळवणे ही सुरुवात; माणूस घडवणे हे लक्ष्य. आमचे मोजमाप गुणपत्रिका नाही.",
     slug: "people-not-marks",
@@ -41,9 +41,9 @@ const REASONS: Reason[] = [
   {
     icon: HeartHandshake,
     en: "Real Results",
-    mr: "खरी यशे",
-    textEn: "The child talks at home again, follows their chosen routine, and admits mistakes instead of hiding them.",
-    textMr: "मूल घरी पुन्हा बोलू लागते, ठरवलेली दिनचर्या पाळते आणि चूक कबूल करते.",
+    mr: "खरे परिणाम",
+    textEn: "The child talks honestly at home again, follows their chosen routine, and admits mistakes instead of hiding them.",
+    textMr: "मूल घरी पुन्हा खरे बोलू लागते, ठरवलेली दिनचर्या पाळते आणि चूक कबूल करते.",
     slug: "results",
   },
 ];
@@ -56,7 +56,7 @@ export const AcademyWhyParents = () => {
         <SectionHeading
           index="08"
           eyebrow={t("Why Parents Choose Us", "पालक आम्हाला का निवडतात")}
-          title={t("Trust Built on Visible Change", "दिसणाऱ्या बदलावर बांधलेला विश्वास")}
+          title={t("Trust Born From Visible Change", "दिसणाऱ्या बदलातून निर्माण झालेला विश्वास")}
         />
 
         <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">

@@ -146,6 +146,15 @@ Build a premium, responsive, English-only landing page for **Youth Transform**, 
   - Replaced ThirtyDailyCore/ThirtyExperienceOutcomes with ThirtyObjectives/ThirtyComponents/ThirtyFeatures/ThirtyIdeal/ThirtyBenefits; App.tsx Marathi tab title now "३० दिवसांचा रूपांतर".
 - Verified via screenshots (Marathi); typecheck clean.
 
+## Implemented — Homepage Sections 7–9 + FAQ Content Update (2026-09-06)
+- User supplied refined Marathi copy for homepage sections:
+  - Section 7 (AcademyJourney): title "प्रत्येक सहभागी अनुसरतो हे सहा टप्पे", user's description, step names "आपले ध्येय शोधा" / "अर्थपूर्ण जगा".
+  - Section 8 (AcademyWhyParents): card titles "गुण नव्हे, माणूस" / "खरे परिणाम", heading "दिसणाऱ्या बदलातून निर्माण झालेला विश्वास"; card 4 text with "खरे बोलू लागते".
+  - Section 9 (AcademyCenters): title "प्रशिक्षण केंद्रे" + full user description (incl. on-location sessions for schools/societies/companies), spellings अलिबाग/पेण, buttons "कॉल करा | चौकशी करा", new bottom note card "तुमच्या परिसरातही सत्र हवे आहे?" with enquire button.
+  - FAQ (AcademyFaq): all 8 FAQs replaced with user's Q&A verbatim + EN translations, new eyebrow/title/description, closing note "तुमच्या मनात अजूनही प्रश्न आहेत?" with call button.
+- Consistency: Pen spelling "पेण" updated site-wide (Contact, Programs locations, About community locations).
+- Verified via screenshots (Marathi) of sections 7/9/FAQ; typecheck clean.
+
 ## Verified
 - `/` and `/youth-transform` both load through the public URL; enquiry dialog fill → submit → success toast confirmed; cross-page links work; typecheck clean.
 - Public URL https://transform-teens.preview.emergentagent.com returns 200; `/api/status` responds.

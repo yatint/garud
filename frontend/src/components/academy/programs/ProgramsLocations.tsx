@@ -6,7 +6,7 @@ import { useLang } from "@/lib/lang";
 const LOCATIONS = [
   { enName: "Karjat", mrName: "कर्जत", enDistrict: "Dist. Raigad, Maharashtra", mrDistrict: "जि. रायगड, महाराष्ट्र", slug: "karjat" },
   { enName: "Alibag", mrName: "अलिबाग", enDistrict: "Dist. Raigad, Maharashtra", mrDistrict: "जि. रायगड, महाराष्ट्र", slug: "alibag" },
-  { enName: "Pen", mrName: "पेन", enDistrict: "Dist. Raigad, Maharashtra", mrDistrict: "जि. रायगड, महाराष्ट्र", slug: "pen" },
+  { enName: "Pen", mrName: "पेण", enDistrict: "Dist. Raigad, Maharashtra", mrDistrict: "जि. रायगड, महाराष्ट्र", slug: "pen" },
   { enName: "Lonavala", mrName: "लोणावळा", enDistrict: "Dist. Pune, Maharashtra", mrDistrict: "जि. पुणे, महाराष्ट्र", slug: "lonavala" },
 ];
 

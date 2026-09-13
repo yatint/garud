@@ -38,7 +38,7 @@ const STEPS = [
   {
     num: "05",
     en: "Find Your Goal",
-    mr: "ध्येय शोधा",
+    mr: "आपले ध्येय शोधा",
     textEn: "Choosing a career and life direction from clarity, not pressure.",
     textMr: "दबावातून नव्हे, स्पष्टतेतून करिअर व आयुष्याची दिशा निवडणे.",
     slug: "goal",
@@ -46,7 +46,7 @@ const STEPS = [
   {
     num: "06",
     en: "Live Meaningfully",
-    mr: "सार्थकी जगा",
+    mr: "अर्थपूर्ण जगा",
     textEn: "Building success while staying responsible to family, society, and yourself.",
     textMr: "कुटुंब, समाज आणि स्वतःप्रति जबाबदार राहून यशस्वी होणे.",
     slug: "meaningful",
@@ -61,10 +61,10 @@ export const AcademyJourney = () => {
         <SectionHeading
           index="07"
           eyebrow={t("The Transformation Journey", "रूपांतराचा प्रवास")}
-          title={t("Six Steps Every Participant Walks", "प्रत्येक सहभागी चालतो ते सहा टप्पे")}
+          title={t("The Six Steps Every Participant Follows", "प्रत्येक सहभागी अनुसरतो हे सहा टप्पे")}
           description={t(
-            "Whatever the program, the arc is the same — from self-awareness to a purposeful, disciplined life.",
-            "कार्यक्रम कोणताही असो, प्रवास एकच — स्व-जाणिवेपासून सुध्येय, शिस्तबद्ध जीवनापर्यंत."
+            "Whatever the program, the path is the same — from self-awareness to a purposeful, disciplined life.",
+            "कार्यक्रम कोणताही असो, वाटचाल तीच असते — आत्मजाणिवेपासून उद्देशपूर्ण, शिस्तबद्ध आयुष्यापर्यंत."
           )}
           align="center"
         />

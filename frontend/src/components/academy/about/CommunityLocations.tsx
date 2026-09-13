@@ -10,7 +10,7 @@ const COMMUNITY_IMG =
 const LOCATIONS = [
   { nameEn: "Karjat", nameMr: "कर्जत", distEn: "Dist. Raigad, Maharashtra", distMr: "जि. रायगड, महाराष्ट्र", slug: "karjat" },
   { nameEn: "Alibag", nameMr: "आलिबाग", distEn: "Dist. Raigad, Maharashtra", distMr: "जि. रायगड, महाराष्ट्र", slug: "alibag" },
-  { nameEn: "Pen", nameMr: "पेन", distEn: "Dist. Raigad, Maharashtra", distMr: "जि. रायगड, महाराष्ट्र", slug: "pen" },
+  { nameEn: "Pen", nameMr: "पेण", distEn: "Dist. Raigad, Maharashtra", distMr: "जि. रायगड, महाराष्ट्र", slug: "pen" },
   { nameEn: "Lonavala", nameMr: "लोणावळा", distEn: "Dist. Pune, Maharashtra", distMr: "जि. पुणे, महाराष्ट्र", slug: "lonavala" },
 ];
 

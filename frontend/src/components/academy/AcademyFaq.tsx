@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { Plus } from "lucide-react";
+import { Phone, Plus } from "lucide-react";
 import { useState } from "react";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -11,59 +11,59 @@ export const AcademyFaq = () => {
 
   const FAQS = [
     {
-      q: t("What is the fee?", "फी किती आहे?"),
+      q: t("How much is the fee?", "फी किती आहे?"),
       a: t(
-        "Fees vary by program and location. The exact fee for the current batch is shared over a phone call — there are no hidden charges of any kind.",
-        "फी कार्यक्रम व ठिकाणानुसार बदलते. चालू बॅचची नेमकी फी फोनवर सांगितली जाते — कोणतेही छुपे शुल्क नाही."
+        "The fee is decided per program — but our emphasis is always on delivering value, not just on the price.",
+        "कार्यक्रमानुसार फी ठरते — परंतु आमचा भर नेहमीच “मूल्य” देण्यावर असतो, केवळ शुल्कावर नाही."
       ),
     },
     {
-      q: t("Which age groups are the programs for?", "कोणत्या वयोगटांसाठी कार्यक्रम आहेत?"),
+      q: t("Which age groups are these programs for?", "हे कार्यक्रम कोणत्या वयोगटासाठी आहेत?"),
       a: t(
-        "Kids Transform is for ages 6–12, Youth Transform for ages 13–18, Young Adult Transform for 19+, and Parenting 360° is for parents. The 30-Day Transformation Program is open to all age groups.",
-        "Kids Transform ६–१२, Youth Transform १३–१८, Young Adult Transform १९+ आणि Parenting 360° पालकांसाठी. ३० दिवसांचा कार्यक्रम सर्व वयोगटांसाठी खुला आहे."
+        "Programs crafted differently for various age groups — the right guidance at every stage.",
+        "विविध वयोगटांसाठी वेगवेगळ्या पद्धतीने रचलेले कार्यक्रम — प्रत्येक टप्प्यावर योग्य मार्गदर्शन."
       ),
     },
     {
-      q: t("How many students are in a batch?", "एका बॅचमध्ये किती विद्यार्थी असतात?"),
+      q: t("How many students are in one batch?", "एका बॅचमध्ये किती विद्यार्थी असतात?"),
       a: t(
-        "Batches are deliberately kept small so discussions stay personal and every participant gets a chance to speak.",
-        "बॅच मुद्दाम छोट्या ठेवल्या जातात, म्हणजे चर्चा वैयक्तिक राहते आणि प्रत्येकाला बोलण्याची संधी मिळते."
+        "A limited number of students — so every child gets personal attention.",
+        "मर्यादित विद्यार्थीसंख्या — जेणेकरून प्रत्येक मुलावर वैयक्तिक लक्ष देता येईल."
       ),
     },
     {
-      q: t("Where are the workshops held?", "कार्यशाळा कोठे होतात?"),
+      q: t("Where are the workshops held?", "कार्यशाळा कुठे होतात?"),
       a: t(
-        "Regular sessions run in Karjat, Alibag, Pen, and Lonavala. We also conduct sessions at your location for schools, housing societies, and companies.",
-        "कर्जत, आलिबाग, पेन आणि लोणावळा येथे नियमित सत्रे होतात. शाळा, सोसायटी व कंपन्यांसाठी तुमच्या ठिकाणीही सत्रे घेतो."
+        "At our fixed centers, as well as sessions arranged in schools, institutions, and companies.",
+        "आमच्या निश्चित केंद्रांवर तसेच शाळा, संस्था आणि कंपन्यांमध्येही सत्रांची सोय."
       ),
     },
     {
-      q: t("How long are the programs?", "कार्यक्रम किती दिवसांचे असतात?"),
+      q: t("How long are the programs?", "कार्यक्रमांचा कालावधी किती आहे?"),
       a: t(
-        "Parenting 360° is a single day (4 hours). Kids, Youth, and Young Adult Transform are 3 days each, and the flagship program runs for 30 days.",
-        "Parenting 360° एका दिवसाचा (४ तास). Kids, Youth व Young Adult Transform प्रत्येकी ३ दिवस आणि प्रमुख कार्यक्रम ३० दिवसांचा."
+        "Sessions designed with a set duration — enough time to create effective change.",
+        "ठराविक कालावधीसह रचलेले सत्र — परिणामकारक बदल घडवण्यासाठी पुरेसा वेळ."
       ),
     },
     {
-      q: t("Do parents have to participate?", "पालकांचा सहभाग आवश्यक आहे का?"),
+      q: t("Is it necessary for parents to participate?", "पालकांनी सहभागी होणे आवश्यक आहे का?"),
       a: t(
-        "Parent participation is not mandatory for a child's program — but change at home lasts much longer when parents complete Parenting 360°.",
-        "मुलाच्या कार्यक्रमात पालकांचा सहभाग बंधनकारक नाही — पण Parenting 360° केल्यास घरातील बदल खूप टिकतो."
+        "Yes, because real change is the one that lasts at home too — hence special participation for parents.",
+        "होय, कारण खरा बदल तोच जो घरातही टिकतो — म्हणून पालकांसाठीही विशेष सहभाग."
       ),
     },
     {
-      q: t("Which language are sessions conducted in?", "सत्रे कोणत्या भाषेत होतात?"),
+      q: t("In which language are the sessions conducted?", "सत्रे कोणत्या भाषेत घेतली जातात?"),
       a: t(
-        "Sessions are primarily conducted in Marathi; English is used as needed depending on the group.",
-        "सत्रे प्रामुख्याने मराठीत होतात; गटानुसार गरजेनुसार इंग्रजी वापरली जाते."
+        "In simple, easy-to-understand, and effective language — so everyone absorbs it comfortably.",
+        "सोप्या, समजणाऱ्या आणि प्रभावी भाषेत — जेणेकरून प्रत्येकाला सहज आकलन होईल."
       ),
     },
     {
-      q: t("Is there follow-up after the program?", "कार्यक्रमानंतर पाठपुरावा होतो का?"),
+      q: t("Is there follow-up after the program?", "कार्यक्रमानंतर पाठपुरावा असतो का?"),
       a: t(
-        "Yes. Habit tracking, contact with mentors, and progress reports for parents continue after the program ends.",
-        "हो. कार्यक्रम संपल्यानंतरही सवयींचा मागोवा, मार्गदर्शकांचा संपर्क आणि पालकांना प्रगती अहवाल चालू राहतो."
+        "Absolutely — continuous guidance and progress reviews so the new habits last.",
+        "नक्कीच — सवयी टिकून राहाव्यात यासाठी सातत्यपूर्ण मार्गदर्शन आणि प्रगतीचा आढावा."
       ),
     },
   ];
@@ -73,8 +73,12 @@ export const AcademyFaq = () => {
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           index="10"
-          eyebrow={t("FAQs", "प्रश्न")}
-          title={t("Questions Parents Ask Us", "पालक विचारतात ते प्रश्न")}
+          eyebrow={t("Frequently Asked Questions", "वारंवार विचारले जाणारे प्रश्न (FAQs)")}
+          title={t("Every Question in a Parent's Mind, Answered From the Heart", "पालकांच्या मनातील प्रत्येक प्रश्नाला आम्ही मनापासून उत्तर देतो…")}
+          description={t(
+            "Parents naturally have many questions when deciding for their child's bright future. Every parent who comes to us is looking not just for information, but for trust.",
+            "मुलांच्या उज्ज्वल भविष्यासाठी निर्णय घेताना पालकांच्या मनात अनेक प्रश्न असतात — आणि ते स्वाभाविकही आहे. आमच्याकडे येणारा प्रत्येक पालक फक्त माहिती नाही, तर विश्वास शोधत असतो."
+          )}
           align="center"
         />
 
@@ -133,6 +137,28 @@ export const AcademyFaq = () => {
             );
           })}
         </div>
+
+        <Reveal delay={0.15}>
+          <div className="mt-12 text-center" data-testid="faq-closing-note">
+            <p className="font-heading text-lg font-bold text-[#18463b]">
+              {t("Still have questions?", "तुमच्या मनात अजूनही प्रश्न आहेत?")}
+            </p>
+            <p className="mx-auto mt-2 max-w-xl text-sm leading-relaxed text-[#555] sm:text-base">
+              {t(
+                "We are always ready to listen and guide — because behind every question lies your care for your child's bright future.",
+                "आम्ही ऐकण्यासाठी आणि मार्गदर्शनासाठी सदैव तयार आहोत — कारण प्रत्येक प्रश्नाच्या मागे असते तुमच्या मुलाच्या उज्ज्वल भविष्याची काळजी."
+              )}
+            </p>
+            <a
+              data-testid="faq-call-button"
+              href="tel:+919011658888"
+              className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#18463b]/25 px-7 py-3 text-xs font-bold uppercase tracking-[0.14em] text-[#18463b] transition-all duration-300 hover:-translate-y-[2px] hover:border-[#f68a4a] hover:text-[#f68a4a]"
+            >
+              <Phone size={14} />
+              {t("Call Us", "कॉल करा")}
+            </a>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

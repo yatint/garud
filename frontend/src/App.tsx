@@ -8,6 +8,7 @@ import YouthTransform from "@/pages/YouthTransform";
 import KidsTransform from "@/pages/KidsTransform";
 import YoungAdultTransform from "@/pages/YoungAdultTransform";
 import ThirtyDayTransform from "@/pages/ThirtyDayTransform";
+import Parenting360 from "@/pages/Parenting360";
 import LifeSkills from "@/pages/LifeSkills";
 import SuccessStories from "@/pages/SuccessStories";
 import Contact from "@/pages/Contact";
@@ -25,6 +26,7 @@ const TITLES: Record<string, [string, string]> = {
   "/programs/kids-transform": ["Kids Transform | Rupantaram Life Skills Academy", "Kids Transform | रूपांतरम् जीवनकौशल्य अकादमी"],
   "/programs/young-adult-transform": ["Young Adult Transform | Rupantaram Life Skills Academy", "युवा रूपांतर | रूपांतरम् जीवनकौशल्य अकादमी"],
   "/programs/30-day-transform": ["30-Day Transform | Rupantaram Life Skills Academy", "30-Day Transform | रूपांतरम् जीवनकौशल्य अकादमी"],
+  "/programs/parenting-360": ["Parenting 360° | Rupantaram Life Skills Academy", "पालकत्व 360° | रूपांतरम् जीवनकौशल्य अकादमी"],
   "/youth-transform": ["Youth Transform | Rupantaram Life Skills Academy", "किशोर रूपांतर | रूपांतरम् जीवनकौशल्य अकादमी"],
   "/life-skills": ["21 Life Skills | Rupantaram Life Skills Academy", "२१ जीवनकौशल्ये | रूपांतरम् जीवनकौशल्य अकादमी"],
   "/success-stories": ["Success Stories | Rupantaram Life Skills Academy", "यशोगाथा | रूपांतरम् जीवनकौशल्य अकादमी"],
@@ -51,6 +53,7 @@ export default function App() {
       <Route path="/programs/kids-transform" element={<KidsTransform />} />
       <Route path="/programs/young-adult-transform" element={<YoungAdultTransform />} />
       <Route path="/programs/30-day-transform" element={<ThirtyDayTransform />} />
+      <Route path="/programs/parenting-360" element={<Parenting360 />} />
       <Route path="/youth-transform" element={<YouthTransform />} />
       <Route path="/life-skills" element={<LifeSkills />} />
       <Route path="/success-stories" element={<SuccessStories />} />

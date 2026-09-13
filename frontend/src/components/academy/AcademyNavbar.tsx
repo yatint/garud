@@ -52,7 +52,7 @@ export const AcademyNavbar = ({ onEnquire }: AcademyNavbarProps) => {
     { label: t("Kids Transform (6–12)", "Kids Transform (६–१२)"), href: "/programs/kids-transform" },
     { label: t("Youth Transform (13–18)", "Youth Transform (१३–१८)"), href: "/youth-transform" },
     { label: t("Young Adult Transform (19+)", "Young Adult Transform (१९+)"), href: "/programs/young-adult-transform" },
-    { label: "Parenting 360°", href: "/programs" },
+    { label: "Parenting 360°", href: "/programs/parenting-360" },
     { label: t("30-Day Transformation", "३० दिवसांचे रूपांतर"), href: "/programs/30-day-transform" },
   ];
 

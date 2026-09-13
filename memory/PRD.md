@@ -123,6 +123,18 @@ Build a premium, responsive, English-only landing page for **Youth Transform**, 
   - Replaced YoungDevelop/YoungExperience/YoungWhyOutcomes with YoungObjectives/YoungComponents/YoungFeatures/YoungBenefits; App.tsx Marathi tab title now "युवा रूपांतर".
 - Verified via screenshots (Marathi); typecheck clean.
 
+## Implemented — Parenting 360° Page (2026-09-06)
+- User supplied Marathi content for the last missing program page; built /#/programs/parenting-360 (new route) on the academy design system with bilingual content:
+  - Hero: "पालकत्व 360°", badge "पालकांसाठी | १ दिवस | ४ तास", stock photo of Indian parents in a session.
+  - About (01): both new paragraphs; tagline "समज · संवाद · जवळीक".
+  - उद्दिष्टे (02): 5 icon cards (Search/MessagesSquare/Home/Heart/Smartphone).
+  - मुख्य घटक (03): 5 numbered cards — बालमानसशास्त्र, संवाद कौशल्ये, भावनिक जवळीक, सकारात्मक पालकत्व, डिजिटल पालकत्व.
+  - रचना (04): 3 session blocks (संवादात्मक सत्रे / गटचर्चा / प्रश्नोत्तरे) as numbered icon cards.
+  - कोणासाठी (05): 4 checklist items; वैशिष्ट्ये (06): 4 feature cards; अपेक्षित परिणाम: 5 chips green band; CTA with the closing quote "बदल पालकांच्या विचारांतून सुरू होतो…".
+  - New components in src/components/academy/parenting/; page src/pages/Parenting360.tsx; route + bilingual tab title in App.tsx.
+  - Wired inbound links: navbar programs dropdown, Programs overview card ("View Details"), Life Skills table row — all now point to /programs/parenting-360.
+- Verified via screenshots (Marathi); typecheck clean. All five programs now have dedicated pages.
+
 ## Verified
 - `/` and `/youth-transform` both load through the public URL; enquiry dialog fill → submit → success toast confirmed; cross-page links work; typecheck clean.
 - Public URL https://transform-teens.preview.emergentagent.com returns 200; `/api/status` responds.
@@ -135,5 +147,5 @@ Build a premium, responsive, English-only landing page for **Youth Transform**, 
 
 ## Backlog
 - P0: Real enrollment backend (save leads to MongoDB) + brochure PDF download.
-- P1: Parenting 360° dedicated program page.
+- P1: Same authentic Marathi content treatment for Kids Transform and 30-Day Transform pages (user is supplying copy page by page).
 - P2: Batch schedule section, real testimonials/photos to replace placeholders, admin view of leads.

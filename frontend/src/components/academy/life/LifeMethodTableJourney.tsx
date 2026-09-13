@@ -26,7 +26,7 @@ const TABLE = [
   { program: "Kids Transform", enFocus: "Confidence, habits, values, communication", mrFocus: "आत्मविश्वास, सवयी, मूल्ये, संवाद", href: "/programs/kids-transform" },
   { program: "Youth Transform", enFocus: "Leadership, discipline, emotional intelligence", mrFocus: "नेतृत्व, शिस्त, भावनिक बुद्धिमत्ता", href: "/youth-transform" },
   { program: "Young Adult Transform", enFocus: "Career direction, decision making, responsibility", mrFocus: "करिअर दिशा, निर्णयक्षमता, जबाबदारी", href: "/programs/young-adult-transform" },
-  { program: "Parenting 360°", enFocus: "Positive parenting and family communication", mrFocus: "सकारात्मक पालकत्व आणि कौटुंबिक संवाद", href: "/programs" },
+  { program: "Parenting 360°", enFocus: "Positive parenting and family communication", mrFocus: "सकारात्मक पालकत्व आणि कौटुंबिक संवाद", href: "/programs/parenting-360" },
   { program: "30-Day Transform", enFocus: "Daily habit formation and lifelong transformation", mrFocus: "दैनिक सवय निर्मिती आणि आजीवन परिवर्तन", href: "/programs/30-day-transform" },
 ];
 

@@ -63,6 +63,7 @@ const PROGRAMS: Program[] = [
     mrFocus: "बालमानसशास्त्र, संवाद, भावनिक जवळीक, सकारात्मक पालकत्व, डिजिटल पालकत्व.",
     img: "https://images.unsplash.com/photo-1783873231697-3909aeda2381?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=900",
     slug: "parenting",
+    link: "/programs/parenting-360",
   },
   {
     title: "30-Day Transformation Program",

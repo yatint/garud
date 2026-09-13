@@ -155,6 +155,12 @@ Build a premium, responsive, English-only landing page for **Youth Transform**, 
 - Consistency: Pen spelling "पेण" updated site-wide (Contact, Programs locations, About community locations).
 - Verified via screenshots (Marathi) of sections 7/9/FAQ; typecheck clean.
 
+## Implemented — Hero Content Updates (2026-09-06)
+- Homepage hero (AcademyHero): Marathi eyebrow now "जीवनकौशल्ये आणि व्यक्तिमत्व परिवर्तनाचे विद्यापीठ" (English mode keeps brand tagline + full academy name as H1), title "चला माणूस घडवू या", description replaced with user's verbatim copy ("रूपांतरममध्ये संस्कार, शिस्त, भावनिक बळकटी… प्रत्यक्ष युद्धपातळीवर काम करून सिद्ध केले जाते"). User chose to skip the incomplete "स्पर्धा परीक्षा…" fragment line.
+- Kids Transform hero (KidsHero): badge "वय ६–१३ · ३ दिवसीय कार्यशाळा", new user-supplied subtitle, added tagline "इथे आयुष्य घडते….." in orange below subtitle.
+- Kids age group changed 6–12 → 6–13 site-wide (user confirmed): Programs card, Program Finder, Contact FAQ answer, Enquiry dialog, footer, About programs strip, homepage programs card, navbar dropdown label, Kids page meta description.
+- Verified via screenshots (Marathi) of both heroes; typecheck clean.
+
 ## Verified
 - `/` and `/youth-transform` both load through the public URL; enquiry dialog fill → submit → success toast confirmed; cross-page links work; typecheck clean.
 - Public URL https://transform-teens.preview.emergentagent.com returns 200; `/api/status` responds.

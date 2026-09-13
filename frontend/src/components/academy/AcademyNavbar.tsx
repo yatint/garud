@@ -49,7 +49,7 @@ export const AcademyNavbar = ({ onEnquire }: AcademyNavbarProps) => {
 
   const PROGRAM_MENU = [
     { label: t("All Programs Overview", "सर्व कार्यक्रम"), href: "/programs" },
-    { label: t("Kids Transform (6–12)", "Kids Transform (६–१२)"), href: "/programs/kids-transform" },
+    { label: t("Kids Transform (6–13)", "Kids Transform (६–१३)"), href: "/programs/kids-transform" },
     { label: t("Youth Transform (13–18)", "Youth Transform (१३–१८)"), href: "/youth-transform" },
     { label: t("Young Adult Transform (19+)", "Young Adult Transform (१९+)"), href: "/programs/young-adult-transform" },
     { label: "Parenting 360°", href: "/programs/parenting-360" },

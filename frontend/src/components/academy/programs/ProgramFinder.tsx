@@ -14,7 +14,7 @@ interface Stop {
 }
 
 const STOPS: Stop[] = [
-  { icon: Smile, enAge: "6–12", mrAge: "६–१२", program: "Kids Transform", slug: "kids", tint: "bg-[#f68a4a]" },
+  { icon: Smile, enAge: "6–13", mrAge: "६–१३", program: "Kids Transform", slug: "kids", tint: "bg-[#f68a4a]" },
   { icon: Zap, enAge: "13–18", mrAge: "१३–१८", program: "Youth Transform", slug: "youth", tint: "bg-[#18463b]" },
   { icon: Briefcase, enAge: "19+", mrAge: "१९+", program: "Young Adult Transform", slug: "young-adult", tint: "bg-[#f0a500]" },
   { icon: Home, enAge: "Parents", mrAge: "पालक", program: "Parenting 360°", slug: "parents", tint: "bg-[#0b5d3b]" },

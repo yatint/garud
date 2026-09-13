@@ -20,8 +20,8 @@ interface Program {
 const PROGRAMS: Program[] = [
   {
     title: "Kids Transform",
-    ageEn: "Ages 6–12",
-    ageMr: "६–१२ वर्षे",
+    ageEn: "Ages 6–13",
+    ageMr: "६–१३ वर्षे",
     durEn: "3 Days",
     durMr: "३ दिवस",
     img: "https://images.pexels.com/photos/3231359/pexels-photo-3231359.jpeg?auto=compress&cs=tinysrgb&w=1000",

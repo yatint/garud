@@ -21,8 +21,8 @@ interface Program {
 const PROGRAMS: Program[] = [
   {
     title: "Kids Transform",
-    enAudience: "Ages 6–12",
-    mrAudience: "वय ६–१२",
+    enAudience: "Ages 6–13",
+    mrAudience: "वय ६–१३",
     enDuration: "3 Days",
     mrDuration: "३ दिवस",
     enFocus: "Confidence, discipline, communication, values, creativity, study habits.",

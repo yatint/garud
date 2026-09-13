@@ -32,7 +32,7 @@ export const KidsHero = ({ onEnroll }: KidsHeroProps) => {
           >
             <span className="h-2 w-2 rounded-full bg-[#f68a4a] animate-gold-pulse" />
             <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-white">
-              {t("Ages 6–12 · 3-Day Program", "वय ६–१२ · ३-दिवसांचा कार्यक्रम")}
+              {t("Ages 6–13 · 3-Day Workshop", "वय ६–१३ · ३ दिवसीय कार्यशाळा")}
             </span>
           </motion.div>
 
@@ -54,9 +54,19 @@ export const KidsHero = ({ onEnroll }: KidsHeroProps) => {
             data-testid="kids-hero-subtitle"
           >
             {t(
-              "A 3-day life skills and personality development journey that helps children build confidence, discipline, communication, values, and positive habits through joyful learning.",
-              "३ दिवसांचा जीवनकौशल्य आणि व्यक्तिमत्त्व विकास प्रवास — आनंदी शिक्षणाद्वारे मुलांमध्ये आत्मविश्वास, शिस्त, संवाद, मूल्ये आणि सकारात्मक सवयी घडवण्यासाठी."
+              "A 3-day life skills and personality development workshop that nurtures confidence, discipline, communication skills, and values through joyful, value-based learning — and shapes life itself.",
+              "आनंददायी आणि संस्कारक्षम शिक्षणातून आत्मविश्वास, शिस्त, संवादकौशल्य, मूल्ये वृद्धिंगत करणारा आणि आयुष्य घडविणारा तीन दिवसीय जीवनकौशल्ये आणि व्यक्तिमत्व विकासाची कार्यशाळा."
             )}
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.52 }}
+            className="mt-5 font-heading text-base font-black uppercase tracking-[0.24em] text-[#f8b183] [text-shadow:0_1px_10px_rgba(8,22,17,0.65)]"
+            data-testid="kids-hero-tagline"
+          >
+            {t("Here, Life Is Shaped…", "इथे आयुष्य घडते…..")}
           </motion.p>
 
           <motion.div

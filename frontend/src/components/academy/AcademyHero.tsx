@@ -58,8 +58,8 @@ export const AcademyHero = ({ started }: { started: boolean }) => {
             data-testid="academy-hero-tagline"
           >
             {lang === "mr"
-              ? "Life Skills & Personality Transformation Academy"
-              : "चला माणूस घडवू या"}
+              ? "जीवनकौशल्ये आणि व्यक्तिमत्व परिवर्तनाचे विद्यापीठ"
+              : "Chala Manus Ghadvu Ya"}
           </motion.p>
 
           <motion.h1
@@ -82,8 +82,8 @@ export const AcademyHero = ({ started }: { started: boolean }) => {
             data-testid="academy-hero-subtitle"
           >
             {t(
-              "Plenty of places prepare children for exams; very few prepare them for life. Garud Zep – Rupantaram builds character, discipline, emotional strength, and career direction — through activity, not lectures.",
-              "परीक्षांची तयारी करणारी ठिकाणे बरीच आहेत; पण आयुष्याची तयारी करणारी जागा फार कमी. गरुड झेप – रूपांतरम्मध्ये संस्कार, शिस्त, भावनिक बळकटी आणि करिअरची दिशा उपक्रमांतून घडवली जाते — उपदेशांनी नव्हे."
+              "At Rupantaram, values, discipline, and emotional strength are certainly taught — but more importantly, every individual is shown the direction of their future life and brought onto the right path. And all of this is proven not through sermons, but by working on the actual battlefield of life.",
+              "रूपांतरममध्ये संस्कार, शिस्त, भावनिक बळकटी तर शिकवली जातेच मात्र त्याहून महत्त्वाचे म्हणजे व्यक्तीला त्याच्या भावी आयुष्याची दिशा दाखवून योग्य मार्गावर आणले जाते आणि हे सर्व उपदेश देऊन नव्हे तर प्रत्यक्ष युद्धपातळीवर काम करून सिद्ध केले जाते."
             )}
           </motion.p>
 

@@ -23,7 +23,7 @@ export default function KidsTransform() {
       .querySelector('meta[name="description"]')
       ?.setAttribute(
         "content",
-        "Kids Transform is a 3-day life skills and personality development program for children aged 6–12, focusing on confidence, discipline, communication, values, and positive habits through practical learning."
+        "Kids Transform is a 3-day life skills and personality development program for children aged 6–13, focusing on confidence, discipline, communication, values, and positive habits through practical learning."
       );
     const lenis = initLenis();
     let raf = 0;

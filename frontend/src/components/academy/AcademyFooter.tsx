@@ -46,7 +46,7 @@ export const AcademyFooter = () => {
   ];
 
   const PROGRAMS = [
-    t("Kids Transform (Ages 6–12)", "Kids Transform (६–१२ वर्षे)"),
+    t("Kids Transform (Ages 6–13)", "Kids Transform (६–१३ वर्षे)"),
     t("Youth Transform (Ages 13–18)", "Youth Transform (१३–१८ वर्षे)"),
     t("Young Adult Transform (19+)", "Young Adult Transform (१९+)"),
     t("Parenting 360° (1 Day)", "Parenting 360° (१ दिवस)"),

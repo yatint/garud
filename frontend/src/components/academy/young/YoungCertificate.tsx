@@ -9,7 +9,7 @@ export const YoungCertificate = () => {
     <section data-testid="young-certificate-section" className="bg-[#fbfafa] py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          index="06"
+          index="07"
           eyebrow={t("Certificate", "प्रमाणपत्र")}
           title={t("Recognizing Your Transformation", "तुमच्या परिवर्तनाची दखल")}
           description={t(
@@ -42,7 +42,7 @@ export const YoungCertificate = () => {
                 <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-[#555]">
                   {t(
                     "for successfully completing Young Adult Transform — a 3-day transformational journey of purpose, leadership, and real-life readiness.",
-                    "Young Adult Transform — ध्येय, नेतृत्व आणि खऱ्या आयुष्याची तयारी असा ३ दिवसांचा परिवर्तन प्रवास यशस्वीरीत्या पूर्ण केल्याबद्दल."
+                    "युवा रूपांतर — उद्देश, नेतृत्व आणि खऱ्या आयुष्याची तयारी असा ३ दिवसांचा परिवर्तन प्रवास यशस्वीरीत्या पूर्ण केल्याबद्दल."
                   )}
                 </p>
                 <div className="mt-8 flex items-end justify-between">

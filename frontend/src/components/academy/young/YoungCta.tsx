@@ -28,8 +28,8 @@ export const YoungCta = ({ onEnroll }: YoungCtaProps) => {
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/75 sm:text-lg">
             {t(
-              "Take the next step toward becoming a confident, disciplined, and purpose-driven individual through Young Adult Transform.",
-              "Young Adult Transform द्वारे आत्मविश्वासू, शिस्तबद्ध आणि ध्येयपूर्ण व्यक्ती बनण्याकडे पुढचे पाऊल टाका."
+              "Young Adult Transform is not just a program — it is an inspiring beginning that helps young people discover themselves and take firm steps towards success!",
+              "“युवा रूपांतर” — हा केवळ एक कार्यक्रम नाही, तर तरुणाईला स्वतःची ओळख करून देत, यशाच्या दिशेने ठाम पावले टाकण्याची प्रेरणादायी सुरुवात आहे!"
             )}
           </p>
         </Reveal>

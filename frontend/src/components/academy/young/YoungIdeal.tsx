@@ -4,23 +4,21 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { useLang } from "@/lib/lang";
 
 const TRAITS = [
-  { en: "College students", mr: "कॉलेज विद्यार्थी" },
-  { en: "Fresh graduates", mr: "नवीन पदवीधर" },
-  { en: "Young professionals", mr: "तरुण व्यावसायिक" },
-  { en: "Students preparing for their careers", mr: "करिअरची तयारी करणारे विद्यार्थी" },
-  { en: "Individuals seeking confidence and direction", mr: "आत्मविश्वास आणि दिशा शोधणारे" },
-  { en: "Anyone wanting stronger leadership and communication skills", mr: "बलवत नेतृत्व आणि संवाद कौशल्ये हवी असणारे कोणीही" },
+  { en: "Young adults aged 19 and above", mr: "१९ वर्षे वयोगटापेक्षा अधिक तरुण" },
+  { en: "Youth seeking clarity about career and life", mr: "करिअर आणि आयुष्याबाबत स्पष्टता हवी असलेले युवक" },
+  { en: "Those who want to build leadership and personality", mr: "नेतृत्वगुण आणि व्यक्तिमत्त्व विकास साधू इच्छिणारे" },
+  { en: "Those who want lasting positive change in themselves", mr: "स्वतःमध्ये सकारात्मक आणि दीर्घकालीन बदल घडवू इच्छिणारे" },
 ];
 
 export const YoungIdeal = () => {
   const { t } = useLang();
   return (
-    <section data-testid="young-ideal-section" className="bg-[#fbfafa] py-20 lg:py-28">
+    <section data-testid="young-ideal-section" className="bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          index="04"
-          eyebrow={t("Who Should Join?", "कोणी सहभागी व्हावे?")}
-          title={t("Ideal For", "यांच्यासाठी योग्य")}
+          index="06"
+          eyebrow={t("Who Should Join", "कोणासाठी उपयुक्त?")}
+          title={t("This Program Is Made For…", "हा कार्यक्रम त्यांच्यासाठी…")}
           align="center"
         />
 
@@ -29,7 +27,7 @@ export const YoungIdeal = () => {
             <Reveal key={tr.en} delay={0.06 * i}>
               <div
                 data-testid={`young-ideal-${i + 1}`}
-                className="group flex items-center gap-4 rounded-xl border border-[#e1dfdf] bg-white px-5 py-4 transition-all duration-300 hover:border-[#f68a4a]/60 hover:bg-[#fff]"
+                className="group flex items-center gap-4 rounded-xl border border-[#e1dfdf] bg-[#fbfafa] px-5 py-4 transition-all duration-300 hover:border-[#f68a4a]/60 hover:bg-white"
               >
                 <CheckCircle2
                   size={22}

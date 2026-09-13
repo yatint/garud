@@ -7,14 +7,13 @@ const DAYS = [
     num: "01",
     enDay: "Day 1",
     mrDay: "दिवस १",
-    enTitle: "Know Yourself",
-    mrTitle: "स्वतःला जाणा",
+    enTitle: "Self-Discovery & Purpose",
+    mrTitle: "स्वतःची ओळख आणि उद्देश शोध",
     img: "https://images.unsplash.com/photo-1522075782449-e45a34f1ddfb?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=900",
     items: [
-      { en: "Self-discovery", mr: "स्व-शोध" },
-      { en: "Personality understanding", mr: "व्यक्तिमत्त्वाची समज" },
-      { en: "Confidence building", mr: "आत्मविश्वास निर्मिती" },
-      { en: "Identifying strengths", mr: "शक्ती ओळखणे" },
+      { en: "Knowing yourself", mr: "स्वतःची ओळख" },
+      { en: "Purpose discovery", mr: "उद्देश शोध" },
+      { en: "Positive mindset", mr: "सकारात्मक मानसिकता" },
     ],
     slug: "day-1",
   },
@@ -22,15 +21,13 @@ const DAYS = [
     num: "02",
     enDay: "Day 2",
     mrDay: "दिवस २",
-    enTitle: "Build Your Leadership",
-    mrTitle: "तुमचे नेतृत्व घडवा",
+    enTitle: "Leadership & Communication",
+    mrTitle: "नेतृत्व विकास आणि संवाद",
     img: "https://images.unsplash.com/photo-1630068846062-3ffe78aa5049?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=900",
     items: [
-      { en: "Communication", mr: "संवाद" },
-      { en: "Team collaboration", mr: "संघ सहकार्य" },
-      { en: "Leadership activities", mr: "नेतृत्व उपक्रम" },
-      { en: "Emotional intelligence", mr: "भावनिक बुद्धिमत्ता" },
-      { en: "Responsible decision making", mr: "जबाबदार निर्णयक्षमता" },
+      { en: "Leadership development", mr: "नेतृत्व विकास" },
+      { en: "Communication skills", mr: "संवाद कौशल्ये" },
+      { en: "Emotional balance", mr: "भावनिक संतुलन" },
     ],
     slug: "day-2",
   },
@@ -38,15 +35,14 @@ const DAYS = [
     num: "03",
     enDay: "Day 3",
     mrDay: "दिवस ३",
-    enTitle: "Design Your Future",
-    mrTitle: "तुमचे भविष्य रचा",
+    enTitle: "Career Direction & Action Plan",
+    mrTitle: "करिअर दिशा आणि कृती आराखडा",
     img: "https://images.unsplash.com/photo-1544531586-fde5298cdd40?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=900",
     items: [
-      { en: "Career clarity", mr: "करिअर स्पष्टता" },
-      { en: "Goal planning", mr: "ध्येय नियोजन" },
-      { en: "Public speaking", mr: "सार्वजनिक भाषण" },
-      { en: "Personal action plan", mr: "वैयक्तिक कृती आराखडा" },
-      { en: "Certificate ceremony", mr: "प्रमाणपत्र समारंभ" },
+      { en: "Career direction", mr: "करिअर दिशा" },
+      { en: "Decision-making ability", mr: "निर्णयक्षमता" },
+      { en: "Action plan for success", mr: "यशासाठी कृती आराखडा" },
+      { en: "Graduation & certificate", mr: "पदवी व प्रमाणपत्र" },
     ],
     slug: "day-3",
   },
@@ -58,12 +54,12 @@ export const YoungJourney = () => {
     <section data-testid="young-journey-section" className="bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          index="03"
-          eyebrow={t("The 3-Day Transformation Journey", "३-दिवसांचा परिवर्तन प्रवास")}
-          title={t("From Self-Knowledge to a Future Blueprint", "स्व-जाणीवेपासून भविष्याच्या आराखड्यापर्यंत")}
+          index="04"
+          eyebrow={t("Program Structure", "कार्यक्रम रचना")}
+          title={t("Three Days, One Transformation", "३ दिवस, एक रूपांतर")}
           description={t(
-            "Three intensive days that take you from honest self-discovery to a concrete personal action plan.",
-            "तीन प्रगाढ दिवस — प्रामाणिक स्व-शोधापासून ते ठोस वैयक्तिक कृती आराखड्यापर्यंत."
+            "Three intensive days — from discovering your purpose to a concrete action plan for success.",
+            "तीन प्रगाढ दिवस — उद्देश शोधण्यापासून ते यशाच्या ठोस कृती आराखड्यापर्यंत."
           )}
           align="center"
         />
@@ -84,7 +80,7 @@ export const YoungJourney = () => {
                     <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[#e0701f]">
                       {t(d.enDay, d.mrDay)}
                     </p>
-                    <h3 className="font-heading text-2xl font-black text-[#18463b]">{t(d.enTitle, d.mrTitle)}</h3>
+                    <h3 className="font-heading text-xl font-black leading-tight text-[#18463b]">{t(d.enTitle, d.mrTitle)}</h3>
                   </div>
                 </div>
 

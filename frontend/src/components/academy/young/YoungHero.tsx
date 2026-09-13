@@ -32,7 +32,7 @@ export const YoungHero = ({ onEnroll }: YoungHeroProps) => {
           >
             <span className="h-2 w-2 rounded-full bg-[#f68a4a] animate-gold-pulse" />
             <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-white">
-              {t("Ages 19+ · 3-Day Program", "वय १९+ · ३-दिवसांचा कार्यक्रम")}
+              {t("Ages 19+ · 3-Day Life Transformation Program", "वय १९+ | ३ दिवसीय जीवनपरिवर्तन कार्यक्रम")}
             </span>
           </motion.div>
 
@@ -43,7 +43,7 @@ export const YoungHero = ({ onEnroll }: YoungHeroProps) => {
             className="font-heading text-4xl font-extrabold uppercase leading-tight tracking-wide text-white sm:text-5xl lg:text-6xl"
             data-testid="young-hero-title"
           >
-            Young Adult <span className="text-brand-gradient">Transform</span>
+            {t("Young Adult", "युवा")} <span className="text-brand-gradient">{t("Transform", "रूपांतर")}</span>
           </motion.h1>
 
           <motion.p
@@ -54,8 +54,8 @@ export const YoungHero = ({ onEnroll }: YoungHeroProps) => {
             data-testid="young-hero-subtitle"
           >
             {t(
-              "A 3-day transformational journey that empowers young adults to discover purpose, develop leadership, strengthen communication, and prepare for real-life success.",
-              "३ दिवसांचा परिवर्तनकारी प्रवास — तरुणांना ध्येय शोधणे, नेतृत्व विकसित करणे, संवाद बळकट करणे आणि खऱ्या आयुष्यातील यशाची तयारी करण्यासाठी."
+              "A deep and impactful 3-day transformation journey for young adults seeking the meaning of their life, career direction, and their own identity.",
+              "आपल्या आयुष्याचा अर्थ, करिअरची दिशा आणि स्वतःची ओळख शोधणाऱ्या तरुणांसाठी — ३ दिवसांचा सखोल आणि प्रभावी परिवर्तन प्रवास."
             )}
           </motion.p>
 

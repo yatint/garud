@@ -112,6 +112,17 @@ Build a premium, responsive, English-only landing page for **Youth Transform**, 
   - Replaced YouthOutcomes/YouthMethod with YouthObjectives/YouthComponents/YouthFeatures; App.tsx Marathi tab title now "किशोर रूपांतर".
 - Verified via screenshots in Marathi + English; yarn typecheck clean.
 
+## Implemented — Young Adult Transform Content Update (2026-09-06)
+- User supplied new Marathi content ("युवा रूपांतर") for /programs/young-adult-transform; same restructure pattern as the youth page with bilingual content + Lucide icons:
+  - Hero: title युवा रूपांतर / Young Adult Transform, badge "वय १९+ | ३ दिवसीय जीवनपरिवर्तन कार्यक्रम", new subtitle.
+  - About (01): both new paragraphs verbatim; tagline "उद्देश · नेतृत्व · वास्तविक यश".
+  - उद्दिष्टे (02): 5 objective icon cards (Compass/Crown/Mic/Flame/Target).
+  - मुख्य घटक (03): 5 numbered cards — Purpose Discovery, Leadership & Decision Making, Communication & Influence, Mindset & Emotional Strength, Career & Success Readiness.
+  - रचना (04): Day 1 स्व-ओळख/उद्देश/सकारात्मक मानसिकता, Day 2 नेतृत्व/संवाद/भावनिक संतुलन, Day 3 करिअर दिशा/निर्णय/कृती आराखडा + पदवी.
+  - वैशिष्ट्ये (05): 4 feature cards (MessagesSquare/Wrench/GraduationCap/UserRound); कोणासाठी (06): 4 checklist items; अपेक्षित परिणाम: 5 chips green band; CTA carries the new closing quote.
+  - Replaced YoungDevelop/YoungExperience/YoungWhyOutcomes with YoungObjectives/YoungComponents/YoungFeatures/YoungBenefits; App.tsx Marathi tab title now "युवा रूपांतर".
+- Verified via screenshots (Marathi); typecheck clean.
+
 ## Verified
 - `/` and `/youth-transform` both load through the public URL; enquiry dialog fill → submit → success toast confirmed; cross-page links work; typecheck clean.
 - Public URL https://transform-teens.preview.emergentagent.com returns 200; `/api/status` responds.

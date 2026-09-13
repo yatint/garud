@@ -7,14 +7,13 @@ const DAYS = [
     num: "01",
     enDay: "Day 1",
     mrDay: "दिवस १",
-    enTitle: "Discover Yourself",
-    mrTitle: "स्वतःला ओळखा",
+    enTitle: "Self-Discovery & Confidence",
+    mrTitle: "स्वतःची ओळख आणि आत्मविश्वास",
     img: "https://images.unsplash.com/photo-1686624386665-4cd01b96d0f6?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=900",
     items: [
-      { en: "Self-awareness", mr: "स्व-जाणीव" },
-      { en: "Goal identification", mr: "ध्येय ओळख" },
-      { en: "Confidence activities", mr: "आत्मविश्वासाचे उपक्रम" },
-      { en: "Personality assessment", mr: "व्यक्तिमत्त्व मूल्यमापन" },
+      { en: "Knowing yourself", mr: "स्वतःची ओळख" },
+      { en: "Self-confidence", mr: "आत्मविश्वास" },
+      { en: "Positive thinking", mr: "सकारात्मक विचारसरणी" },
     ],
     slug: "day-1",
   },
@@ -22,14 +21,12 @@ const DAYS = [
     num: "02",
     enDay: "Day 2",
     mrDay: "दिवस २",
-    enTitle: "Build Your Skills",
-    mrTitle: "कौशल्ये घडवा",
+    enTitle: "Emotions & Discipline",
+    mrTitle: "भावनिक बुद्धिमत्ता आणि शिस्त",
     img: "https://images.unsplash.com/photo-1630068846062-3ffe78aa5049?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=900",
     items: [
-      { en: "Communication", mr: "संवाद" },
-      { en: "Leadership", mr: "नेतृत्व" },
-      { en: "Team activities", mr: "सांघिक उपक्रम" },
       { en: "Emotional intelligence", mr: "भावनिक बुद्धिमत्ता" },
+      { en: "Discipline", mr: "शिस्त" },
       { en: "Time management", mr: "वेळ व्यवस्थापन" },
     ],
     slug: "day-2",
@@ -38,14 +35,13 @@ const DAYS = [
     num: "03",
     enDay: "Day 3",
     mrDay: "दिवस ३",
-    enTitle: "Design Your Future",
-    mrTitle: "भविष्य रचा",
+    enTitle: "Leadership & Life Planning",
+    mrTitle: "नेतृत्व विकास आणि जीवन नियोजन",
     img: "https://images.unsplash.com/photo-1564522365984-c08ed1f78893?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=900",
     items: [
-      { en: "Career clarity", mr: "करिअर स्पष्टता" },
-      { en: "Decision making", mr: "निर्णयक्षमता" },
-      { en: "Public speaking", mr: "सार्वजनिक भाषण" },
-      { en: "Personal action plan", mr: "वैयक्तिक कृती आराखडा" },
+      { en: "Leadership development", mr: "नेतृत्व विकास" },
+      { en: "Career direction", mr: "करिअर दिशा" },
+      { en: "Life planning", mr: "जीवनाचे नियोजन" },
       { en: "Graduation & certificate", mr: "पदवी व प्रमाणपत्र" },
     ],
     slug: "day-3",
@@ -58,12 +54,12 @@ export const YouthJourney = () => {
     <section data-testid="youth-journey-section" className="bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          index="03"
-          eyebrow={t("The 3-Day Journey", "३ दिवसांचा प्रवास")}
-          title={t("A Carefully Engineered Transformation Arc", "सुविचारित रूपांतर प्रवास")}
+          index="04"
+          eyebrow={t("Program Structure", "कार्यक्रम रचना")}
+          title={t("Three Days, One Transformation", "३ दिवस, एक रूपांतर")}
           description={t(
-            "Each day builds on the last — from honest self-discovery to a confident step onto the stage.",
-            "प्रत्येक दिवस मागील दिवसावर भर घालतो — प्रामाणिक स्व-शोधापासून ते मंचावरील आत्मविश्वासापर्यंत."
+            "Each day builds on the last — from honest self-discovery to a clear plan for life.",
+            "प्रत्येक दिवस मागील दिवसावर भर घालतो — प्रामाणिक स्व-शोधापासून ते जीवनाच्या स्पष्ट आराखड्यापर्यंत."
           )}
           align="center"
         />
@@ -84,7 +80,7 @@ export const YouthJourney = () => {
                     <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[#e0701f]">
                       {t(d.enDay, d.mrDay)}
                     </p>
-                    <h3 className="font-heading text-2xl font-black text-[#18463b]">{t(d.enTitle, d.mrTitle)}</h3>
+                    <h3 className="font-heading text-xl font-black leading-tight text-[#18463b]">{t(d.enTitle, d.mrTitle)}</h3>
                   </div>
                 </div>
 

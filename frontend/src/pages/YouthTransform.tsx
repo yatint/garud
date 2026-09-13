@@ -3,9 +3,10 @@ import { Toaster } from "@/components/ui/sonner";
 import { SlimNavbar } from "@/components/academy/SlimNavbar";
 import { YouthHero } from "@/components/academy/youth/YouthHero";
 import { YouthAbout } from "@/components/academy/youth/YouthAbout";
-import { YouthOutcomes } from "@/components/academy/youth/YouthOutcomes";
+import { YouthObjectives } from "@/components/academy/youth/YouthObjectives";
+import { YouthComponents } from "@/components/academy/youth/YouthComponents";
 import { YouthJourney } from "@/components/academy/youth/YouthJourney";
-import { YouthMethod } from "@/components/academy/youth/YouthMethod";
+import { YouthFeatures } from "@/components/academy/youth/YouthFeatures";
 import { YouthIdeal } from "@/components/academy/youth/YouthIdeal";
 import { YouthBenefits } from "@/components/academy/youth/YouthBenefits";
 import { YouthCertificate } from "@/components/academy/youth/YouthCertificate";
@@ -24,7 +25,7 @@ export default function YouthTransform() {
       .querySelector('meta[name="description"]')
       ?.setAttribute(
         "content",
-        "Youth Transform is a 3-day life skills and personality transformation program for teenagers aged 13–18, building confidence, discipline, leadership, emotional intelligence, and career direction."
+        "Youth Transform (किशोर रूपांतर) is a special 3-day life skills development program for teenagers aged 13–18, building confidence, discipline, emotional intelligence, leadership, and a clear direction for life."
       );
     const lenis = initLenis();
     let raf = 0;
@@ -48,9 +49,10 @@ export default function YouthTransform() {
       <main>
         <YouthHero onEnroll={openEnquiry} />
         <YouthAbout />
-        <YouthOutcomes />
+        <YouthObjectives />
+        <YouthComponents />
         <YouthJourney />
-        <YouthMethod />
+        <YouthFeatures />
         <YouthIdeal />
         <YouthBenefits />
         <YouthCertificate />

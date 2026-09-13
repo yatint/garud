@@ -27,8 +27,8 @@ export const YouthCta = ({ onEnroll }: YouthCtaProps) => {
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/75 sm:text-lg">
             {t(
-              "Give your teenager three days of guided transformation — confidence, discipline, leadership, and a clear direction for life.",
-              "तुमच्या किशोरवयीन मुलाला तीन दिवसांचे मार्गदर्शित परिवर्तन द्या — आत्मविश्वास, शिस्त, नेतृत्व आणि आयुष्याची स्पष्ट दिशा."
+              "Youth Transform is not just a program — it is the beginning of a transformation: of knowing yourself, shaping yourself, and walking confidently towards success!",
+              "“किशोर रूपांतर” हा केवळ कार्यक्रम नाही, तर एक परिवर्तनाची सुरुवात आहे — स्वतःला ओळखण्याची, घडवण्याची आणि यशाच्या दिशेने आत्मविश्वासाने वाटचाल करण्याची!"
             )}
           </p>
         </Reveal>

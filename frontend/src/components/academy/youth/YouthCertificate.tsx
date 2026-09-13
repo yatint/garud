@@ -9,7 +9,7 @@ export const YouthCertificate = () => {
     <section data-testid="youth-certificate-section" className="bg-[#fbfafa] py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          index="06"
+          index="07"
           eyebrow={t("Certificate", "प्रमाणपत्र")}
           title={t("Recognizing Every Student's Transformation", "प्रत्येक विद्यार्थ्याच्या परिवर्तनाची दखल")}
           description={t(

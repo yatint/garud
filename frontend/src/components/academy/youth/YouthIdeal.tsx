@@ -4,12 +4,9 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { useLang } from "@/lib/lang";
 
 const TRAITS = [
-  { en: "Lack confidence in expressing themselves", mr: "स्वतःला व्यक्त करण्यात आत्मविश्वास नसलेल्या विद्यार्थ्यांना" },
-  { en: "Spend excessive time on mobile & social media", mr: "मोबाईल व सोशल मीडियावर जास्त वेळ घालवणाऱ्यांना" },
-  { en: "Need clarity about career and future direction", mr: "करिअर व भविष्याची दिशा हवी असलेल्यांना" },
-  { en: "Want sharper focus and better study habits", mr: "अभ्यासात एकाग्रता व चांगल्या सवयी हव्या असलेल्यांना" },
-  { en: "Want to improve communication & leadership", mr: "संवाद व नेतृत्व सुधारू इच्छिणाऱ्यांना" },
-  { en: "Want discipline, values, and positive habits", mr: "शिस्त, संस्कार व चांगल्या सवयी हव्या असलेल्यांना" },
+  { en: "Teenage students aged 13–18", mr: "१३ ते १८ वयोगटातील किशोरवयीन विद्यार्थी" },
+  { en: "Students who want to bring positive change in themselves", mr: "स्वतःमध्ये सकारात्मक बदल घडवू इच्छिणारे विद्यार्थी" },
+  { en: "Youngsters confused about their career", mr: "करिअरबाबत संभ्रमित असलेले युवक" },
 ];
 
 export const YouthIdeal = () => {
@@ -18,13 +15,13 @@ export const YouthIdeal = () => {
     <section data-testid="youth-ideal-section" className="bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          index="05"
-          eyebrow={t("Who Should Join", "कोणी सहभागी व्हावे")}
-          title={t("Made for Students Who Are Ready for More", "आणखी काही मिळवायला तयार असलेल्या विद्यार्थ्यांसाठी")}
+          index="06"
+          eyebrow={t("Who Should Join", "कोणासाठी उपयुक्त?")}
+          title={t("This Program Is Made For…", "हा कार्यक्रम त्यांच्यासाठी…")}
           align="center"
         />
 
-        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2" data-testid="youth-ideal-checklist">
+        <div className="mt-12 grid grid-cols-1 gap-4" data-testid="youth-ideal-checklist">
           {TRAITS.map((tr, i) => (
             <Reveal key={tr.en} delay={0.06 * i}>
               <div

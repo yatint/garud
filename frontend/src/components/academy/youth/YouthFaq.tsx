@@ -52,7 +52,7 @@ export const YouthFaq = () => {
     <section id="youth-faq" data-testid="youth-faq-section" className="bg-[#fbfafa] py-20 lg:py-28">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          index="08"
+          index="09"
           eyebrow={t("FAQs", "वारंवार विचारले जाणारे प्रश्न")}
           title={t("Questions Parents & Students Ask", "पालक व विद्यार्थी विचारतात ते प्रश्न")}
           align="center"

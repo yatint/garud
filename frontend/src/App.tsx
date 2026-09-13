@@ -25,7 +25,7 @@ const TITLES: Record<string, [string, string]> = {
   "/programs/kids-transform": ["Kids Transform | Rupantaram Life Skills Academy", "Kids Transform | रूपांतरम् जीवनकौशल्य अकादमी"],
   "/programs/young-adult-transform": ["Young Adult Transform | Rupantaram Life Skills Academy", "Young Adult Transform | रूपांतरम् जीवनकौशल्य अकादमी"],
   "/programs/30-day-transform": ["30-Day Transform | Rupantaram Life Skills Academy", "30-Day Transform | रूपांतरम् जीवनकौशल्य अकादमी"],
-  "/youth-transform": ["Youth Transform | Rupantaram Life Skills Academy", "Youth Transform | रूपांतरम् जीवनकौशल्य अकादमी"],
+  "/youth-transform": ["Youth Transform | Rupantaram Life Skills Academy", "किशोर रूपांतर | रूपांतरम् जीवनकौशल्य अकादमी"],
   "/life-skills": ["21 Life Skills | Rupantaram Life Skills Academy", "२१ जीवनकौशल्ये | रूपांतरम् जीवनकौशल्य अकादमी"],
   "/success-stories": ["Success Stories | Rupantaram Life Skills Academy", "यशोगाथा | रूपांतरम् जीवनकौशल्य अकादमी"],
   "/contact": ["Contact Rupantaram | Rupantaram Life Skills Academy", "संपर्क | रूपांतरम् जीवनकौशल्य अकादमी"],

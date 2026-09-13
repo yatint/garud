@@ -15,19 +15,19 @@ export const YouthAbout = () => {
             <SectionHeading
               index="01"
               eyebrow={t("About the Program", "कार्यक्रमाविषयी")}
-              title={t("Three Days That Rewire a Lifetime", "आयुष्य बदलणारे तीन दिवस")}
+              title={t("From Self-Discovery to Life Transformation", "स्वतःची ओळख ते जीवनाचे रूपांतर")}
             />
             <Reveal delay={0.1}>
               <p className="mt-6 text-base leading-relaxed text-[#555] sm:text-lg">
                 {t(
-                  "Youth Transform is designed for the most defining years of a student's life. Through experiential activities, honest reflection, teamwork, and mentor guidance, teenagers develop the confidence, discipline, and emotional strength that classrooms rarely teach.",
-                  "Youth Transform विद्यार्थ्याच्या आयुष्यातील सर्वात निर्णायक वर्षांसाठी तयार केला आहे. अनुभवाधारित उपक्रम, प्रामाणिक आत्मपरिक्षण, संघकार्य आणि मार्गदर्शनाद्वारे किशोरवयीन मुले वर्गात क्वचित शिकवले जाणारे आत्मविश्वास, शिस्त आणि भावनिक बळकटी विकसित करतात."
+                  "In today's fast-paced and competitive world, teenagers face many challenges — career uncertainty, emotional instability, the influence of social media, and a lack of self-confidence. Against this backdrop, Youth Transform has been designed as a special 3-day life skills development program.",
+                  "आजच्या वेगवान आणि स्पर्धात्मक जगात किशोरवयीन मुलांसमोर अनेक आव्हाने उभी आहेत — करिअरची अनिश्चितता, भावनिक अस्थिरता, सोशल मीडियाचा प्रभाव आणि आत्मविश्वासाचा अभाव. या पार्श्वभूमीवर “किशोर रूपांतर” हा ३ दिवसांचा विशेष जीवनकौशल्य विकास कार्यक्रम तयार करण्यात आला आहे."
                 )}
               </p>
               <p className="mt-5 text-base leading-relaxed text-[#555] sm:text-lg">
                 {t(
-                  "The program is experiential, not lectures — built for the teenage mind, with values at the core of every activity.",
-                  "हा कार्यक्रम उपदेश नव्हे, अनुभव आहे — किशोरवयीन मनासाठी बनवलेला, प्रत्येक उपक्रमाच्या केंद्रात संस्कार."
+                  "This journey is not just training — it is a powerful experience that takes students from self-discovery to life transformation. It builds positive change in the mind, thoughts, and behaviour of students, shaping them into successful, capable, and responsible individuals.",
+                  "हा प्रवास केवळ प्रशिक्षण नसून, स्वतःची ओळख ते जीवनाचे रूपांतर असा अनुभव देणारा एक सशक्त उपक्रम आहे. यामध्ये विद्यार्थ्यांच्या मन, विचार आणि वर्तनामध्ये सकारात्मक बदल घडवून त्यांना यशस्वी, सक्षम आणि जबाबदार व्यक्तिमत्त्व म्हणून घडवण्याचा प्रयत्न केला जातो."
                 )}
               </p>
               <p className="mt-6 font-heading text-sm font-bold uppercase tracking-[0.2em] text-[#f68a4a]">
@@ -42,7 +42,7 @@ export const YouthAbout = () => {
               <div className="relative overflow-hidden rounded-2xl border border-[#e1dfdf]">
                 <img
                   src={ABOUT_IMG}
-                  alt={t("Students collaborating during a Youth Transform workshop", "Youth Transform कार्यशाळेतील विद्यार्थी")}
+                  alt={t("Students collaborating during a Youth Transform workshop", "किशोर रूपांतर कार्यशाळेतील विद्यार्थी")}
                   className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_60%,rgba(24,70,59,0.5)_100%)]" />

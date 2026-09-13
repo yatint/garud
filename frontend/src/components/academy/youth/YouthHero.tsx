@@ -43,7 +43,7 @@ export const YouthHero = ({ onEnroll }: YouthHeroProps) => {
             className="font-heading text-4xl font-extrabold uppercase leading-tight tracking-wide text-white sm:text-5xl lg:text-6xl"
             data-testid="youth-hero-title"
           >
-            Youth <span className="text-brand-gradient">Transform</span>
+            {t("Youth", "किशोर")} <span className="text-brand-gradient">{t("Transform", "रूपांतर")}</span>
           </motion.h1>
 
           <motion.p
@@ -54,8 +54,8 @@ export const YouthHero = ({ onEnroll }: YouthHeroProps) => {
             data-testid="youth-hero-subtitle"
           >
             {t(
-              "A 3-day life skills journey that helps teenagers build confidence, discipline, emotional intelligence, leadership, and a clear direction for the future.",
-              "३ दिवसांचा जीवनकौशल्य प्रवास — किशोरवयीन मुलांमध्ये आत्मविश्वास, शिस्त, भावनिक बुद्धिमत्ता, नेतृत्व आणि भविष्याची स्पष्ट दिशा घडवण्यासाठी."
+              "A special 3-day life skills journey for teenagers — in an age of career uncertainty, emotional instability, social media influence, and low self-confidence.",
+              "करिअरची अनिश्चितता, भावनिक अस्थिरता, सोशल मीडियाचा प्रभाव आणि आत्मविश्वासाच्या अभावाच्या काळात — किशोरवयीन मुलांसाठी ३ दिवसांचा विशेष जीवनकौशल्य विकास प्रवास."
             )}
           </motion.p>
 

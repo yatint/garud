@@ -1,14 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import {
-  BookOpen,
-  Compass,
-  Crown,
-  Mic,
-  MonitorSmartphone,
-  Scale,
-  Sparkles,
-  Sun,
-} from "lucide-react";
+import { Compass, Crown, HeartHandshake, ShieldCheck, Sparkles } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { useLang } from "@/lib/lang";
 
@@ -20,14 +11,11 @@ interface Benefit {
 }
 
 const BENEFITS: Benefit[] = [
-  { icon: Sparkles, enTitle: "Improved self-confidence", mrTitle: "वाढलेला आत्मविश्वास", slug: "confidence" },
-  { icon: BookOpen, enTitle: "Better study focus", mrTitle: "अभ्यासातील एकाग्रता", slug: "study-focus" },
-  { icon: Mic, enTitle: "Strong communication skills", mrTitle: "बळकट संवाद कौशल्ये", slug: "communication" },
-  { icon: Crown, enTitle: "Leadership qualities", mrTitle: "नेतृत्व गुण", slug: "leadership" },
-  { icon: MonitorSmartphone, enTitle: "Reduced screen dependency", mrTitle: "स्क्रीनचा ताबा कमी", slug: "screen" },
-  { icon: Sun, enTitle: "Positive mindset", mrTitle: "सकारात्मक विचारसरणी", slug: "mindset" },
-  { icon: Compass, enTitle: "Clear career direction", mrTitle: "स्पष्ट करिअर दिशा", slug: "career" },
-  { icon: Scale, enTitle: "Responsible decision making", mrTitle: "जबाबदार निर्णय", slug: "decisions" },
+  { icon: Sparkles, enTitle: "More confident and positive", mrTitle: "अधिक आत्मविश्वासी आणि सकारात्मक", slug: "confident" },
+  { icon: ShieldCheck, enTitle: "Disciplined and goal-oriented", mrTitle: "शिस्तबद्ध आणि लक्ष्याभिमुख", slug: "disciplined" },
+  { icon: HeartHandshake, enTitle: "In control of emotions and thoughts", mrTitle: "भावना आणि विचारांवर नियंत्रण", slug: "emotions" },
+  { icon: Crown, enTitle: "Leadership and decision-making ability", mrTitle: "नेतृत्वगुण आणि निर्णयक्षमता", slug: "leadership" },
+  { icon: Compass, enTitle: "A clear direction for the future", mrTitle: "भविष्यासाठी स्पष्ट दिशा", slug: "direction" },
 ];
 
 export const YouthBenefits = () => {
@@ -45,14 +33,14 @@ export const YouthBenefits = () => {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal className="text-center">
           <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#f8b183]">
-            {t("Measurable Benefits", "मोजता येणारे फायदे")}
+            {t("Expected Outcomes", "अपेक्षित परिणाम")}
           </p>
           <h2 className="mt-4 font-heading text-3xl font-black tracking-tight text-white sm:text-4xl lg:text-5xl">
-            {t("What Parents Notice Within Weeks", "काही आठवड्यांत पालकांना दिसणारा बदल")}
+            {t("After These 3 Days, Students…", "या ३ दिवसांच्या प्रवासानंतर विद्यार्थी…")}
           </h2>
         </Reveal>
 
-        <div className="mt-14 grid grid-cols-2 gap-5 md:grid-cols-4">
+        <div className="mt-14 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-5">
           {BENEFITS.map((b, i) => (
             <Reveal key={b.slug} delay={i * 0.06}>
               <div
@@ -62,7 +50,7 @@ export const YouthBenefits = () => {
                 <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#f68a4a] text-white transition-transform duration-300 group-hover:scale-110">
                   <b.icon size={22} />
                 </span>
-                <h3 className="mt-4 font-heading text-sm font-bold text-white sm:text-base">
+                <h3 className="mt-4 font-heading text-sm font-bold leading-snug text-white">
                   {t(b.enTitle, b.mrTitle)}
                 </h3>
               </div>

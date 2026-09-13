@@ -15,7 +15,7 @@ export const YouthTestimonials = () => {
     <section data-testid="youth-testimonials-section" className="bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          index="07"
+          index="08"
           eyebrow={t("Stories", "कथा")}
           title={t("What Parents Will Tell You", "पालक तुम्हाला काय सांगतील")}
           align="center"

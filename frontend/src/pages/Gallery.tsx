@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Expand, X } from "lucide-react";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Toaster } from "@/components/ui/sonner";
-import { SlimNavbar } from "@/components/academy/SlimNavbar";
+import { AcademyNavbar } from "@/components/academy/AcademyNavbar";
 import { AcademyFooter } from "@/components/academy/AcademyFooter";
 import { EnquiryDialog } from "@/components/academy/EnquiryDialog";
 import { useLang } from "@/lib/lang";
@@ -175,7 +175,7 @@ export default function Gallery() {
     <div className="min-h-screen bg-white font-sans text-[#222]">
       <div className="grain-overlay" />
 
-      <SlimNavbar onEnquire={openEnquiry} />
+      <AcademyNavbar onEnquire={openEnquiry} />
 
       <main>
         <section className="relative overflow-hidden bg-[#f6f7f0] pb-14 pt-36 lg:pt-44">          <div className="pointer-events-none absolute inset-0">

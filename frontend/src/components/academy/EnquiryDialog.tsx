@@ -31,10 +31,10 @@ export const EnquiryDialog = ({ open, onOpenChange }: EnquiryDialogProps) => {
 
   const PROGRAM_OPTIONS = [
     t("Not sure — please guide me", "ठरवलेले नाही — मार्गदर्शन हवे"),
-    t("Kids Transform (Ages 6–13)", "Kids Transform (६–१३ वर्षे)"),
-    t("Youth Transform (Ages 13–18)", "Youth Transform (१३–१८ वर्षे)"),
-    t("Young Adult Transform (Ages 19+)", "Young Adult Transform (१९+)"),
-    t("Parenting 360° (1 Day)", "Parenting 360° (१ दिवस)"),
+    t("Kids Transform (Ages 6–13)", "बाल रूपांतर (६–१३ वर्षे)"),
+    t("Youth Transform (Ages 13–18)", "किशोर रूपांतर (१३–१८ वर्षे)"),
+    t("Young Adult Transform (Ages 19+)", "युवा रूपांतर (१९+)"),
+    t("Parenting 360° (1 Day)", "पालकत्व 360° (१ दिवस)"),
     t("30-Day Transformation Program", "३० दिवसांचा रूपांतर कार्यक्रम"),
   ];
 

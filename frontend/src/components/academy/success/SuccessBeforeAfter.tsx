@@ -13,9 +13,9 @@ const ROWS = [
 ];
 
 const PARENTS = [
-  { program: "Kids Transform", slug: "parent-1" },
-  { program: "Youth Transform", slug: "parent-2" },
-  { program: "Parenting 360°", slug: "parent-3" },
+  { enProgram: "Kids Transform", mrProgram: "बाल रूपांतर", slug: "parent-1" },
+  { enProgram: "Youth Transform", mrProgram: "किशोर रूपांतर", slug: "parent-2" },
+  { enProgram: "Parenting 360°", mrProgram: "पालकत्व 360°", slug: "parent-3" },
 ];
 
 export const SuccessBeforeAfter = () => {
@@ -95,7 +95,7 @@ export const SuccessBeforeAfter = () => {
                     <p className="font-heading text-sm font-bold text-[#18463b]">
                       {t("Parent Name (Placeholder)", "पालकांचे नाव (लवकरच)")}
                     </p>
-                    <p className="mt-1 text-xs font-semibold text-[#999]">{p.program}</p>
+                    <p className="mt-1 text-xs font-semibold text-[#999]">{t(p.enProgram, p.mrProgram)}</p>
                     <p className="mt-1 inline-flex items-center gap-1 text-xs text-[#bbb]">
                       <MapPin size={11} />
                       {t("Location (Placeholder)", "ठिकाण (लवकरच)")}

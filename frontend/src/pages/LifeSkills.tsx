@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { Toaster } from "@/components/ui/sonner";
-import { SlimNavbar } from "@/components/academy/SlimNavbar";
+import { AcademyNavbar } from "@/components/academy/AcademyNavbar";
 import { LifeHero } from "@/components/academy/life/LifeHero";
 import { LifeCategories } from "@/components/academy/life/LifeCategories";
 import { LifeMethodTableJourney } from "@/components/academy/life/LifeMethodTableJourney";
@@ -70,7 +70,7 @@ export default function LifeSkills() {
   return (
     <div className="min-h-screen bg-white font-sans text-[#222]">
       <div className="grain-overlay" />
-      <SlimNavbar onEnquire={openEnquiry} />
+      <AcademyNavbar onEnquire={openEnquiry} />
       <main>
         <LifeHero onEnquire={openEnquiry} />
         <LifeIntro />

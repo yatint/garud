@@ -42,7 +42,7 @@ export const YouthCertificate = () => {
                 <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-[#555]">
                   {t(
                     "for successfully completing Youth Transform — a 3-day life skills and personality transformation journey.",
-                    "Youth Transform — ३ दिवसांचा जीवनकौशल्य आणि व्यक्तिमत्त्व परिवर्तन प्रवास यशस्वीरीत्या पूर्ण केल्याबद्दल."
+                    "किशोर रूपांतर — ३ दिवसांचा जीवनकौशल्य आणि व्यक्तिमत्त्व परिवर्तन प्रवास यशस्वीरीत्या पूर्ण केल्याबद्दल."
                   )}
                 </p>
                 <div className="mt-8 flex items-end justify-between">

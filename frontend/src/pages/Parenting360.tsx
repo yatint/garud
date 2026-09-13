@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { Toaster } from "@/components/ui/sonner";
-import { SlimNavbar } from "@/components/academy/SlimNavbar";
+import { AcademyNavbar } from "@/components/academy/AcademyNavbar";
 import { ParentingHero } from "@/components/academy/parenting/ParentingHero";
 import { ParentingAbout } from "@/components/academy/parenting/ParentingAbout";
 import { ParentingObjectives } from "@/components/academy/parenting/ParentingObjectives";
@@ -42,7 +42,7 @@ export default function Parenting360() {
   return (
     <div className="min-h-screen bg-white font-sans text-[#222]">
       <div className="grain-overlay" />
-      <SlimNavbar onEnquire={openEnquiry} />
+      <AcademyNavbar onEnquire={openEnquiry} />
       <main>
         <ParentingHero onEnroll={openEnquiry} />
         <ParentingAbout />

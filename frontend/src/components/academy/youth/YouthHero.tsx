@@ -17,7 +17,7 @@ export const YouthHero = ({ onEnroll }: YouthHeroProps) => {
       <div className="relative flex min-h-[72vh] items-center justify-center overflow-hidden [border-radius:0_0_50%_50%/0_0_72px_72px]">
         <img
           src={HERO_IMG}
-          alt={t("Confident students of the Youth Transform program", "Youth Transform कार्यक्रमातील आत्मविश्वासू विद्यार्थी")}
+          alt={t("Confident students of the Youth Transform program", "किशोर रूपांतर कार्यक्रमातील आत्मविश्वासू विद्यार्थी")}
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(24,70,59,0.55)_0%,rgba(24,70,59,0.7)_60%,rgba(24,70,59,0.85)_100%)]" />

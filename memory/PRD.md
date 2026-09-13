@@ -168,6 +168,13 @@ Build a premium, responsive, English-only landing page for **Youth Transform**, 
 - Why-Us (PromiseCta): core promise replaced with user's poetic version — anti-"instant success" opening, 4 attribute lines, identity line, and closing "येथे यश हे केवळ एक टप्पा नाही, तर आयुष्यभर टिकणारी एक सवय बनते".
 - All with English translations for the toggle; verified via screenshots (Marathi); typecheck clean.
 
+## Implemented — Full Menu on All Pages + Complete Marathi Names (2026-09-06)
+- User issues: (1) inner pages lacked the nav menu, (2) English program names remained in Marathi mode (e.g. Kids Transform), (3) branch contact numbers spec.
+- Menu: SlimNavbar deleted; all 12 inner pages now use the full AcademyNavbar (topbar, logo, green menu, dropdown, mobile hamburger). AcademyNavbar home/logo links now navigate to "/" from inner pages (scroll-to-top on home). Dropdown uses stable slug testids.
+- Marathi program names site-wide (Marathi mode): Kids Transform→बाल रूपांतर, Youth Transform→किशोर रूपांतर, Young Adult Transform→युवा रूपांतर, Parenting 360°→पालकत्व 360°, 30-Day Transform→३० दिवसांचा रूपांतर — across navbar dropdown, footer, homepage cards, programs cards, program finder, life-skills table, about strip, success stories, enquiry dialog + contact form selects, certificates, FAQs, tab titles, hero titles (Kids hero now "बाल रूपांतर").
+- Branch numbers: all 4 center cards show +91 90116 58888 with कॉल करा (tel:) + चौकशी करा (dialog) — matches user spec (was already in place, verified).
+- Testing agent (iteration_3): 100% pass on all flows. Follow-up polish applied: unified "३० दिवसांचा रूपांतर" phrasing site-wide (user's own spelling) and aligned age suffixes in both program selects.
+
 ## Verified
 - `/` and `/youth-transform` both load through the public URL; enquiry dialog fill → submit → success toast confirmed; cross-page links work; typecheck clean.
 - Public URL https://transform-teens.preview.emergentagent.com returns 200; `/api/status` responds.

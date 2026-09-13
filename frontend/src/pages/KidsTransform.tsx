@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { Toaster } from "@/components/ui/sonner";
-import { SlimNavbar } from "@/components/academy/SlimNavbar";
+import { AcademyNavbar } from "@/components/academy/AcademyNavbar";
 import { KidsHero } from "@/components/academy/kids/KidsHero";
 import { KidsAbout } from "@/components/academy/kids/KidsAbout";
 import { KidsLearn } from "@/components/academy/kids/KidsLearn";
@@ -43,7 +43,7 @@ export default function KidsTransform() {
   return (
     <div className="min-h-screen bg-white font-sans text-[#222]">
       <div className="grain-overlay" />
-      <SlimNavbar onEnquire={openEnquiry} />
+      <AcademyNavbar onEnquire={openEnquiry} />
       <main>
         <KidsHero onEnroll={openEnquiry} />
         <KidsAbout />

@@ -9,16 +9,17 @@ interface Stop {
   enAge: string;
   mrAge: string;
   program: string;
+  programMr: string;
   slug: string;
   tint: string;
 }
 
 const STOPS: Stop[] = [
-  { icon: Smile, enAge: "6–13", mrAge: "६–१३", program: "Kids Transform", slug: "kids", tint: "bg-[#f68a4a]" },
-  { icon: Zap, enAge: "13–18", mrAge: "१३–१८", program: "Youth Transform", slug: "youth", tint: "bg-[#18463b]" },
-  { icon: Briefcase, enAge: "19+", mrAge: "१९+", program: "Young Adult Transform", slug: "young-adult", tint: "bg-[#f0a500]" },
-  { icon: Home, enAge: "Parents", mrAge: "पालक", program: "Parenting 360°", slug: "parents", tint: "bg-[#0b5d3b]" },
-  { icon: TrendingUp, enAge: "Complete Growth Journey", mrAge: "संपूर्ण प्रगती प्रवास", program: "30-Day Transformation", slug: "growth", tint: "bg-[#e0701f]" },
+  { icon: Smile, enAge: "6–13", mrAge: "६–१३", program: "Kids Transform", programMr: "बाल रूपांतर", slug: "kids", tint: "bg-[#f68a4a]" },
+  { icon: Zap, enAge: "13–18", mrAge: "१३–१८", program: "Youth Transform", programMr: "किशोर रूपांतर", slug: "youth", tint: "bg-[#18463b]" },
+  { icon: Briefcase, enAge: "19+", mrAge: "१९+", program: "Young Adult Transform", programMr: "युवा रूपांतर", slug: "young-adult", tint: "bg-[#f0a500]" },
+  { icon: Home, enAge: "Parents", mrAge: "पालक", program: "Parenting 360°", programMr: "पालकत्व 360°", slug: "parents", tint: "bg-[#0b5d3b]" },
+  { icon: TrendingUp, enAge: "Complete Growth Journey", mrAge: "संपूर्ण प्रगती प्रवास", program: "30-Day Transformation", programMr: "३० दिवसांचा रूपांतर", slug: "growth", tint: "bg-[#e0701f]" },
 ];
 
 export const ProgramFinder = () => {
@@ -46,7 +47,7 @@ export const ProgramFinder = () => {
                 <p className="mt-5 font-heading text-sm font-black uppercase tracking-[0.14em] text-[#18463b]">
                   {t(s.enAge, s.mrAge)}
                 </p>
-                <p className="mt-1.5 text-sm font-semibold text-[#7a7a7a]">{s.program}</p>
+                <p className="mt-1.5 text-sm font-semibold text-[#7a7a7a]">{t(s.program, s.programMr)}</p>
               </div>
             </Reveal>
           ))}

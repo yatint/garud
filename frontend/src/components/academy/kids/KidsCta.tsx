@@ -29,7 +29,7 @@ export const KidsCta = ({ onEnroll }: KidsCtaProps) => {
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/75 sm:text-lg">
             {t(
               "Help your child grow with confidence, discipline, strong values, and lifelong habits through the Kids Transform journey.",
-              "Kids Transform प्रवासाद्वारे तुमच्या मुलाला आत्मविश्वास, शिस्त, दृढ मूल्ये आणि आजीवन सवयींसह वाढण्यास मदत करा."
+              "बाल रूपांतर प्रवासाद्वारे तुमच्या मुलाला आत्मविश्वास, शिस्त, दृढ मूल्ये आणि आजीवन सवयींसह वाढण्यास मदत करा."
             )}
           </p>
         </Reveal>

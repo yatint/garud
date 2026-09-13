@@ -37,7 +37,7 @@ export const KidsBenefits = () => {
             {t("Why Parents Love This Program", "पालकांना हा कार्यक्रम का आवडतो")}
           </p>
           <h2 className="mt-4 font-heading text-3xl font-black tracking-tight text-white sm:text-4xl lg:text-5xl">
-            {t("After Kids Transform, Children Become More…", "Kids Transform नंतर मुले अधिक…")}
+            {t("After Kids Transform, Children Become More…", "बाल रूपांतरनंतर मुले अधिक…")}
           </h2>
         </Reveal>
 

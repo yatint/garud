@@ -23,11 +23,11 @@ const METHODS: Array<{ icon: LucideIcon; enTitle: string; mrTitle: string; enTex
 ];
 
 const TABLE = [
-  { program: "Kids Transform", enFocus: "Confidence, habits, values, communication", mrFocus: "आत्मविश्वास, सवयी, मूल्ये, संवाद", href: "/programs/kids-transform" },
-  { program: "Youth Transform", enFocus: "Leadership, discipline, emotional intelligence", mrFocus: "नेतृत्व, शिस्त, भावनिक बुद्धिमत्ता", href: "/youth-transform" },
-  { program: "Young Adult Transform", enFocus: "Career direction, decision making, responsibility", mrFocus: "करिअर दिशा, निर्णयक्षमता, जबाबदारी", href: "/programs/young-adult-transform" },
-  { program: "Parenting 360°", enFocus: "Positive parenting and family communication", mrFocus: "सकारात्मक पालकत्व आणि कौटुंबिक संवाद", href: "/programs/parenting-360" },
-  { program: "30-Day Transform", enFocus: "Daily habit formation and lifelong transformation", mrFocus: "दैनिक सवय निर्मिती आणि आजीवन परिवर्तन", href: "/programs/30-day-transform" },
+  { program: "Kids Transform", programMr: "बाल रूपांतर", enFocus: "Confidence, habits, values, communication", mrFocus: "आत्मविश्वास, सवयी, मूल्ये, संवाद", href: "/programs/kids-transform" },
+  { program: "Youth Transform", programMr: "किशोर रूपांतर", enFocus: "Leadership, discipline, emotional intelligence", mrFocus: "नेतृत्व, शिस्त, भावनिक बुद्धिमत्ता", href: "/youth-transform" },
+  { program: "Young Adult Transform", programMr: "युवा रूपांतर", enFocus: "Career direction, decision making, responsibility", mrFocus: "करिअर दिशा, निर्णयक्षमता, जबाबदारी", href: "/programs/young-adult-transform" },
+  { program: "Parenting 360°", programMr: "पालकत्व 360°", enFocus: "Positive parenting and family communication", mrFocus: "सकारात्मक पालकत्व आणि कौटुंबिक संवाद", href: "/programs/parenting-360" },
+  { program: "30-Day Transform", programMr: "३० दिवसांचा रूपांतर", enFocus: "Daily habit formation and lifelong transformation", mrFocus: "दैनिक सवय निर्मिती आणि आजीवन परिवर्तन", href: "/programs/30-day-transform" },
 ];
 
 const JOURNEY = [
@@ -98,7 +98,7 @@ export const LifeMethodTableJourney = () => {
                   className={`group grid grid-cols-[1fr_1.4fr] items-center border-t border-[#e1dfdf] transition-colors hover:bg-[#f6f7f0] ${i % 2 === 0 ? "bg-white" : "bg-[#fdfdfb]"}`}
                 >
                   <span className="flex items-center gap-2 px-6 py-4 font-heading text-sm font-bold text-[#18463b] sm:text-base">
-                    {row.program}
+                    {t(row.program, row.programMr)}
                     <ArrowRight size={14} className="text-[#f68a4a] opacity-0 transition-opacity group-hover:opacity-100" />
                   </span>
                   <span className="px-6 py-4 text-sm text-[#555]">{t(row.enFocus, row.mrFocus)}</span>

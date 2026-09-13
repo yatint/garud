@@ -43,7 +43,7 @@ export const KidsHero = ({ onEnroll }: KidsHeroProps) => {
             className="font-heading text-4xl font-extrabold uppercase leading-tight tracking-wide text-white sm:text-5xl lg:text-6xl"
             data-testid="kids-hero-title"
           >
-            Kids <span className="text-brand-gradient">Transform</span>
+            {t("Kids", "बाल")} <span className="text-brand-gradient">{t("Transform", "रूपांतर")}</span>
           </motion.h1>
 
           <motion.p

@@ -23,7 +23,7 @@ const TITLES: Record<string, [string, string]> = {
   "/about": ["About Rupantaram | Rupantaram Life Skills Academy", "रूपांतरम् विषयी | रूपांतरम् जीवनकौशल्य अकादमी"],
   "/why-us": ["Why Choose Rupantaram | Rupantaram Life Skills Academy", "रूपांतरम् का निवडावे | रूपांतरम् जीवनकौशल्य अकादमी"],
   "/programs": ["Our Programs | Rupantaram Life Skills Academy", "आमचे कार्यक्रम | रूपांतरम् जीवनकौशल्य अकादमी"],
-  "/programs/kids-transform": ["Kids Transform | Rupantaram Life Skills Academy", "Kids Transform | रूपांतरम् जीवनकौशल्य अकादमी"],
+  "/programs/kids-transform": ["Kids Transform | Rupantaram Life Skills Academy", "बाल रूपांतर | रूपांतरम् जीवनकौशल्य अकादमी"],
   "/programs/young-adult-transform": ["Young Adult Transform | Rupantaram Life Skills Academy", "युवा रूपांतर | रूपांतरम् जीवनकौशल्य अकादमी"],
   "/programs/30-day-transform": ["30-Day Transform | Rupantaram Life Skills Academy", "३० दिवसांचा रूपांतर | रूपांतरम् जीवनकौशल्य अकादमी"],
   "/programs/parenting-360": ["Parenting 360° | Rupantaram Life Skills Academy", "पालकत्व 360° | रूपांतरम् जीवनकौशल्य अकादमी"],

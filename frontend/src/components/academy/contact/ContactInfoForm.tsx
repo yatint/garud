@@ -40,12 +40,12 @@ const CARDS = [
   },
 ];
 
-const PROGRAM_OPTIONS = [
-  "Kids Transform",
-  "Youth Transform",
-  "Young Adult Transform",
-  "Parenting 360°",
-  "30-Day Transform",
+const PROGRAM_OPTIONS: Array<[string, string]> = [
+  ["Kids Transform (Ages 6–13)", "बाल रूपांतर (६–१३ वर्षे)"],
+  ["Youth Transform (Ages 13–18)", "किशोर रूपांतर (१३–१८ वर्षे)"],
+  ["Young Adult Transform (Ages 19+)", "युवा रूपांतर (१९+)"],
+  ["Parenting 360° (1 Day)", "पालकत्व 360° (१ दिवस)"],
+  ["30-Day Transform (30 Days)", "३० दिवसांचा रूपांतर (३० दिवस)"],
 ];
 
 const fieldClass =
@@ -165,11 +165,11 @@ export const ContactInfoForm = () => {
                       id="cf-program"
                       data-testid="contact-program-select"
                       className="h-10 w-full rounded-md border border-[#e1dfdf] bg-white px-3 text-sm text-[#222] focus:border-[#f68a4a] focus:outline-none"
-                      defaultValue={PROGRAM_OPTIONS[1]}
+                      defaultValue={PROGRAM_OPTIONS[1][0]}
                     >
                       {PROGRAM_OPTIONS.map((p) => (
-                        <option key={p} value={p}>
-                          {p}
+                        <option key={p[0]} value={p[0]}>
+                          {t(p[0], p[1])}
                         </option>
                       ))}
                     </select>

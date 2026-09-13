@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { Toaster } from "@/components/ui/sonner";
-import { SlimNavbar } from "@/components/academy/SlimNavbar";
+import { AcademyNavbar } from "@/components/academy/AcademyNavbar";
 import { WhyHero } from "@/components/academy/why/WhyHero";
 import { Philosophy } from "@/components/academy/why/Philosophy";
 import { TrustFeatures } from "@/components/academy/why/TrustFeatures";
@@ -35,7 +35,7 @@ export default function WhyUs() {
   return (
     <div className="min-h-screen bg-white font-sans text-[#222]">
       <div className="grain-overlay" />
-      <SlimNavbar onEnquire={openEnquiry} />
+      <AcademyNavbar onEnquire={openEnquiry} />
       <main>
         <WhyHero onEnquire={openEnquiry} />
         <Philosophy />

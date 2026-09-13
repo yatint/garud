@@ -46,10 +46,10 @@ export const AcademyFooter = () => {
   ];
 
   const PROGRAMS = [
-    t("Kids Transform (Ages 6–13)", "Kids Transform (६–१३ वर्षे)"),
-    t("Youth Transform (Ages 13–18)", "Youth Transform (१३–१८ वर्षे)"),
-    t("Young Adult Transform (19+)", "Young Adult Transform (१९+)"),
-    t("Parenting 360° (1 Day)", "Parenting 360° (१ दिवस)"),
+    t("Kids Transform (Ages 6–13)", "बाल रूपांतर (६–१३ वर्षे)"),
+    t("Youth Transform (Ages 13–18)", "किशोर रूपांतर (१३–१८ वर्षे)"),
+    t("Young Adult Transform (19+)", "युवा रूपांतर (१९+)"),
+    t("Parenting 360° (1 Day)", "पालकत्व 360° (१ दिवस)"),
     t("30-Day Transformation Journey", "३० दिवसांचा रूपांतर प्रवास"),
   ];
 
@@ -121,7 +121,7 @@ export const AcademyFooter = () => {
                   data-testid="academy-footer-youth-link"
                   className="text-sm font-semibold text-[#f8b183] transition-colors hover:text-white"
                 >
-                  {t("Explore Youth Transform →", "Youth Transform पहा →")}
+                  {t("Explore Youth Transform →", "किशोर रूपांतर पहा →")}
                 </Link>
               </li>
             </ul>

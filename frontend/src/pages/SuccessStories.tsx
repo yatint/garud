@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { Toaster } from "@/components/ui/sonner";
-import { SlimNavbar } from "@/components/academy/SlimNavbar";
+import { AcademyNavbar } from "@/components/academy/AcademyNavbar";
 import { SuccessHero } from "@/components/academy/success/SuccessHero";
 import { SuccessStoriesGrid } from "@/components/academy/success/SuccessStoriesGrid";
 import { SuccessBeforeAfter } from "@/components/academy/success/SuccessBeforeAfter";
@@ -38,7 +38,7 @@ export default function SuccessStories() {
   return (
     <div className="min-h-screen bg-white font-sans text-[#222]">
       <div className="grain-overlay" />
-      <SlimNavbar onEnquire={openEnquiry} />
+      <AcademyNavbar onEnquire={openEnquiry} />
       <main>
         <SuccessHero onEnquire={openEnquiry} />
         <SuccessStoriesGrid />

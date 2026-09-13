@@ -24,7 +24,7 @@ const FAQS = [
     enQ: "Which program is suitable for my child?",
     mrQ: "माझ्या मुलासाठी कोणता कार्यक्रम योग्य?",
     enA: "Programs are age-based: Kids Transform (6–13), Youth Transform (13–18), and Young Adult Transform (19+). Our counsellors will help you choose the right fit during a free guidance call.",
-    mrA: "कार्यक्रम वयानुसार आहेत: Kids Transform (६–१३), Youth Transform (१३–१८) आणि Young Adult Transform (१९+). मोफत मार्गदर्शन कॉलमध्ये आमचे समुपदेशक योग्य पर्याय निवडण्यास मदत करतील.",
+    mrA: "कार्यक्रम वयानुसार आहेत: बाल रूपांतर (६–१३), किशोर रूपांतर (१३–१८) आणि युवा रूपांतर (१९+). मोफत मार्गदर्शन कॉलमध्ये आमचे समुपदेशक योग्य पर्याय निवडण्यास मदत करतील.",
   },
   {
     enQ: "Can parents attend counselling before registration?",

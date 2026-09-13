@@ -13,7 +13,7 @@ export const AcademyStories = () => {
         "माझा मुलगा स्टेजवर जायला घाबरायचा. कार्यशाळेनंतर त्याने शाळेच्या वार्षिक सणासमारंभाचे सूत्रसंचालन केले."
       ),
       author: t("Mother of a 10-year-old", "१० वर्षीय मुलाची आई"),
-      program: "Kids Transform",
+      program: t("Kids Transform", "बाल रूपांतर"),
     },
     {
       quote: t(
@@ -26,10 +26,10 @@ export const AcademyStories = () => {
     {
       quote: t(
         "After Parenting 360°, I learned to listen. The daily arguments stopped and real conversation began.",
-        "Parenting 360° नंतर मी ऐकायला शिकले. रोजची भांडणे थांबली आणि खरा संवाद सुरू झाला."
+        "पालकत्व 360° नंतर मी ऐकायला शिकले. रोजची भांडणे थांबली आणि खरा संवाद सुरू झाला."
       ),
       author: t("Mother of a 15-year-old", "१५ वर्षीय मुलाची आई"),
-      program: "Parenting 360°",
+      program: t("Parenting 360°", "पालकत्व 360°"),
     },
   ];
 

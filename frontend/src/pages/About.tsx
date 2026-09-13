@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { Toaster } from "@/components/ui/sonner";
-import { SlimNavbar } from "@/components/academy/SlimNavbar";
+import { AcademyNavbar } from "@/components/academy/AcademyNavbar";
 import { AboutHero } from "@/components/academy/about/AboutHero";
 import { WhoWeAre } from "@/components/academy/about/WhoWeAre";
 import { Difference } from "@/components/academy/about/Difference";
@@ -35,7 +35,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-white font-sans text-[#222]">
       <div className="grain-overlay" />
-      <SlimNavbar onEnquire={openEnquiry} />
+      <AcademyNavbar onEnquire={openEnquiry} />
       <main>
         <AboutHero />
         <WhoWeAre />

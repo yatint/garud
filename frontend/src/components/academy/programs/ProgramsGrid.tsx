@@ -6,6 +6,7 @@ import { useLang } from "@/lib/lang";
 
 interface Program {
   title: string;
+  titleMr: string;
   enAudience: string;
   mrAudience: string;
   enDuration: string;
@@ -21,6 +22,7 @@ interface Program {
 const PROGRAMS: Program[] = [
   {
     title: "Kids Transform",
+    titleMr: "बाल रूपांतर",
     enAudience: "Ages 6–13",
     mrAudience: "वय ६–१३",
     enDuration: "3 Days",
@@ -32,6 +34,7 @@ const PROGRAMS: Program[] = [
   },
   {
     title: "Youth Transform",
+    titleMr: "किशोर रूपांतर",
     enAudience: "Ages 13–18",
     mrAudience: "वय १३–१८",
     enDuration: "3 Days",
@@ -44,6 +47,7 @@ const PROGRAMS: Program[] = [
   },
   {
     title: "Young Adult Transform",
+    titleMr: "युवा रूपांतर",
     enAudience: "Ages 19+",
     mrAudience: "वय १९+",
     enDuration: "3 Days",
@@ -55,6 +59,7 @@ const PROGRAMS: Program[] = [
   },
   {
     title: "Parenting 360°",
+    titleMr: "पालकत्व 360°",
     enAudience: "Parents & Guardians",
     mrAudience: "पालक आणि पालकत्वकर्ते",
     enDuration: "1 Day",
@@ -67,6 +72,7 @@ const PROGRAMS: Program[] = [
   },
   {
     title: "30-Day Transformation Program",
+    titleMr: "३० दिवसांचा रूपांतर कार्यक्रम",
     enAudience: "Students & Families",
     mrAudience: "विद्यार्थी आणि कुटुंबे",
     enDuration: "30 Days",
@@ -140,7 +146,7 @@ export const ProgramsGrid = ({ onEnquire }: ProgramsGridProps) => {
                   </div>
 
                   <div className="flex flex-1 flex-col p-6">
-                    <h3 className="font-heading text-xl font-bold text-[#18463b]">{p.title}</h3>
+                    <h3 className="font-heading text-xl font-bold text-[#18463b]">{t(p.title, p.titleMr)}</h3>
                     <p className="mt-3 flex-1 text-sm leading-relaxed text-[#555]">{t(p.enFocus, p.mrFocus)}</p>
                     {p.link ? (
                       <Link

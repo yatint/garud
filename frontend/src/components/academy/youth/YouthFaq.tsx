@@ -10,7 +10,7 @@ const FAQS = [
     enQ: "Who is this program for?",
     mrQ: "हा कार्यक्रम कोणासाठी आहे?",
     enA: "Youth Transform is designed for teenagers aged 13–18 who want to build confidence, discipline, communication skills, and a clear sense of direction — whether they struggle with focus and screen habits, or are ready to unlock their full potential.",
-    mrA: "Youth Transform १३–१८ वयोगटातील किशोरवयीन मुलांसाठी आहे — आत्मविश्वास, शिस्त, संवाद कौशल्ये आणि स्पष्ट दिशा हवी असलेल्यांसाठी; एकाग्रता व स्क्रीन सवयींमध्ये अडचण असो किंवा क्षमता विकसित करायची असो.",
+    mrA: "किशोर रूपांतर १३–१८ वयोगटातील किशोरवयीन मुलांसाठी आहे — आत्मविश्वास, शिस्त, संवाद कौशल्ये आणि स्पष्ट दिशा हवी असलेल्यांसाठी; एकाग्रता व स्क्रीन सवयींमध्ये अडचण असो किंवा क्षमता विकसित करायची असो.",
   },
   {
     enQ: "Is prior experience required?",

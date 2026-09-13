@@ -5,9 +5,9 @@ import { useLang } from "@/lib/lang";
 import { scrollToId } from "@/lib/scroll";
 
 const STORIES = [
-  { badge: "Kids Transform", enTitle: "Student Transformation Story", mrTitle: "विद्यार्थ्याची परिवर्तन कथा", enName: "Student Name (Placeholder)", mrName: "विद्यार्थ्याचे नाव (लवकरच)", slug: "student" },
-  { badge: "Youth Transform", enTitle: "Youth Transformation Story", mrTitle: "तरुणाची परिवर्तन कथा", enName: "Student Name (Placeholder)", mrName: "विद्यार्थ्याचे नाव (लवकरच)", slug: "youth" },
-  { badge: "Parenting 360°", enTitle: "Parenting Transformation Story", mrTitle: "पालकत्व परिवर्तन कथा", enName: "Parent Name (Placeholder)", mrName: "पालकांचे नाव (लवकरच)", slug: "parenting" },
+  { badge: "Kids Transform", badgeMr: "बाल रूपांतर", enTitle: "Student Transformation Story", mrTitle: "विद्यार्थ्याची परिवर्तन कथा", enName: "Student Name (Placeholder)", mrName: "विद्यार्थ्याचे नाव (लवकरच)", slug: "student" },
+  { badge: "Youth Transform", badgeMr: "किशोर रूपांतर", enTitle: "Youth Transformation Story", mrTitle: "तरुणाची परिवर्तन कथा", enName: "Student Name (Placeholder)", mrName: "विद्यार्थ्याचे नाव (लवकरच)", slug: "youth" },
+  { badge: "Parenting 360°", badgeMr: "पालकत्व 360°", enTitle: "Parenting Transformation Story", mrTitle: "पालकत्व परिवर्तन कथा", enName: "Parent Name (Placeholder)", mrName: "पालकांचे नाव (लवकरच)", slug: "parenting" },
 ];
 
 export const SuccessStoriesGrid = () => {
@@ -56,7 +56,7 @@ export const SuccessStoriesGrid = () => {
                   </div>
                   <div className="flex flex-1 flex-col p-6">
                     <span className="inline-flex w-fit items-center gap-1.5 rounded-full bg-[#f68a4a]/12 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-[#e0701f]">
-                      {s.badge}
+                      {t(s.badge, s.badgeMr)}
                     </span>
                     <h3 className="mt-4 font-heading text-lg font-bold text-[#18463b]">{t(s.enTitle, s.mrTitle)}</h3>
                     <p className="mt-1 text-xs font-semibold text-[#999]">{t(s.enName, s.mrName)}</p>

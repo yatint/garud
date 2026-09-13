@@ -6,6 +6,7 @@ import { useLang } from "@/lib/lang";
 
 interface Program {
   title: string;
+  titleMr: string;
   ageEn: string;
   ageMr: string;
   durEn: string;
@@ -20,6 +21,7 @@ interface Program {
 const PROGRAMS: Program[] = [
   {
     title: "Kids Transform",
+    titleMr: "बाल रूपांतर",
     ageEn: "Ages 6–13",
     ageMr: "६–१३ वर्षे",
     durEn: "3 Days",
@@ -35,6 +37,7 @@ const PROGRAMS: Program[] = [
   },
   {
     title: "Youth Transform",
+    titleMr: "किशोर रूपांतर",
     ageEn: "Ages 13–18",
     ageMr: "१३–१८ वर्षे",
     durEn: "3 Days",
@@ -50,6 +53,7 @@ const PROGRAMS: Program[] = [
   },
   {
     title: "Young Adult Transform",
+    titleMr: "युवा रूपांतर",
     ageEn: "Ages 19+",
     ageMr: "१९+ वर्षे",
     durEn: "3 Days",
@@ -65,6 +69,7 @@ const PROGRAMS: Program[] = [
   },
   {
     title: "Parenting 360°",
+    titleMr: "पालकत्व 360°",
     ageEn: "For Parents",
     ageMr: "पालकांसाठी",
     durEn: "1 Day",
@@ -79,6 +84,7 @@ const PROGRAMS: Program[] = [
   },
   {
     title: "30-Day Transformation",
+    titleMr: "३० दिवसांचा रूपांतर",
     ageEn: "All Ages",
     ageMr: "सर्वांसाठी",
     durEn: "Flagship · 30 Days",
@@ -143,7 +149,7 @@ export const AcademyPrograms = ({ onEnquire }: AcademyProgramsProps) => {
                 </div>
 
                 <div className="flex flex-1 flex-col p-6">
-                  <h3 className="font-heading text-xl font-bold text-[#18463b]">{p.title}</h3>
+                  <h3 className="font-heading text-xl font-bold text-[#18463b]">{t(p.title, p.titleMr)}</h3>
                   <ul className="mt-4 flex flex-1 flex-col gap-2">
                     {p.points.map((pt) => (
                       <li key={pt.en} className="flex items-start gap-2.5 text-sm text-[#555]">

@@ -6,6 +6,7 @@ import { useLang } from "@/lib/lang";
 
 interface Program {
   title: string;
+  titleMr: string;
   ageEn: string;
   ageMr: string;
   textEn: string;
@@ -18,6 +19,7 @@ interface Program {
 const PROGRAMS: Program[] = [
   {
     title: "Kids Transform",
+    titleMr: "बाल रूपांतर",
     ageEn: "6–13 Years",
     ageMr: "६–१३ वर्षे",
     textEn: "Building confidence, habits, discipline, values, and communication.",
@@ -28,6 +30,7 @@ const PROGRAMS: Program[] = [
   },
   {
     title: "Youth Transform",
+    titleMr: "किशोर रूपांतर",
     ageEn: "13–18 Years",
     ageMr: "१३–१८ वर्षे",
     textEn: "Career clarity, emotional intelligence, leadership, digital discipline, and personality development.",
@@ -38,6 +41,7 @@ const PROGRAMS: Program[] = [
   },
   {
     title: "Young Adult Transform",
+    titleMr: "युवा रूपांतर",
     ageEn: "19+ Years",
     ageMr: "१९+ वर्षे",
     textEn: "Career planning, financial awareness, leadership, communication, and life management.",
@@ -48,6 +52,7 @@ const PROGRAMS: Program[] = [
   },
   {
     title: "Parenting 360°",
+    titleMr: "पालकत्व 360°",
     ageEn: "For Parents",
     ageMr: "पालकांसाठी",
     textEn: "Helping parents understand child psychology, communication, emotional bonding, and positive parenting.",
@@ -94,7 +99,7 @@ export const AboutPrograms = ({ onEnquire }: AboutProgramsProps) => {
                   </span>
                 </div>
                 <div className="flex flex-1 flex-col p-6">
-                  <h3 className="font-heading text-lg font-bold text-[#18463b]">{p.title}</h3>
+                  <h3 className="font-heading text-lg font-bold text-[#18463b]">{t(p.title, p.titleMr)}</h3>
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-[#555]">{t(p.textEn, p.textMr)}</p>
                   {p.link ? (
                     <Link

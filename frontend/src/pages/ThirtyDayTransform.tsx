@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { Toaster } from "@/components/ui/sonner";
-import { SlimNavbar } from "@/components/academy/SlimNavbar";
+import { AcademyNavbar } from "@/components/academy/AcademyNavbar";
 import { ThirtyHero } from "@/components/academy/thirty/ThirtyHero";
 import { ThirtyAboutWhy } from "@/components/academy/thirty/ThirtyAboutWhy";
 import { ThirtyObjectives } from "@/components/academy/thirty/ThirtyObjectives";
@@ -42,7 +42,7 @@ export default function ThirtyDayTransform() {
   return (
     <div className="min-h-screen bg-white font-sans text-[#222]">
       <div className="grain-overlay" />
-      <SlimNavbar onEnquire={openEnquiry} />
+      <AcademyNavbar onEnquire={openEnquiry} />
       <main>
         <ThirtyHero onEnroll={openEnquiry} />
         <ThirtyAboutWhy />

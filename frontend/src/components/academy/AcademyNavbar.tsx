@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, Menu, Phone, X } from "lucide-react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { LangToggle } from "@/components/LangToggle";
 import { useLang } from "@/lib/lang";
 import { scrollToId } from "@/lib/scroll";
@@ -46,19 +46,25 @@ interface AcademyNavbarProps {
 export const AcademyNavbar = ({ onEnquire }: AcademyNavbarProps) => {
   const [open, setOpen] = useState(false);
   const { t } = useLang();
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   const PROGRAM_MENU = [
-    { label: t("All Programs Overview", "सर्व कार्यक्रम"), href: "/programs" },
-    { label: t("Kids Transform (6–13)", "Kids Transform (६–१३)"), href: "/programs/kids-transform" },
-    { label: t("Youth Transform (13–18)", "Youth Transform (१३–१८)"), href: "/youth-transform" },
-    { label: t("Young Adult Transform (19+)", "Young Adult Transform (१९+)"), href: "/programs/young-adult-transform" },
-    { label: "Parenting 360°", href: "/programs/parenting-360" },
-    { label: t("30-Day Transformation", "३० दिवसांचे रूपांतर"), href: "/programs/30-day-transform" },
+    { label: t("All Programs Overview", "सर्व कार्यक्रम"), href: "/programs", slug: "all" },
+    { label: t("Kids Transform (6–13)", "बाल रूपांतर (६–१३)"), href: "/programs/kids-transform", slug: "kids" },
+    { label: t("Youth Transform (13–18)", "किशोर रूपांतर (१३–१८)"), href: "/youth-transform", slug: "youth" },
+    { label: t("Young Adult Transform (19+)", "युवा रूपांतर (१९+)"), href: "/programs/young-adult-transform", slug: "young-adult" },
+    { label: t("Parenting 360°", "पालकत्व 360°"), href: "/programs/parenting-360", slug: "parenting" },
+    { label: t("30-Day Transformation", "३० दिवसांचा रूपांतर"), href: "/programs/30-day-transform", slug: "thirty-day" },
   ];
 
-  const go = (target: string) => {
+  const goHome = () => {
     setOpen(false);
-    scrollToId(target, OFFSET);
+    if (pathname === "/") {
+      scrollToId("#top", OFFSET);
+    } else {
+      navigate("/");
+    }
   };
 
   const linkClass =
@@ -85,7 +91,7 @@ export const AcademyNavbar = ({ onEnquire }: AcademyNavbarProps) => {
 
           <button
             data-testid="academy-nav-logo"
-            onClick={() => go("#top")}
+            onClick={goHome}
             className="absolute left-1/2 -translate-x-1/2"
           >
             <img
@@ -122,7 +128,7 @@ export const AcademyNavbar = ({ onEnquire }: AcademyNavbarProps) => {
           className="mx-auto flex h-12 max-w-7xl items-center justify-center gap-8 px-4"
           data-testid="academy-nav-links"
         >
-          <button data-testid="academy-nav-link-home" onClick={() => go("#top")} className={linkClass}>
+          <button data-testid="academy-nav-link-home" onClick={goHome} className={linkClass}>
             {t("Home", "मुख्यपृष्ठ")}
           </button>
           <Link to="/about" data-testid="academy-nav-link-about" className={linkClass}>
@@ -147,7 +153,7 @@ export const AcademyNavbar = ({ onEnquire }: AcademyNavbarProps) => {
                   <Link
                     key={p.label}
                     to={p.href}
-                    data-testid={`programs-dropdown-${p.label.toLowerCase().replace(/[^a-z]+/g, "-")}`}
+                    data-testid={`programs-dropdown-${p.slug}`}
                     className="block rounded-lg px-4 py-2.5 text-sm font-semibold text-[#444] transition-colors hover:bg-[#f6f7f0] hover:text-[#f68a4a]"
                   >
                     {p.label}
@@ -192,7 +198,7 @@ export const AcademyNavbar = ({ onEnquire }: AcademyNavbarProps) => {
             <div className="flex flex-col gap-1 px-6 py-4">
               <button
                 data-testid="academy-mobile-nav-link-home"
-                onClick={() => go("#top")}
+                onClick={goHome}
                 className="rounded-lg px-3 py-3 text-left text-sm font-semibold text-[#444] transition-colors hover:bg-[#f6f7f0] hover:text-[#18463b]"
               >
                 {t("Home", "मुख्यपृष्ठ")}

@@ -21,7 +21,7 @@ export const KidsAbout = () => {
               <p className="mt-6 text-base leading-relaxed text-[#555] sm:text-lg">
                 {t(
                   "Kids Transform is designed for children during their most important developmental years. Through interactive games, creative activities, group learning, mindfulness, and value-based experiences, children develop the habits and life skills needed for a confident and responsible future.",
-                  "Kids Transform मुलांच्या सर्वात महत्त्वाच्या विकासाच्या वर्षांसाठी तयार केला आहे. परस्पर खेळ, सर्जनशील उपक्रम, सामूहिक शिक्षण, माइंडफुलनेस आणि मूल्याधारित अनुभवांद्वारे मुले आत्मविश्वासू आणि जबाबदार भविष्यासाठी आवश्यक सवयी व जीवनकौशल्ये विकसित करतात."
+                  "बाल रूपांतर मुलांच्या सर्वात महत्त्वाच्या विकासाच्या वर्षांसाठी तयार केला आहे. परस्पर खेळ, सर्जनशील उपक्रम, सामूहिक शिक्षण, माइंडफुलनेस आणि मूल्याधारित अनुभवांद्वारे मुले आत्मविश्वासू आणि जबाबदार भविष्यासाठी आवश्यक सवयी व जीवनकौशल्ये विकसित करतात."
                 )}
               </p>
               <p className="mt-5 text-base leading-relaxed text-[#555] sm:text-lg">

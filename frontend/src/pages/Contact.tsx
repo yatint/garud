@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Toaster } from "@/components/ui/sonner";
-import { SlimNavbar } from "@/components/academy/SlimNavbar";
+import { AcademyNavbar } from "@/components/academy/AcademyNavbar";
 import { ContactHero } from "@/components/academy/contact/ContactHero";
 import { ContactInfoForm } from "@/components/academy/contact/ContactInfoForm";
 import { ContactLocations } from "@/components/academy/contact/ContactLocations";
@@ -38,7 +38,7 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-white font-sans text-[#222]">
       <div className="grain-overlay" />
-      <SlimNavbar onEnquire={openEnquiry} />
+      <AcademyNavbar onEnquire={openEnquiry} />
       <main>
         <ContactHero />
         <ContactInfoForm />

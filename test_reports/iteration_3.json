@@ -1,0 +1,30 @@
+{
+  "summary": "Frontend testing for navbar-on-all-pages change + Marathi program name completeness. All 12 inner pages (about, why-us, programs, kids-transform, youth-transform, young-adult-transform, parenting-360, 30-day-transform, life-skills, gallery, success-stories, contact) now render the full AcademyNavbar (socials topbar + logo + green menu bar with मुख्यपृष्ठ/आमच्याविषयी/आमची खासियत/कार्यक्रम▾/जीवनकौशल्ये/गॅलरी/यशोगाथा/संपर्क/चौकशी करा + English toggle + phone). Programs dropdown shows correct Marathi names with stable testids (programs-dropdown-all/kids/youth/young-adult/parenting/thirty-day) and switches to English on toggle. English persists across reload via localStorage. Home nav from inner page works via both मुख्यपृष्ठ link and logo. Homepage program cards, contact form select, enquiry dialog select, life-skills table, success-stories badges, footer, and browser tab titles all show Marathi program names — no leftover English labels in Marathi mode. Centers section shows 4 branches (कर्जत/अलिबाग/पेण/लोणावळा) each with +91 90116 58888, कॉल करा (tel: link) and चौकशी करा (opens dialog). Enquiry dialog submits with Marathi success toast. Mobile hamburger works on inner pages with all links + enquire. No console or page errors on any page.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "Program name translation consistency (Marathi mode)", "issues": [
+        "'३० दिवसांचा रूपांतर' vs '३० दिवसांचे रूपांतर' — both forms appear across the site: homepage cards show both, program dropdown uses 'दिवसांचे', contact form / enquiry dialog / tab title use 'दिवसांचा'. Recommend unifying to a single form (grammatically 'दिवसांचे' agrees with neuter रूपांतर, but the problem statement uses 'दिवसांचा'; whichever is chosen should be applied everywhere).",
+        "Age suffix inconsistency in program select options: EnquiryDialog appends age ranges ('बाल रूपांतर (६–१३ वर्षे)', 'किशोर रूपांतर (१३–१८ वर्षे)') while contact form ContactInfoForm select lists them without age ('बाल रूपांतर'). Consider aligning both selects."
+      ]}
+    ]
+  },
+  "test_report_links": [],
+  "action_items": [
+    "Unify '३० दिवसांचा' vs '३० दिवसांचे रूपांतर' Marathi phrasing across AcademyPrograms, ProgramsGrid, ProgramFinder, LifeMethodTable, footer, EnquiryDialog, ContactInfoForm, and tab titles.",
+    "(Optional) Align program-select option labels between EnquiryDialog and ContactInfoForm (with/without age range)."
+  ],
+  "critical_code_review_comments": [
+    "AcademyNavbar cleanly consolidates full nav on all pages via a single component; SlimNavbar references confirmed removed.",
+    "Programs dropdown uses stable slug-based data-testids — good for testability.",
+    "Language preference persisted via localStorage key 'rupantaram-lang' works reliably across reload."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (static site)", "frontend": "100% of tested flows"},
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Full navbar-on-all-pages and Marathi program-name coverage verified end-to-end across all 12 inner pages, dropdown, dialog, forms, footer, tab titles, and mobile hamburger. Only leftover concern is minor Marathi wording inconsistency for the 30-Day program ('दिवसांचा' vs 'दिवसांचे') and inconsistent age suffix in program selects. Preview URL uses HashRouter (/#/...). Default lang Marathi, key 'rupantaram-lang'. Preloader ~1.8s — wait >=5s on homepage."
+}
